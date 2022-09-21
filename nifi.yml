@@ -1,0 +1,38 @@
+version: '3'
+services:
+    nifi:
+        image: apache/nifi:1.12.0 #apache/nifi:1.14.0 not work when restart containers
+        container_name: nifi
+        restart: unless-stopped
+        ports:
+            # HTTP
+            - 8181:8080
+            # HTTPS
+            # - "8443:8443/tcp"
+            # Remote Input Socket
+            #- "10000:10000/tcp"
+            # JVM Debugger
+            #- "18181:8000/tcp"
+            # Cluster Node Protocol
+            #- "11443:11443/tcp"
+        env_file:
+            - .env
+        environment:
+            - NIFI_WEB_HTTP_PORT=8080
+            - SINGLE_USER_CREDENTIALS_USERNAME=admin
+            - SINGLE_USER_CREDENTIALS_PASSWORD=${NIFI_ADMIN_PASSWORD}
+        networks:
+            - svastikkka
+    nifi-registry:
+        image: apache/nifi-registry:1.14.0
+        container_name: registry
+        restart: unless-stopped
+        ports:
+            - "19090:18080"
+        networks:
+            - svastikkka
+        depends_on:
+            - nifi
+networks:
+    svastikkka:
+        driver: bridge
