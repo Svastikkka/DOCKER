@@ -1,0 +1,14 @@
+version: '3'
+services:
+    database:
+        image: mongo:4.4
+        container_name: mongo
+        environment:
+            - MONGO_INITDB_DATABASE='svastikkka_db'
+        networks:
+            - svastikkka
+        ports:
+            - "23556-23558:27017-27019"
+networks:
+    svastikkka:
+        driver: bridge
