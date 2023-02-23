@@ -10,12 +10,12 @@ rule_files:
 scrape_configs:
   - job_name: demo/graphite
     static_configs:
-      - targets: [ 'graphite:2023' ]
+      - targets: [ 'graphite:80' ]
         labels:
           pod: 'graphite'
 
 remote_write:
-  - url: http://load-balancer:32768
+  - url: http://graphite:80
 # Add X-Scope-OrgID header so that Mimir knows what tenant the remote write data should be stored in.
 # In this case, our tenant is "demo"
     headers:

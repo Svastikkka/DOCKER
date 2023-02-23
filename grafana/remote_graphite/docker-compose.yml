@@ -2,21 +2,25 @@ version: '3'
 services:
   graphite:
     ports:
-    - "32768:80" 
+    - 8081:80
+    - 2003-2004:2003-2004
+    - 7002:7002
     - 8125:8125/udp
-    - 8126:8126/tcp
+    - 8126:8126
+    - 2023-2024:2023-2024
     labels:
       io.rancher.container.pull_image: always
       io.rancher.scheduler.affinity:host_label: monitoring=true
     tty: true
-    image: hopsoft/graphite-statsd:v0.9.15-phusion0.9.18
+    image: graphiteapp/graphite-statsd
     # volumes:
     # - graphite-data:/opt/graphite/storage
     stdin_open: true
-    # environment:
-    #   VIRTUAL_HOST: statsd.devshop.cloud
-    #   LETSENCRYPT_HOST: statsd.devshop.cloud
-    #   LETSENCRYPT_EMAIL: jon@thinkdrop.net
+    environment:
+    - COLLECTD=1
+    - GRAPHITE_DEBUG=1
+    - REDIS_TAGDB=1
+    - BRUBECK=1
 
   grafana:
     image: grafana/grafana:latest
