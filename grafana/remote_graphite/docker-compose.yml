@@ -1,8 +1,16 @@
 version: '3'
 services:
+  prometheus_adaptor:
+    container_name: prometheus-adaptor
+    ports:
+    - 9201:9201
+    image: svastikkka/prometheus-adaptor:latest
+
   graphite:
+    container_name: graphite
     ports:
     - 8081:80
+    - 8080:8080
     - 2003-2004:2003-2004
     - 7002:7002
     - 8125:8125/udp
@@ -12,9 +20,7 @@ services:
       io.rancher.container.pull_image: always
       io.rancher.scheduler.affinity:host_label: monitoring=true
     tty: true
-    image: graphiteapp/graphite-statsd
-    # volumes:
-    # - graphite-data:/opt/graphite/storage
+    image: svastikkka/graphite:latest
     stdin_open: true
     environment:
     - COLLECTD=1
@@ -23,6 +29,7 @@ services:
     - BRUBECK=1
 
   grafana:
+    container_name: grafana
     image: grafana/grafana:latest
     # pull_policy: always
     environment:
@@ -35,6 +42,7 @@ services:
       - 3000:3000
 
   prometheus:
+    container_name: prometheus
     image: prom/prometheus:latest
     command:
       - --config.file=/etc/prometheus/prometheus.yml
@@ -42,14 +50,15 @@ services:
       - --storage.tsdb.path=/prometheus
       - --web.console.libraries=/usr/share/prometheus/console_libraries
       - --web.console.templates=/usr/share/prometheus/consoles
+      - --enable-feature=remote-write-receiver
     ports:
       - 9090:9090
-  #   volumes:
-  #     - ./config/prometheus.yaml:/etc/prometheus/prometheus.yml
+    volumes:
+      - ./config/prometheus.yaml:/etc/prometheus/prometheus.yml
 
   load-balancer:
     image: nginx:latest
-    volumes:
-      - ./config/nginx.conf:/etc/nginx/nginx.conf:ro
+    # volumes:
+    #   - ./config/nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
       - 9009:9009
