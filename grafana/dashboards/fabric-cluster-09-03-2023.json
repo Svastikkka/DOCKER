@@ -1,0 +1,3866 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 7,
+    "iteration": 1678346576750,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 58,
+        "panels": [],
+        "title": "Fabric Deployment",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "auto",
+              "displayMode": "auto",
+              "filterable": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "orange",
+                  "value": 5
+                },
+                {
+                  "color": "red",
+                  "value": 7
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Time"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Time"
+                },
+                {
+                  "id": "unit",
+                  "value": "time: YYYY-MM-DD HH:mm:ss"
+                },
+                {
+                  "id": "custom.align"
+                },
+                {
+                  "id": "custom.width",
+                  "value": 158
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Metric"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "none"
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "auto"
+                },
+                {
+                  "id": "custom.align"
+                },
+                {
+                  "id": "custom.width",
+                  "value": 339
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Value"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "none"
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background"
+                },
+                {
+                  "id": "custom.align"
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 1
+        },
+        "id": 62,
+        "libraryPanel": {
+          "description": "",
+          "meta": {
+            "connectedDashboards": 1,
+            "created": "2022-10-07T17:27:11Z",
+            "createdBy": {
+              "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+              "id": 1,
+              "name": "admin"
+            },
+            "folderName": "General",
+            "folderUid": "",
+            "updated": "2022-10-07T17:27:11Z",
+            "updatedBy": {
+              "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+              "id": 1,
+              "name": "admin"
+            }
+          },
+          "name": "Fabric Deployment Replicas - Up To Date",
+          "type": "table",
+          "uid": "MzxMxHMVz",
+          "version": 1
+        },
+        "links": [],
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": [
+            {
+              "desc": false,
+              "displayName": "Value"
+            }
+          ]
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": "code",
+            "expr": "kube_deployment_status_replicas{exported_namespace=~\"$namespace\"}",
+            "format": "time_series",
+            "instant": true,
+            "interval": "",
+            "intervalFactor": 1,
+            "legendFormat": "{{deployment}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Fabric Deployment Replicas - Up To Date",
+        "transformations": [
+          {
+            "id": "seriesToRows",
+            "options": {
+              "reducers": []
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "auto",
+              "displayMode": "auto",
+              "filterable": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "orange",
+                  "value": 5
+                },
+                {
+                  "color": "red",
+                  "value": 7
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Time"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Time"
+                },
+                {
+                  "id": "unit",
+                  "value": "time: YYYY-MM-DD HH:mm:ss"
+                },
+                {
+                  "id": "custom.align"
+                },
+                {
+                  "id": "custom.width",
+                  "value": 155
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Metric"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "none"
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "auto"
+                },
+                {
+                  "id": "custom.align",
+                  "value": "center"
+                },
+                {
+                  "id": "custom.width",
+                  "value": 339
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Value"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "none"
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background"
+                },
+                {
+                  "id": "custom.align"
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 1
+        },
+        "id": 64,
+        "libraryPanel": {
+          "description": "",
+          "meta": {
+            "connectedDashboards": 1,
+            "created": "2022-10-07T17:27:12Z",
+            "createdBy": {
+              "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+              "id": 1,
+              "name": "admin"
+            },
+            "folderName": "General",
+            "folderUid": "",
+            "updated": "2022-11-04T12:55:46Z",
+            "updatedBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            }
+          },
+          "name": "Fabric Statefulset Replicas - Up To Date",
+          "type": "table",
+          "uid": "vclx7sU7z",
+          "version": 2
+        },
+        "links": [],
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": []
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "kube_statefulset_status_replicas{exported_namespace=~\"$namespace\" }",
+            "interval": "",
+            "legendFormat": "{{statefulset}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Fabric Statefulset Replicas - Up To Date",
+        "transformations": [
+          {
+            "id": "seriesToRows",
+            "options": {
+              "reducers": []
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 9
+        },
+        "id": 60,
+        "panels": [],
+        "title": "Fabric Pods",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "Shows Pod Running/Pending only",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "auto",
+              "displayMode": "auto",
+              "filterable": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "#EAB839",
+                  "value": 5
+                },
+                {
+                  "color": "#6ED0E0",
+                  "value": 7
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Time"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Time"
+                },
+                {
+                  "id": "unit",
+                  "value": "time: YYYY-MM-DD HH:mm:ss"
+                },
+                {
+                  "id": "custom.align"
+                },
+                {
+                  "id": "custom.width",
+                  "value": 153
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Metric"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "none"
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "auto"
+                },
+                {
+                  "id": "custom.align"
+                },
+                {
+                  "id": "custom.width",
+                  "value": 920
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Value"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "none"
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background"
+                },
+                {
+                  "id": "custom.align"
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 12,
+          "w": 24,
+          "x": 0,
+          "y": 10
+        },
+        "id": 66,
+        "links": [],
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": [
+            {
+              "desc": false,
+              "displayName": "Value (lastNotNull)"
+            }
+          ]
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "kube_pod_status_phase{exported_namespace=~\"$namespace\", phase=~\"Running\"}",
+            "interval": "",
+            "legendFormat": "namespace: {{exported_namespace}} |  pod: {{pod}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Fabric Pod - Running/Stopped",
+        "transformations": [
+          {
+            "id": "seriesToRows",
+            "options": {
+              "reducers": []
+            }
+          },
+          {
+            "id": "groupBy",
+            "options": {
+              "fields": {
+                "Metric": {
+                  "aggregations": [],
+                  "operation": "groupby"
+                },
+                "Value": {
+                  "aggregations": [
+                    "lastNotNull"
+                  ],
+                  "operation": "aggregate"
+                }
+              }
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "The Pod has been bound to a node, and all of the containers have been created. At least one container is still running, or is in the process of starting or restarting.",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "#629e51",
+              "mode": "fixed"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 8,
+          "x": 0,
+          "y": 22
+        },
+        "id": 68,
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "expr": "sum(kube_pod_status_phase{exported_namespace=~\"$namespace\", phase=\"Running\"})",
+            "format": "time_series",
+            "interval": "",
+            "intervalFactor": 1,
+            "refId": "A"
+          }
+        ],
+        "title": "Fabric Pods Running",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "The Pod has been accepted by the Kubernetes cluster, but one or more of the containers has not been set up and made ready to run. This includes time a Pod spends waiting to be scheduled as well as the time spent downloading container images over the network.",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "#629e51",
+              "mode": "fixed"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 4,
+          "x": 8,
+          "y": 22
+        },
+        "id": 70,
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "expr": " sum(kube_pod_status_phase{exported_namespace=~\"$namespace\", phase=\"Pending\"})",
+            "format": "time_series",
+            "interval": "",
+            "intervalFactor": 1,
+            "refId": "A"
+          }
+        ],
+        "title": "Fabric Pods Pending",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "All containers in the Pod have terminated, and at least one container has terminated in failure. That is, the container either exited with non-zero status or was terminated by the system.",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "#629e51",
+              "mode": "fixed"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 4,
+          "x": 12,
+          "y": 22
+        },
+        "id": 72,
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(kube_pod_status_phase{exported_namespace=~\"$namespace\", phase=\"Failed\"})",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Fabric Pods Failed",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "For some reason the state of the Pod could not be obtained. This phase typically occurs due to an error in communicating with the node where the Pod should be running.",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "#629e51",
+              "mode": "fixed"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 4,
+          "x": 16,
+          "y": 22
+        },
+        "id": 74,
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "expr": "sum(kube_pod_status_phase{exported_namespace=~\"$namespace\", phase=\"Unknown\" })",
+            "format": "time_series",
+            "interval": "",
+            "intervalFactor": 1,
+            "refId": "A"
+          }
+        ],
+        "title": "Fabric Pods Unknown",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "All containers in the Pod have terminated in success, and will not be restarted.\n",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "#629e51",
+              "mode": "fixed"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 4,
+          "x": 20,
+          "y": 22
+        },
+        "id": 76,
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "expr": "sum(kube_pod_status_phase{exported_namespace=~\"$namespace\", phase=\"Succeeded\" })",
+            "format": "time_series",
+            "interval": "",
+            "intervalFactor": 1,
+            "refId": "A"
+          }
+        ],
+        "title": "Fabric Pods Succeeded",
+        "type": "stat"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 28
+        },
+        "id": 78,
+        "panels": [],
+        "title": "Fabric Container",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "Tells how many times the container is restarted or going in crash loop backoff error",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "rgb(31, 120, 193)",
+              "mode": "thresholds"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 2
+                },
+                {
+                  "color": "orange",
+                  "value": 3
+                },
+                {
+                  "color": "#F2495C",
+                  "value": 4
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 29
+        },
+        "id": 80,
+        "libraryPanel": {
+          "description": "Tells how many times the container is restarted or going in crash loop backoff error",
+          "meta": {
+            "connectedDashboards": 1,
+            "created": "2022-10-07T17:27:17Z",
+            "createdBy": {
+              "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+              "id": 1,
+              "name": "admin"
+            },
+            "folderName": "General",
+            "folderUid": "",
+            "updated": "2022-10-07T17:27:17Z",
+            "updatedBy": {
+              "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+              "id": 1,
+              "name": "admin"
+            }
+          },
+          "name": "Fabric Containers Restarts",
+          "type": "bargauge",
+          "uid": "BNsxOEU7k",
+          "version": 1
+        },
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "displayMode": "gradient",
+          "minVizHeight": 11,
+          "minVizWidth": 0,
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showUnfilled": true
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": "code",
+            "expr": "kube_pod_container_status_restarts_total{exported_namespace=~\"$namespace\" ,pod=~\"$pod\",container=~\"$container\",container!=\"\",container!=\"POD\"}",
+            "format": "time_series",
+            "intervalFactor": 1,
+            "legendFormat": "{{exported_namespace}} | {{pod}} |  {{container}}",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Fabric Containers Restarts",
+        "transformations": [],
+        "type": "bargauge"
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 29
+        },
+        "hiddenSeries": false,
+        "id": 91,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "8.4.3",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(rate(kube_pod_container_status_restarts_total{pod=~\"$pod\"}[5m]) * 60 * 5) by (pod, exported_namespace) > 0",
+            "interval": "",
+            "legendFormat": "{{pod}} | {{exported_namespace}}",
+            "refId": "A"
+          }
+        ],
+        "thresholds": [
+          {
+            "$$hashKey": "object:68",
+            "colorMode": "critical",
+            "fill": true,
+            "line": true,
+            "op": "gt",
+            "value": 0,
+            "yaxis": "left"
+          }
+        ],
+        "timeRegions": [],
+        "title": "Fabric Containers Restarts (Last 5 min)",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "mode": "time",
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "logBase": 1,
+            "show": true
+          },
+          {
+            "format": "short",
+            "logBase": 1,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false
+        }
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": []
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 37
+        },
+        "id": 88,
+        "options": {
+          "legend": {
+            "displayMode": "hidden",
+            "placement": "bottom"
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "kube_pod_container_status_waiting{exported_namespace=~\"$namespace\"}",
+            "interval": "",
+            "legendFormat": "{{exported_namespace}} | {{container}} |  {{pod}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Fabric Containers Waiting",
+        "transformations": [],
+        "type": "piechart"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "rgb(31, 120, 193)",
+              "mode": "fixed"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 6,
+          "x": 12,
+          "y": 37
+        },
+        "id": 82,
+        "libraryPanel": {
+          "description": "",
+          "meta": {
+            "connectedDashboards": 1,
+            "created": "2022-10-07T17:27:17Z",
+            "createdBy": {
+              "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+              "id": 1,
+              "name": "admin"
+            },
+            "folderName": "General",
+            "folderUid": "",
+            "updated": "2022-10-07T17:27:17Z",
+            "updatedBy": {
+              "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+              "id": 1,
+              "name": "admin"
+            }
+          },
+          "name": "Fabric Containers Running",
+          "type": "stat",
+          "uid": "DpvhOP87k",
+          "version": 1
+        },
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "expr": "sum(kube_pod_container_status_running{exported_namespace=~\"$namespace\"})",
+            "format": "time_series",
+            "intervalFactor": 1,
+            "refId": "A"
+          }
+        ],
+        "title": "Fabric Containers Running",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "rgb(31, 120, 193)",
+              "mode": "fixed"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 6,
+          "x": 18,
+          "y": 37
+        },
+        "id": 84,
+        "libraryPanel": {
+          "description": "",
+          "meta": {
+            "connectedDashboards": 1,
+            "created": "2022-10-07T17:27:17Z",
+            "createdBy": {
+              "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+              "id": 1,
+              "name": "admin"
+            },
+            "folderName": "General",
+            "folderUid": "",
+            "updated": "2022-11-04T12:57:16Z",
+            "updatedBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            }
+          },
+          "name": "Fabric Containers Waiting",
+          "type": "stat",
+          "uid": "uvL2OE87k",
+          "version": 2
+        },
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(kube_pod_container_status_waiting{exported_namespace=~\"$namespace\"})",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Fabric Containers Waiting",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "rgb(31, 120, 193)",
+              "mode": "fixed"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 12,
+          "x": 12,
+          "y": 41
+        },
+        "id": 86,
+        "libraryPanel": {
+          "description": "",
+          "meta": {
+            "connectedDashboards": 1,
+            "created": "2022-10-07T17:27:18Z",
+            "createdBy": {
+              "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+              "id": 1,
+              "name": "admin"
+            },
+            "folderName": "General",
+            "folderUid": "",
+            "updated": "2022-11-04T13:06:31Z",
+            "updatedBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            }
+          },
+          "name": "Fabric Containers Terminated",
+          "type": "stat",
+          "uid": "Xp7xdP87k",
+          "version": 2
+        },
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(kube_pod_container_status_terminated{exported_namespace=~\"$namespace\"})",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Fabric Containers Terminated",
+        "type": "stat"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 45
+        },
+        "id": 10,
+        "panels": [],
+        "title": "Cluster Network I/O",
+        "type": "row"
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "decimals": 2,
+        "description": "",
+        "editable": true,
+        "error": false,
+        "fill": 1,
+        "fillGradient": 0,
+        "grid": {},
+        "gridPos": {
+          "h": 9,
+          "w": 24,
+          "x": 0,
+          "y": 46
+        },
+        "height": "200px",
+        "hiddenSeries": false,
+        "id": 12,
+        "isNew": true,
+        "legend": {
+          "alignAsTable": false,
+          "avg": true,
+          "current": true,
+          "max": false,
+          "min": false,
+          "rightSide": false,
+          "show": false,
+          "sideWidth": 200,
+          "sort": "current",
+          "sortDesc": true,
+          "total": false,
+          "values": true
+        },
+        "libraryPanel": {
+          "description": "",
+          "meta": {
+            "connectedDashboards": 1,
+            "created": "2022-10-07T17:27:18Z",
+            "createdBy": {
+              "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+              "id": 1,
+              "name": "admin"
+            },
+            "folderName": "General",
+            "folderUid": "",
+            "updated": "2022-11-04T13:08:07Z",
+            "updatedBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            }
+          },
+          "name": "Network I/O pressure",
+          "type": "graph",
+          "uid": "Nux3Oa8nz",
+          "version": 2
+        },
+        "lines": true,
+        "linewidth": 2,
+        "links": [],
+        "nullPointMode": "connected",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "8.4.3",
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum (rate (container_network_receive_bytes_total{kubernetes_io_hostname=~\"^$Node$\"}[$interval]))",
+            "interval": "",
+            "legendFormat": "Received",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "- sum (rate (container_network_transmit_bytes_total{kubernetes_io_hostname=~\"^$Node$\"}[$interval]))",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Sent",
+            "refId": "B"
+          }
+        ],
+        "thresholds": [],
+        "timeRegions": [],
+        "title": "Network I/O pressure",
+        "tooltip": {
+          "msResolution": false,
+          "shared": true,
+          "sort": 0,
+          "value_type": "cumulative"
+        },
+        "type": "graph",
+        "xaxis": {
+          "mode": "time",
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:79",
+            "format": "Bps",
+            "logBase": 1,
+            "show": true
+          },
+          {
+            "$$hashKey": "object:80",
+            "format": "Bps",
+            "logBase": 1,
+            "show": false
+          }
+        ],
+        "yaxis": {
+          "align": false
+        }
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 55
+        },
+        "id": 42,
+        "panels": [],
+        "title": "Cluster Kubernetes API Request",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "Bad Request",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 6,
+          "x": 0,
+          "y": 56
+        },
+        "id": 45,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(apiserver_request_total{code=~\"400\"})",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster 400",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "Access to the requested resource is forbidden",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 3,
+          "x": 6,
+          "y": 56
+        },
+        "id": 44,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(apiserver_request_total{code=~\"403\"})",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster 403",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "Conflict",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 3,
+          "x": 9,
+          "y": 56
+        },
+        "id": 46,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(apiserver_request_total{code=~\"409\"})",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster 409",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "Unprocessable Entityerror",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 3,
+          "x": 12,
+          "y": 56
+        },
+        "id": 47,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(apiserver_request_total{code=~\"422\"})",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster 422",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "Internal Server Error server",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 3,
+          "x": 15,
+          "y": 56
+        },
+        "id": 48,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(apiserver_request_total{code=~\"500\"})",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster 500",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "Service Unavailable",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 3,
+          "x": 18,
+          "y": 56
+        },
+        "id": 49,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(apiserver_request_total{code=~\"503\"})",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster 503",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "Gateway Timeout server error",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 3,
+          "x": 21,
+          "y": 56
+        },
+        "id": 50,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(apiserver_request_total{code=~\"504\"})",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster 504",
+        "type": "stat"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 61
+        },
+        "id": 8,
+        "panels": [],
+        "title": "Cluster CPU and RAM",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "Cluster CPU usage (core requests)",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 2,
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "rgba(50, 172, 45, 0.97)",
+                  "value": null
+                },
+                {
+                  "color": "rgba(237, 129, 40, 0.89)",
+                  "value": 65
+                },
+                {
+                  "color": "rgba(245, 54, 54, 0.9)",
+                  "value": 90
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 0,
+          "y": 62
+        },
+        "id": 6,
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "exemplar": true,
+            "expr": "sum (rate (container_cpu_usage_seconds_total{id=\"/\",kubernetes_io_hostname=~\"^$Node$\"}[$interval]))",
+            "interval": "10s",
+            "intervalFactor": 1,
+            "legendFormat": "",
+            "refId": "A",
+            "step": 10
+          }
+        ],
+        "title": "Cluster CPU usage (core requests)",
+        "type": "gauge"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 2,
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "rgba(50, 172, 45, 0.97)",
+                  "value": null
+                },
+                {
+                  "color": "rgba(237, 129, 40, 0.89)",
+                  "value": 65
+                },
+                {
+                  "color": "rgba(245, 54, 54, 0.9)",
+                  "value": 90
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 6,
+          "y": 62
+        },
+        "id": 52,
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum (rate (container_cpu_usage_seconds_total{id=\"/\",kubernetes_io_hostname=~\"^$Node$\"}[$interval])) / sum (kube_pod_container_resource_limits{unit=\"core\"}) * 100",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster CPU usage (core limits)",
+        "type": "gauge"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "rgba(50, 172, 45, 0.97)",
+                  "value": null
+                },
+                {
+                  "color": "rgba(237, 129, 40, 0.89)",
+                  "value": 65
+                },
+                {
+                  "color": "rgba(245, 54, 54, 0.9)",
+                  "value": 90
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 12,
+          "y": 62
+        },
+        "id": 54,
+        "libraryPanel": {
+          "description": "",
+          "meta": {
+            "connectedDashboards": 1,
+            "created": "2022-10-07T17:27:23Z",
+            "createdBy": {
+              "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+              "id": 1,
+              "name": "admin"
+            },
+            "folderName": "General",
+            "folderUid": "",
+            "updated": "2022-11-04T13:33:15Z",
+            "updatedBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            }
+          },
+          "name": "Cluster memory usage (memory requests)",
+          "type": "stat",
+          "uid": "L2med-Unk",
+          "version": 2
+        },
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum (container_memory_working_set_bytes{id=\"/\",kubernetes_io_hostname=~\"^$Node$\"}) / sum (kube_pod_container_resource_requests{unit=\"byte\" }) * 100",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster memory usage (memory requests)",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "rgba(50, 172, 45, 0.97)",
+                  "value": null
+                },
+                {
+                  "color": "rgba(237, 129, 40, 0.89)",
+                  "value": 65
+                },
+                {
+                  "color": "rgba(245, 54, 54, 0.9)",
+                  "value": 90
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 18,
+          "y": 62
+        },
+        "id": 4,
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum (container_memory_working_set_bytes{id=\"/\",kubernetes_io_hostname=~\"^$Node$\"}) / sum (kube_pod_container_resource_limits{unit=\"byte\" }) * 100",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster memory usage (memory limits)",
+        "type": "gauge"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "Cluster Total CPU requests",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 2,
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 3,
+          "x": 0,
+          "y": 70
+        },
+        "id": 20,
+        "libraryPanel": {
+          "description": "Cluster Total CPU requests",
+          "meta": {
+            "connectedDashboards": 1,
+            "created": "2022-11-04T12:49:20Z",
+            "createdBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            },
+            "folderName": "General",
+            "folderUid": "",
+            "updated": "2022-11-04T13:44:08Z",
+            "updatedBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            }
+          },
+          "name": "Cluster Total CPU requests",
+          "type": "stat",
+          "uid": "t7pw2-8nz",
+          "version": 2
+        },
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(kube_pod_container_resource_requests{unit=\"core\"})",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster Total CPU requests",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "Cluster Total CPU limits",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 2,
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 3,
+          "x": 3,
+          "y": 70
+        },
+        "id": 55,
+        "libraryPanel": {
+          "description": "Cluster Total CPU limits",
+          "meta": {
+            "connectedDashboards": 1,
+            "created": "2022-11-04T12:49:26Z",
+            "createdBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            },
+            "folderName": "General",
+            "folderUid": "",
+            "updated": "2022-11-04T13:44:59Z",
+            "updatedBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            }
+          },
+          "name": "Cluster Total CPU limits",
+          "type": "stat",
+          "uid": "OI_eBkQnk",
+          "version": 2
+        },
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(kube_pod_container_resource_limits{unit=\"core\"})",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster Total CPU limits",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "Cluster Used CPU (interval)",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 2,
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 6,
+          "x": 6,
+          "y": 70
+        },
+        "id": 16,
+        "libraryPanel": {
+          "description": "Cluster Used CPU (interval)",
+          "meta": {
+            "connectedDashboards": 1,
+            "created": "2022-10-07T17:27:23Z",
+            "createdBy": {
+              "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+              "id": 1,
+              "name": "admin"
+            },
+            "folderName": "General",
+            "folderUid": "",
+            "updated": "2022-11-04T13:45:39Z",
+            "updatedBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            }
+          },
+          "name": "Cluster Used CPU (interval)",
+          "type": "stat",
+          "uid": "AwP8ha87z",
+          "version": 2
+        },
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum (rate (container_cpu_usage_seconds_total{id=\"/\",kubernetes_io_hostname=~\"^$Node$\"}[$interval]))",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster Used CPU (interval)",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "Cluster Total Memory requests",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 2,
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "bytes"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 3,
+          "x": 12,
+          "y": 70
+        },
+        "id": 18,
+        "libraryPanel": {
+          "description": "Cluster Total Memory requests",
+          "meta": {
+            "connectedDashboards": 1,
+            "created": "2022-11-04T12:49:26Z",
+            "createdBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            },
+            "folderName": "General",
+            "folderUid": "",
+            "updated": "2022-11-04T13:46:19Z",
+            "updatedBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            }
+          },
+          "name": "Cluster Total Memory requests",
+          "type": "stat",
+          "uid": "pWtLh-U7k",
+          "version": 2
+        },
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(kube_pod_container_resource_requests{unit=\"byte\"})",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster Total Memory requests",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "Cluster Total Memory limits",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 2,
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "bytes"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 3,
+          "x": 15,
+          "y": 70
+        },
+        "id": 56,
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(kube_pod_container_resource_limits{unit=\"byte\"})",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster Total Memory limits",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "Cluster Used Memory (interval)",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 2,
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "bytes"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 6,
+          "x": 18,
+          "y": 70
+        },
+        "id": 14,
+        "libraryPanel": {
+          "description": "Cluster Used Memory (interval)",
+          "meta": {
+            "connectedDashboards": 1,
+            "created": "2022-11-04T12:49:26Z",
+            "createdBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            },
+            "folderName": "General",
+            "folderUid": "",
+            "updated": "2022-11-04T13:47:41Z",
+            "updatedBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            }
+          },
+          "name": "Cluster Used Memory (interval)",
+          "type": "stat",
+          "uid": "bT3yhaU7k",
+          "version": 2
+        },
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum (container_memory_working_set_bytes{id=\"/\",kubernetes_io_hostname=~\"^$Node$\"})",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster Used Memory (interval)",
+        "type": "stat"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 75
+        },
+        "id": 22,
+        "panels": [],
+        "title": "Cluster Load balancer",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": []
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 76
+        },
+        "id": 2,
+        "options": {
+          "legend": {
+            "displayMode": "list",
+            "placement": "right"
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "v1.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "kube_ingress_created{}",
+            "interval": "",
+            "legendFormat": "{{ingress}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster Ingress",
+        "type": "piechart"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": []
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 76
+        },
+        "id": 33,
+        "libraryPanel": {
+          "description": "",
+          "meta": {
+            "connectedDashboards": 1,
+            "created": "2022-11-04T12:49:26Z",
+            "createdBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            },
+            "folderName": "General",
+            "folderUid": "",
+            "updated": "2022-11-04T13:31:11Z",
+            "updatedBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            }
+          },
+          "name": "Cluster Network Load balancer",
+          "type": "piechart",
+          "uid": "lBIn0EU7k",
+          "version": 2
+        },
+        "options": {
+          "legend": {
+            "displayMode": "list",
+            "placement": "right"
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "v1.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "kube_service_status_load_balancer_ingress{}",
+            "interval": "",
+            "legendFormat": "{{exported_service}} | {{exported_namespace}} | {{hostname}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster Network Load balancer",
+        "type": "piechart"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 84
+        },
+        "id": 25,
+        "panels": [],
+        "title": "Cluster PV",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "Number of volumes allocated to each pod",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 10
+                },
+                {
+                  "color": "orange",
+                  "value": 30
+                },
+                {
+                  "color": "red",
+                  "value": 50
+                }
+              ]
+            },
+            "unit": "gbytes"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 85
+        },
+        "id": 29,
+        "libraryPanel": {
+          "description": "Number of volumes allocated to each pod",
+          "meta": {
+            "connectedDashboards": 1,
+            "created": "2022-11-04T12:49:26Z",
+            "createdBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            },
+            "folderName": "General",
+            "folderUid": "",
+            "updated": "2022-11-04T13:09:52Z",
+            "updatedBy": {
+              "avatarUrl": "",
+              "id": 3,
+              "name": ""
+            }
+          },
+          "name": "Cluster PV",
+          "type": "bargauge",
+          "uid": "dl_XwLU7k",
+          "version": 2
+        },
+        "options": {
+          "displayMode": "gradient",
+          "minVizHeight": 15,
+          "minVizWidth": 0,
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showUnfilled": true
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "(kube_persistentvolume_capacity_bytes{}/1073741824) ",
+            "interval": "",
+            "legendFormat": "{{persistentvolume}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster PV",
+        "type": "bargauge"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "auto",
+              "displayMode": "auto",
+              "filterable": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Metric"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "none"
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "auto"
+                },
+                {
+                  "id": "custom.align",
+                  "value": "auto"
+                },
+                {
+                  "id": "custom.width"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Value"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "none"
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background"
+                },
+                {
+                  "id": "custom.align"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Time"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 128
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 85
+        },
+        "id": 35,
+        "links": [],
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": []
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "P1809F7CD0C75ACF3"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "kube_pod_spec_volumes_persistentvolumeclaims_info{}",
+            "interval": "",
+            "legendFormat": "namespace: {{exported_namespace}} | pvc: {{persistentvolumeclaim}} |  pod: {{pod}} |  vol: {{volume}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Cluster PVC",
+        "transformations": [
+          {
+            "id": "seriesToRows",
+            "options": {
+              "reducers": []
+            }
+          },
+          {
+            "id": "filterFieldsByName",
+            "options": {
+              "include": {
+                "names": [
+                  "Metric"
+                ]
+              }
+            }
+          }
+        ],
+        "type": "table"
+      }
+    ],
+    "refresh": false,
+    "schemaVersion": 35,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "allValue": ".*",
+          "current": {
+            "selected": false,
+            "text": "All",
+            "value": "$__all"
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "definition": "label_values(kubernetes_io_hostname)",
+          "hide": 0,
+          "includeAll": true,
+          "multi": false,
+          "name": "Node",
+          "options": [],
+          "query": {
+            "query": "label_values(kubernetes_io_hostname)",
+            "refId": "StandardVariableQuery"
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "auto": true,
+          "auto_count": 30,
+          "auto_min": "10s",
+          "current": {
+            "selected": false,
+            "text": "10m",
+            "value": "10m"
+          },
+          "description": "Time range interval",
+          "hide": 0,
+          "label": "interval",
+          "name": "interval",
+          "options": [
+            {
+              "selected": false,
+              "text": "auto",
+              "value": "$__auto_interval_interval"
+            },
+            {
+              "selected": false,
+              "text": "1m",
+              "value": "1m"
+            },
+            {
+              "selected": true,
+              "text": "10m",
+              "value": "10m"
+            },
+            {
+              "selected": false,
+              "text": "30m",
+              "value": "30m"
+            },
+            {
+              "selected": false,
+              "text": "1h",
+              "value": "1h"
+            },
+            {
+              "selected": false,
+              "text": "6h",
+              "value": "6h"
+            },
+            {
+              "selected": false,
+              "text": "12h",
+              "value": "12h"
+            },
+            {
+              "selected": false,
+              "text": "1d",
+              "value": "1d"
+            },
+            {
+              "selected": false,
+              "text": "7d",
+              "value": "7d"
+            },
+            {
+              "selected": false,
+              "text": "14d",
+              "value": "14d"
+            },
+            {
+              "selected": false,
+              "text": "30d",
+              "value": "30d"
+            }
+          ],
+          "query": "1m,10m,30m,1h,6h,12h,1d,7d,14d,30d",
+          "queryValue": "",
+          "refresh": 2,
+          "skipUrlSync": false,
+          "type": "interval"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "test",
+            "value": "test"
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "definition": "label_values(kube_namespace_labels, exported_namespace)",
+          "hide": 0,
+          "includeAll": true,
+          "multi": false,
+          "name": "namespace",
+          "options": [],
+          "query": {
+            "query": "label_values(kube_namespace_labels, exported_namespace)",
+            "refId": "StandardVariableQuery"
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "current": {
+            "selected": true,
+            "text": [
+              "domain-data-api-v2"
+            ],
+            "value": [
+              "domain-data-api-v2"
+            ]
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "definition": "label_values(kube_deployment_created{exported_namespace=~\"$namespace\"}, deployment)",
+          "hide": 0,
+          "includeAll": true,
+          "multi": true,
+          "name": "deployment",
+          "options": [],
+          "query": {
+            "query": "label_values(kube_deployment_created{exported_namespace=~\"$namespace\"}, deployment)",
+            "refId": "StandardVariableQuery"
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "current": {
+            "selected": true,
+            "text": [
+              "All"
+            ],
+            "value": [
+              "$__all"
+            ]
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "definition": "label_values(kube_pod_info{exported_namespace=~\"$namespace\"}, pod)",
+          "hide": 0,
+          "includeAll": true,
+          "label": "Pod",
+          "multi": true,
+          "name": "pod",
+          "options": [],
+          "query": {
+            "query": "label_values(kube_pod_info{exported_namespace=~\"$namespace\"}, pod)",
+            "refId": "StandardVariableQuery"
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "current": {
+            "selected": true,
+            "text": [
+              "All"
+            ],
+            "value": [
+              "$__all"
+            ]
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "definition": "label_values(kube_pod_container_info{exported_namespace=~\"$namespace\", pod=~\"$pod\"}, container)",
+          "hide": 0,
+          "includeAll": true,
+          "label": "Container",
+          "multi": true,
+          "name": "container",
+          "options": [],
+          "query": {
+            "query": "label_values(kube_pod_container_info{exported_namespace=~\"$namespace\", pod=~\"$pod\"}, container)",
+            "refId": "StandardVariableQuery"
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-2d",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Fabric Cluster",
+    "uid": "4A8-Fa8nz_change",
+    "version": 31,
+    "weekStart": ""
+  }
