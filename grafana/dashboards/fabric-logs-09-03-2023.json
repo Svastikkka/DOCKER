@@ -1,0 +1,150 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 1,
+    "iteration": 1678345148394,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "type": "loki",
+          "uid": "af-9Gr4Vk"
+        },
+        "gridPos": {
+          "h": 22,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 10,
+        "options": {
+          "dedupStrategy": "none",
+          "enableLogDetails": true,
+          "prettifyLogMessage": false,
+          "showCommonLabels": false,
+          "showLabels": true,
+          "showTime": true,
+          "sortOrder": "Descending",
+          "wrapLogMessage": true
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "loki",
+              "uid": "af-9Gr4Vk"
+            },
+            "expr": "{namespace=\"$namespace\", application=~\"$application\"}",
+            "queryType": "range",
+            "refId": "A"
+          }
+        ],
+        "title": "Logs",
+        "type": "logs"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 35,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": true,
+            "text": [
+              "oauth"
+            ],
+            "value": [
+              "oauth"
+            ]
+          },
+          "datasource": {
+            "type": "loki",
+            "uid": "af-9Gr4Vk"
+          },
+          "definition": "label_values(namespace)",
+          "hide": 0,
+          "includeAll": false,
+          "label": "Namespace",
+          "multi": true,
+          "name": "namespace",
+          "options": [],
+          "query": "label_values(namespace)",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "allValue": "application : gateway",
+          "current": {
+            "selected": false,
+            "text": "webgateway",
+            "value": "webgateway"
+          },
+          "datasource": {
+            "type": "loki",
+            "uid": "af-9Gr4Vk"
+          },
+          "definition": "label_values({namespace=\"$namespace\"} , application)",
+          "hide": 0,
+          "includeAll": false,
+          "label": "application",
+          "multi": true,
+          "name": "application",
+          "options": [],
+          "query": "label_values({namespace=\"$namespace\"} , application)",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-5m",
+      "to": "now"
+    },
+    "timepicker": {
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ]
+    },
+    "timezone": "",
+    "title": "Fabric Logs",
+    "uid": "VwhxWEl7k_change",
+    "version": 25,
+    "weekStart": ""
+  }

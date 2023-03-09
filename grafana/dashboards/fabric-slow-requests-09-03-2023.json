@@ -1,0 +1,297 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 9,
+    "iteration": 1678345046721,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "type": "loki",
+          "uid": "af-9Gr4Vk"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 25,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 2,
+        "links": [],
+        "options": {
+          "dedupStrategy": "none",
+          "enableLogDetails": true,
+          "prettifyLogMessage": false,
+          "showCommonLabels": false,
+          "showLabels": false,
+          "showTime": true,
+          "sortOrder": "Descending",
+          "wrapLogMessage": false
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "loki",
+              "uid": "af-9Gr4Vk"
+            },
+            "expr": "{application=\"webgateway\",namespace=\"oauth\"} | json |  message_env=~\"$environment\" | message_duration>$response | message_app=~\"$application\"",
+            "refId": "A"
+          }
+        ],
+        "title": "Slow Requests",
+        "transformations": [],
+        "type": "logs"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 35,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "All",
+            "value": "$__all"
+          },
+          "hide": 0,
+          "includeAll": true,
+          "label": "environment",
+          "multi": true,
+          "name": "environment",
+          "options": [
+            {
+              "selected": true,
+              "text": "All",
+              "value": "$__all"
+            },
+            {
+              "selected": false,
+              "text": "test",
+              "value": "test"
+            },
+            {
+              "selected": false,
+              "text": "prod",
+              "value": "prod"
+            }
+          ],
+          "query": "test,prod",
+          "queryValue": "",
+          "skipUrlSync": false,
+          "type": "custom"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "50ms",
+            "value": "50ms"
+          },
+          "hide": 0,
+          "label": "response > ",
+          "name": "response",
+          "options": [
+            {
+              "selected": true,
+              "text": "50ms",
+              "value": "50ms"
+            }
+          ],
+          "query": "50ms",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": true,
+            "text": [
+              "Nimble"
+            ],
+            "value": [
+              "Nimble"
+            ]
+          },
+          "hide": 0,
+          "includeAll": true,
+          "label": "application",
+          "multi": true,
+          "name": "application",
+          "options": [
+            {
+              "selected": false,
+              "text": "All",
+              "value": "$__all"
+            },
+            {
+              "selected": false,
+              "text": "External Work Requests FE",
+              "value": "External Work Requests FE"
+            },
+            {
+              "selected": false,
+              "text": "Config Server",
+              "value": "Config Server"
+            },
+            {
+              "selected": false,
+              "text": "Collab Attachments",
+              "value": "Collab Attachments"
+            },
+            {
+              "selected": false,
+              "text": "PPM Optimizer",
+              "value": "PPM Optimizer"
+            },
+            {
+              "selected": false,
+              "text": "PPM BE",
+              "value": "PPM BE"
+            },
+            {
+              "selected": false,
+              "text": "LicensingModule BE",
+              "value": "LicensingModule BE"
+            },
+            {
+              "selected": false,
+              "text": "PPM FE",
+              "value": "PPM FE"
+            },
+            {
+              "selected": true,
+              "text": "Nimble",
+              "value": "Nimble"
+            },
+            {
+              "selected": false,
+              "text": "Piglet Webhooks",
+              "value": "Piglet Webhooks"
+            },
+            {
+              "selected": false,
+              "text": "Storymapping BE",
+              "value": "Storymapping BE"
+            },
+            {
+              "selected": false,
+              "text": "BAAS",
+              "value": "BAAS"
+            },
+            {
+              "selected": false,
+              "text": "RM",
+              "value": "RM"
+            },
+            {
+              "selected": false,
+              "text": "LandingPage",
+              "value": "LandingPage"
+            },
+            {
+              "selected": false,
+              "text": "Thoth",
+              "value": "Thoth"
+            },
+            {
+              "selected": false,
+              "text": "Thoth Chat",
+              "value": "Thoth Chat"
+            },
+            {
+              "selected": false,
+              "text": "Jenkins",
+              "value": "Jenkins"
+            },
+            {
+              "selected": false,
+              "text": "Howler",
+              "value": "Howler"
+            },
+            {
+              "selected": false,
+              "text": "Git",
+              "value": "Git"
+            },
+            {
+              "selected": false,
+              "text": "Collab Downloads",
+              "value": "Collab Downloads"
+            },
+            {
+              "selected": false,
+              "text": "Storymapping FE",
+              "value": "Storymapping FE"
+            },
+            {
+              "selected": false,
+              "text": "Grafana",
+              "value": "Grafana"
+            },
+            {
+              "selected": false,
+              "text": "LicensingModule FE",
+              "value": "LicensingModule FE"
+            },
+            {
+              "selected": false,
+              "text": "External Work Requests For External Form",
+              "value": "External Work Requests For External Form"
+            },
+            {
+              "selected": false,
+              "text": "External Work Requests BE",
+              "value": "External Work Requests BE"
+            },
+            {
+              "selected": false,
+              "text": "Piglet",
+              "value": "Piglet"
+            },
+            {
+              "selected": false,
+              "text": "Collab comments",
+              "value": "Collab comments"
+            }
+          ],
+          "query": "External Work Requests FE\n,Config Server\n,Collab Attachments\n,PPM Optimizer\n,PPM BE\n,LicensingModule BE\n,PPM FE\n,Nimble\n,Piglet Webhooks\n,Storymapping BE\n,BAAS\n,RM\n,LandingPage\n,Thoth\n,Thoth Chat\n,Jenkins\n,Howler\n,Git\n,Collab Downloads\n,Storymapping FE\n,Grafana\n,LicensingModule FE\n,External Work Requests For External Form\n,External Work Requests BE\n,Piglet\n,Collab comments",
+          "queryValue": "",
+          "skipUrlSync": false,
+          "type": "custom"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Fabric Slow Requests",
+    "uid": "sEQHYxOVz_change",
+    "version": 13,
+    "weekStart": ""
+  }

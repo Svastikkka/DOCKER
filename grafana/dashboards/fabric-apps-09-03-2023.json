@@ -1,0 +1,2068 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 5,
+  "iteration": 1678343471022,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "displayMode": "auto"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 80,
+      "options": {
+        "footer": {
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "editorMode": 1,
+          "exemplar": true,
+          "expr": "sum by(pod, uri)(http_server_requests_seconds_sum{pod=~\"$pod\", uri!~\"/actuator/.+\"}) / sum by(pod, uri)(http_server_requests_seconds_count{pod=~\"$pod\", uri!~\"/actuator/.+\"})",
+          "interval": "10s",
+          "legendFormat": "{{ pod }} | {{ uri }}",
+          "refId": "A"
+        }
+      ],
+      "title": "Requests Average Duration",
+      "transformations": [
+        {
+          "id": "seriesToRows",
+          "options": {}
+        },
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "Metric": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "Value": {
+                "aggregations": [
+                  "lastNotNull"
+                ],
+                "operation": "aggregate"
+              }
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "No. of Requests",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 78,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "editorMode": 1,
+          "exemplar": true,
+          "expr": "sum(increase(http_server_requests_seconds_count{pod=~\"$pod\", namespace=~\"$namespace\", uri!~\".*actuator.*\"}[$__range])) by (namespace, pod)",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "HTTP Requests",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 18
+      },
+      "id": 8,
+      "panels": [],
+      "title": "Fabric Network I/O",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "decimals": 2,
+      "description": "The network received throughput in Megabits per second. This metric is derived from the Prometheus metric.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 19
+      },
+      "hiddenSeries": false,
+      "id": 6,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "libraryPanel": {
+        "description": "The network received throughput in Megabits per second. This metric is derived from the Prometheus metric.",
+        "meta": {
+          "connectedDashboards": 1,
+          "created": "2022-10-07T16:54:08Z",
+          "createdBy": {
+            "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+            "id": 1,
+            "name": "admin"
+          },
+          "folderName": "General",
+          "folderUid": "",
+          "updated": "2022-10-07T16:54:08Z",
+          "updatedBy": {
+            "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+            "id": 1,
+            "name": "admin"
+          }
+        },
+        "name": "Fabric Network I/O",
+        "type": "graph",
+        "uid": "1fN-3a87k",
+        "version": 1
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.4.3",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "editorMode": 1,
+          "exemplar": true,
+          "expr": "sort_desc(sum by (pod) (rate (container_network_receive_bytes_total{namespace=~\"$namespace\",pod=~\"$pod\",container=~\"$container\"}[$interval])))",
+          "format": "time_series",
+          "interval": "10s",
+          "intervalFactor": 1,
+          "legendFormat": "{{pod}}",
+          "range": true,
+          "refId": "A",
+          "step": 30
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "editorMode": "code",
+          "expr": "- sort_desc(sum by (pod) (rate (container_network_transmit_bytes_total{namespace=~\"$namespace\",pod=~\"$pod\",container=~\"$container\"}[$interval])))",
+          "hide": false,
+          "interval": "10s",
+          "legendFormat": "{{pod}}",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Fabric Network I/O",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:71",
+          "format": "bytes",
+          "label": "Requests",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:72",
+          "format": "short",
+          "logBase": 1,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 28
+      },
+      "id": 10,
+      "panels": [],
+      "title": "Fabric RAM & CPU",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "description": "Give details regarding memory usage of each POD.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "gbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 0,
+        "y": 29
+      },
+      "id": 2,
+      "libraryPanel": {
+        "description": "Give details regarding memory usage of each POD.",
+        "meta": {
+          "connectedDashboards": 1,
+          "created": "2022-10-07T16:54:08Z",
+          "createdBy": {
+            "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+            "id": 1,
+            "name": "admin"
+          },
+          "folderName": "General",
+          "folderUid": "",
+          "updated": "2022-10-07T16:54:08Z",
+          "updatedBy": {
+            "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+            "id": 1,
+            "name": "admin"
+          }
+        },
+        "name": "Fabric Pod Memory Usage",
+        "type": "bargauge",
+        "uid": "ZZ5GE-U7z",
+        "version": 1
+      },
+      "links": [],
+      "options": {
+        "displayMode": "lcd",
+        "minVizHeight": 15,
+        "minVizWidth": 0,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum by(pod) (container_memory_working_set_bytes{namespace=~\"$namespace\",pod=~\"$pod\",container=~\"$container\",container!=\"\",container!=\"POD\"}/1073741824)",
+          "format": "time_series",
+          "hide": false,
+          "interval": "10s",
+          "intervalFactor": 1,
+          "legendFormat": "{{ pod }}",
+          "metric": "container_memory_usage_bytes",
+          "range": true,
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "title": "Fabric Memory Usage",
+      "type": "bargauge"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "description": "Total CPU time consumed by all tasks in seconds. This metric is derived from prometheus metric.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 12,
+        "y": 29
+      },
+      "hiddenSeries": false,
+      "id": 4,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.4.3",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "editorMode": 1,
+          "exemplar": true,
+          "expr": "sum(rate(container_cpu_usage_seconds_total{name!~\".*prometheus.*\", image!=\"\", namespace=~\"$namespace\", container!=\"POD\", pod=~\"$pod\", container=~\"$container\"}[5m])) by (pod, container, namespace) /\nsum(container_spec_cpu_quota{name!~\".*prometheus.*\", image!=\"\", container!=\"POD\", pod=~\"$pod\", container=~\"$container\", namespace=~\"$namespace\"}/container_spec_cpu_period{name!~\".*prometheus.*\", image!=\"\", container!=\"POD\", pod=~\"$pod\", namespace=~\"$namespace\", container=~\"$container\"}) by (pod, container, namespace)",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "range": true,
+          "refId": "A",
+          "step": 30
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Fabric CPU Usage",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "percentunit",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 39
+      },
+      "id": 74,
+      "panels": [],
+      "title": "Fabric Requests",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "description": "Gives us the maximum duration of each type of inbound HTTP request.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 24,
+        "x": 0,
+        "y": 40
+      },
+      "id": 76,
+      "libraryPanel": {
+        "description": "Gives us the maximum duration of each type of inbound HTTP request.",
+        "meta": {
+          "connectedDashboards": 1,
+          "created": "2022-12-12T15:39:00Z",
+          "createdBy": {
+            "avatarUrl": "",
+            "id": 40,
+            "name": ""
+          },
+          "folderName": "General",
+          "folderUid": "",
+          "updated": "2022-12-12T15:39:00Z",
+          "updatedBy": {
+            "avatarUrl": "",
+            "id": 40,
+            "name": ""
+          }
+        },
+        "name": "Fabric Server Requests Seconds Max",
+        "type": "timeseries",
+        "uid": "cSXiH45Vz",
+        "version": 1
+      },
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "editorMode": 1,
+          "exemplar": true,
+          "expr": "http_server_requests_seconds_max{namespace=~\"$namespace\", pod=~\"$pod\", uri!~\"/actuator/.+\" }",
+          "interval": "",
+          "legendFormat": "{{namespace}} | {{pod}} | {{status}} | {{method}} | {{outcome}} | PATH {{uri}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Fabric Server Requests Seconds Max",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 53
+      },
+      "id": 12,
+      "panels": [],
+      "title": "Fabric Ingress",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "description": "Tell number of ingress deployed in cluster",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 54
+      },
+      "id": 36,
+      "libraryPanel": {
+        "description": "Tell number of ingress deployed in cluster",
+        "meta": {
+          "connectedDashboards": 1,
+          "created": "2022-10-07T16:54:08Z",
+          "createdBy": {
+            "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+            "id": 1,
+            "name": "admin"
+          },
+          "folderName": "General",
+          "folderUid": "",
+          "updated": "2022-10-07T16:54:08Z",
+          "updatedBy": {
+            "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+            "id": 1,
+            "name": "admin"
+          }
+        },
+        "name": "Fabric Ingress",
+        "type": "piechart",
+        "uid": "ZnxJnsU7k",
+        "version": 1
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "right"
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "v1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "editorMode": "code",
+          "expr": "kube_ingress_created{ exported_namespace=~\"$namespace\" }",
+          "legendFormat": "{{ingress}} | {{tls_host}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Fabric Ingress",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 54
+      },
+      "id": 49,
+      "libraryPanel": {
+        "description": "",
+        "meta": {
+          "connectedDashboards": 1,
+          "created": "2022-12-12T15:40:55Z",
+          "createdBy": {
+            "avatarUrl": "",
+            "id": 40,
+            "name": ""
+          },
+          "folderName": "General",
+          "folderUid": "",
+          "updated": "2022-12-12T15:40:55Z",
+          "updatedBy": {
+            "avatarUrl": "",
+            "id": 40,
+            "name": ""
+          }
+        },
+        "name": "Fabric Ingress Info",
+        "type": "piechart",
+        "uid": "zpK4HV54z",
+        "version": 1
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "right"
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "editorMode": 1,
+          "exemplar": true,
+          "expr": "kube_ingress_path{ingress=~\"$ingress\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Ingress: {{ingress}} | Service Name: {{service_name}} | Service Port {{service_port}} | Path: {{path}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Fabric Ingress Info",
+      "transformations": [],
+      "type": "piechart"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 62
+      },
+      "id": 56,
+      "panels": [],
+      "title": "Fabric Container Network I/O",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "description": "Number of packets transmitted per second. This metric is derived from prometheus metric.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "pps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 63
+      },
+      "id": 58,
+      "libraryPanel": {
+        "description": "Number of packets transmitted per second. This metric is derived from prometheus metric.",
+        "meta": {
+          "connectedDashboards": 1,
+          "created": "2022-10-07T16:54:14Z",
+          "createdBy": {
+            "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+            "id": 1,
+            "name": "admin"
+          },
+          "folderName": "General",
+          "folderUid": "",
+          "updated": "2022-10-07T16:54:14Z",
+          "updatedBy": {
+            "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
+            "id": 1,
+            "name": "admin"
+          }
+        },
+        "name": "Container Network Transmitted Packets/Sec\t",
+        "type": "timeseries",
+        "uid": "nbKRZHw7z",
+        "version": 1
+      },
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "exemplar": true,
+          "expr": "rate(container_network_transmit_packets_total{ pod=~\"$pod\", namespace=~\"$namespace\"}[5m])",
+          "interval": "",
+          "legendFormat": "{{namespace}} | {{pod}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Container Network Transmitted Packets/Sec\t",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "description": "Number of bytes received per second. This metric is derived from prometheus metric",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "pps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 63
+      },
+      "id": 60,
+      "libraryPanel": {
+        "description": "Number of bytes received per second. This metric is derived from prometheus metric",
+        "meta": {
+          "connectedDashboards": 1,
+          "created": "2022-12-12T15:40:35Z",
+          "createdBy": {
+            "avatarUrl": "",
+            "id": 40,
+            "name": ""
+          },
+          "folderName": "General",
+          "folderUid": "",
+          "updated": "2022-12-12T15:40:35Z",
+          "updatedBy": {
+            "avatarUrl": "",
+            "id": 40,
+            "name": ""
+          }
+        },
+        "name": "Container Network Received Packets/Sec",
+        "type": "timeseries",
+        "uid": "tWUnHV5Vz",
+        "version": 1
+      },
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "exemplar": true,
+          "expr": "rate(container_network_receive_packets_total{ pod=~\"$pod\", namespace=~\"$namespace\" }[$interval])",
+          "interval": "",
+          "legendFormat": "{{namespace}} | {{pod}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Container Network Received Packets/Sec",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "description": "Network transmitted throughput in Megabits per second. This metric is derived from Prometheus metric",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 71
+      },
+      "id": 62,
+      "libraryPanel": {
+        "description": "Network transmitted throughput in Megabits per second. This metric is derived from Prometheus metric",
+        "meta": {
+          "connectedDashboards": 1,
+          "created": "2022-12-12T15:40:21Z",
+          "createdBy": {
+            "avatarUrl": "",
+            "id": 40,
+            "name": ""
+          },
+          "folderName": "General",
+          "folderUid": "",
+          "updated": "2023-02-13T05:43:35Z",
+          "updatedBy": {
+            "avatarUrl": "/theia/avatar/7432559b06a67b44d1d6af796393559b",
+            "id": 4,
+            "name": "deepak@digite.com"
+          }
+        },
+        "name": "Container Network Transmitted Throughput (Mbps)\t",
+        "type": "timeseries",
+        "uid": "Y3D7H45Vk",
+        "version": 2
+      },
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "editorMode": 1,
+          "exemplar": true,
+          "expr": "rate(container_network_transmit_bytes_total{pod=~\"$pod\", namespace=~\"$namespace\"}[$interval])",
+          "interval": "",
+          "legendFormat": "{{namespace}} | {{pod}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Container Network Transmitted Throughput (Mbps)\t",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "description": "The network received throughput in Megabits per second. This metric is derived from Prometheus metric",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 71
+      },
+      "id": 64,
+      "libraryPanel": {
+        "description": "The network received throughput in Megabits per second. This metric is derived from Prometheus metric",
+        "meta": {
+          "connectedDashboards": 1,
+          "created": "2022-12-12T15:40:30Z",
+          "createdBy": {
+            "avatarUrl": "",
+            "id": 40,
+            "name": ""
+          },
+          "folderName": "General",
+          "folderUid": "",
+          "updated": "2023-02-13T05:44:21Z",
+          "updatedBy": {
+            "avatarUrl": "/theia/avatar/7432559b06a67b44d1d6af796393559b",
+            "id": 4,
+            "name": "deepak@digite.com"
+          }
+        },
+        "name": "Container Network Received Throughput (Mbps)\t",
+        "type": "timeseries",
+        "uid": "yybnN45Vk",
+        "version": 2
+      },
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "exemplar": true,
+          "expr": "rate(container_network_receive_bytes_total{pod=~\"$pod\",namespace=~\"$namespace\"}[$interval])",
+          "interval": "",
+          "legendFormat": "{{namespace}} | {{pod}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Container Network Received Throughput (Mbps)\t",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "description": "A number of packets dropped while transmitting per second. This metric is derived from the Prometheus metric",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "pps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 79
+      },
+      "id": 66,
+      "libraryPanel": {
+        "description": "A number of packets dropped while transmitting per second. This metric is derived from the Prometheus metric",
+        "meta": {
+          "connectedDashboards": 1,
+          "created": "2022-12-12T15:40:12Z",
+          "createdBy": {
+            "avatarUrl": "",
+            "id": 40,
+            "name": ""
+          },
+          "folderName": "General",
+          "folderUid": "",
+          "updated": "2022-12-12T15:40:12Z",
+          "updatedBy": {
+            "avatarUrl": "",
+            "id": 40,
+            "name": ""
+          }
+        },
+        "name": "Container Network Transmitted Packets Dropped/Sec\t",
+        "type": "timeseries",
+        "uid": "pNz7NV54k",
+        "version": 1
+      },
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "exemplar": true,
+          "expr": "rate(container_network_transmit_packets_dropped_total{pod=~\"$pod\", namespace=~\"$namespace\"}[$interval])",
+          "interval": "",
+          "legendFormat": "{{namespace}} | {{pod}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Container Network Transmitted Packets Dropped/Sec\t",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "description": "Number of packets received per second. This metric is derived from prometheus metric",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "pps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 79
+      },
+      "id": 68,
+      "libraryPanel": {
+        "description": "Number of packets received per second. This metric is derived from prometheus metric",
+        "meta": {
+          "connectedDashboards": 1,
+          "created": "2022-12-12T15:40:06Z",
+          "createdBy": {
+            "avatarUrl": "",
+            "id": 40,
+            "name": ""
+          },
+          "folderName": "General",
+          "folderUid": "",
+          "updated": "2022-12-12T15:40:06Z",
+          "updatedBy": {
+            "avatarUrl": "",
+            "id": 40,
+            "name": ""
+          }
+        },
+        "name": "Container Network Received Packets Dropped/Sec",
+        "type": "timeseries",
+        "uid": "abuGNVc4z",
+        "version": 1
+      },
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "exemplar": true,
+          "expr": "container_network_receive_packets_dropped_total{pod=~\"$pod\", namespace=~\"$namespace\"}",
+          "interval": "",
+          "legendFormat": "{{namespace}} | {{pod}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Container Network Received Packets Dropped/Sec",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "description": "Number of errors encountered while transmitting per second. This metric is derived from prometheus metric",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 87
+      },
+      "id": 70,
+      "libraryPanel": {
+        "description": "Number of errors encountered while transmitting per second. This metric is derived from prometheus metric",
+        "meta": {
+          "connectedDashboards": 1,
+          "created": "2022-12-12T15:39:52Z",
+          "createdBy": {
+            "avatarUrl": "",
+            "id": 40,
+            "name": ""
+          },
+          "folderName": "General",
+          "folderUid": "",
+          "updated": "2022-12-12T15:39:52Z",
+          "updatedBy": {
+            "avatarUrl": "",
+            "id": 40,
+            "name": ""
+          }
+        },
+        "name": "Container Network Transmitted Error/Sec\t",
+        "type": "timeseries",
+        "uid": "PIhGH45Vz",
+        "version": 1
+      },
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "exemplar": true,
+          "expr": "container_network_transmit_errors_total{namespace=~\"$namespace\"}",
+          "interval": "",
+          "legendFormat": "{{pod}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Container Network Transmitted Error/Sec\t",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "description": "A number of errors were encountered while receiving per second. This metric is derived from Prometheus metric",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 87
+      },
+      "id": 72,
+      "libraryPanel": {
+        "description": "A number of errors were encountered while receiving per second. This metric is derived from Prometheus metric",
+        "meta": {
+          "connectedDashboards": 1,
+          "created": "2022-12-12T15:40:01Z",
+          "createdBy": {
+            "avatarUrl": "",
+            "id": 40,
+            "name": ""
+          },
+          "folderName": "General",
+          "folderUid": "",
+          "updated": "2022-12-12T15:40:01Z",
+          "updatedBy": {
+            "avatarUrl": "",
+            "id": 40,
+            "name": ""
+          }
+        },
+        "name": "Container Network Received Error/Sec\t",
+        "type": "timeseries",
+        "uid": "F4EMNV5Vz",
+        "version": 1
+      },
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "right"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "exemplar": true,
+          "expr": "container_network_receive_errors_total{pod=~\"$pod\", namespace=~\"$namespace\"}",
+          "interval": "",
+          "legendFormat": "{{namespace}} | {{pod}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Container Network Received Error/Sec\t",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 35,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "prod-2",
+          "value": "prod-2"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "definition": "label_values(kube_namespace_labels, exported_namespace)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Namespace",
+        "multi": false,
+        "name": "namespace",
+        "options": [],
+        "query": {
+          "query": "label_values(kube_namespace_labels, exported_namespace)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "definition": "label_values(kube_deployment_created{exported_namespace=~\"$namespace\"}, deployment)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Deployment",
+        "multi": true,
+        "name": "deployment",
+        "options": [],
+        "query": {
+          "query": "label_values(kube_deployment_created{exported_namespace=~\"$namespace\"}, deployment)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "definition": "label_values(kube_pod_info{exported_namespace=~\"$namespace\"}, pod)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Pod",
+        "multi": true,
+        "name": "pod",
+        "options": [],
+        "query": {
+          "query": "label_values(kube_pod_info{exported_namespace=~\"$namespace\"}, pod)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "allValue": ".*",
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "definition": "label_values(kube_pod_container_info{exported_namespace=~\"$namespace\", pod=~\"$pod\"}, container)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Container",
+        "multi": true,
+        "name": "container",
+        "options": [],
+        "query": {
+          "query": "label_values(kube_pod_container_info{exported_namespace=~\"$namespace\", pod=~\"$pod\"}, container)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "definition": "label_values(kube_ingress_created{ exported_namespace=~\"$namespace\" }, ingress)",
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "ingress",
+        "options": [],
+        "query": {
+          "query": "label_values(kube_ingress_created{ exported_namespace=~\"$namespace\" }, ingress)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "auto": true,
+        "auto_count": 30,
+        "auto_min": "10s",
+        "current": {
+          "selected": false,
+          "text": "auto",
+          "value": "$__auto_interval_interval"
+        },
+        "description": "Time range interval",
+        "hide": 0,
+        "label": "Interval",
+        "name": "interval",
+        "options": [
+          {
+            "selected": true,
+            "text": "auto",
+            "value": "$__auto_interval_interval"
+          },
+          {
+            "selected": false,
+            "text": "1m",
+            "value": "1m"
+          },
+          {
+            "selected": false,
+            "text": "2m",
+            "value": "2m"
+          },
+          {
+            "selected": false,
+            "text": "3m",
+            "value": "3m"
+          },
+          {
+            "selected": false,
+            "text": "5m",
+            "value": "5m"
+          },
+          {
+            "selected": false,
+            "text": "10m",
+            "value": "10m"
+          },
+          {
+            "selected": false,
+            "text": "30m",
+            "value": "30m"
+          }
+        ],
+        "query": "1m,2m,3m,5m,10m,30m",
+        "queryValue": "",
+        "refresh": 2,
+        "skipUrlSync": false,
+        "type": "interval"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "Fabric Apps",
+  "uid": "d8TDL-87z_change",
+  "version": 18,
+  "weekStart": ""
+}
