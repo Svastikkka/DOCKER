@@ -1,6 +1,7 @@
 version: '3.4'
 services:
   grafana:
+    container_name: grafana
     image: grafana/grafana:latest
     # pull_policy: always
     environment:
@@ -13,6 +14,7 @@ services:
       - 3000:3000
 
   prometheus:
+    container_name: prometheus
     image: prom/prometheus:latest
     command:
       - --config.file=/etc/prometheus/prometheus.yml
@@ -24,6 +26,7 @@ services:
       - ./config/prometheus.yaml:/etc/prometheus/prometheus.yml
 
   otel-collector:
+    container_name: otel-collector
     image: docker.io/otel/opentelemetry-collector:0.47.0
     command: ["/otelcol", "--config=/conf/otel-collector-config.yaml"]
     volumes:
@@ -34,6 +37,7 @@ services:
       - "4317:4317"
       - "55690:55690"
   otel-collector-service:
+    container_name: otel-collector-service
     image: docker.io/otel/opentelemetry-collector:0.47.0
     command: ["/otelcol", "--config=/conf/otel-collector-config.yaml"]
     volumes:
@@ -44,6 +48,7 @@ services:
       - "4318:4318"
       - "55681:55681"
   jaeger:
+    container_name: jaeger
     image: jaegertracing/all-in-one:1.24
     ports:
       - "5775:5775/udp"
