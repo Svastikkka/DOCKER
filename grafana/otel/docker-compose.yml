@@ -1,0 +1,56 @@
+version: '3.4'
+services:
+  grafana:
+    image: grafana/grafana:latest
+    # pull_policy: always
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_USERS_DEFAULT_THEME=light
+      - GF_LOG_MODE=console
+      - GF_LOG_LEVEL=critical
+    ports:
+      - 3000:3000
+
+  prometheus:
+    image: prom/prometheus:latest
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --log.level=error
+      - --storage.tsdb.path=/prometheus
+      - --web.console.libraries=/usr/share/prometheus/console_libraries
+      - --web.console.templates=/usr/share/prometheus/consoles
+    volumes:
+      - ./config/prometheus.yaml:/etc/prometheus/prometheus.yml
+
+  otel-collector:
+    image: docker.io/otel/opentelemetry-collector:0.47.0
+    command: ["/otelcol", "--config=/conf/otel-collector-config.yaml"]
+    volumes:
+      - ./config/otel-collector-config.yaml:/conf/otel-collector-config.yaml
+    ports:
+      - "1888:1888"
+      - "13133:13133"
+      - "4317:4317"
+      - "55690:55690"
+  otel-collector-service:
+    image: docker.io/otel/opentelemetry-collector:0.47.0
+    command: ["/otelcol", "--config=/conf/otel-collector-config.yaml"]
+    volumes:
+      - ./config/otel-collector-config.yaml:/conf/otel-collector-config.yaml
+    ports:
+      - "1889:1889"
+      - "13134:13134"
+      - "4318:4318"
+      - "55681:55681"
+  jaeger:
+    image: jaegertracing/all-in-one:1.24
+    ports:
+      - "5775:5775/udp"
+      - "6831:6831/udp"
+      - "6832:6832/udp"
+      - "5778:5778"
+      - "16686:16686"
+      - "14268:14268"
+      - "9411:9411"
+
