@@ -1,0 +1,352 @@
+{
+    "__inputs": [
+      {
+        "name": "DS_LOKI",
+        "label": "Loki",
+        "description": "",
+        "type": "datasource",
+        "pluginId": "loki",
+        "pluginName": "Loki"
+      }
+    ],
+    "__elements": [],
+    "__requires": [
+      {
+        "type": "grafana",
+        "id": "grafana",
+        "name": "Grafana",
+        "version": "8.4.3"
+      },
+      {
+        "type": "panel",
+        "id": "logs",
+        "name": "Logs",
+        "version": ""
+      },
+      {
+        "type": "datasource",
+        "id": "loki",
+        "name": "Loki",
+        "version": "1.0.0"
+      }
+    ],
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "description": "",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": null,
+    "iteration": 1685202540923,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "type": "loki",
+          "uid": "${DS_LOKI}"
+        },
+        "description": "",
+        "gridPos": {
+          "h": 25,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 2,
+        "links": [],
+        "options": {
+          "dedupStrategy": "none",
+          "enableLogDetails": true,
+          "prettifyLogMessage": false,
+          "showCommonLabels": false,
+          "showLabels": false,
+          "showTime": true,
+          "sortOrder": "Descending",
+          "wrapLogMessage": false
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "loki",
+              "uid": "${DS_LOKI}"
+            },
+            "expr": "{application=\"webgateway\",namespace=\"oauth\"} | json |  message_env=~\"$environment\" | message_duration>$response | message_app=~\"$application\"",
+            "refId": "A"
+          }
+        ],
+        "title": "Slow Requests",
+        "transformations": [],
+        "type": "logs"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 35,
+    "style": "dark",
+    "tags": [
+      "Fabric"
+    ],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "uat",
+            "value": "uat"
+          },
+          "hide": 0,
+          "includeAll": true,
+          "label": "environment",
+          "multi": true,
+          "name": "environment",
+          "options": [
+            {
+              "selected": false,
+              "text": "All",
+              "value": "$__all"
+            },
+            {
+              "selected": false,
+              "text": "dev",
+              "value": "dev"
+            },
+            {
+              "selected": false,
+              "text": "qa",
+              "value": "qa"
+            },
+            {
+              "selected": false,
+              "text": "standalone",
+              "value": "standalone"
+            },
+            {
+              "selected": true,
+              "text": "uat",
+              "value": "uat"
+            },
+            {
+              "selected": false,
+              "text": "oauth",
+              "value": "oauth"
+            }
+          ],
+          "query": "dev,qa,standalone,uat,oauth",
+          "queryValue": "",
+          "skipUrlSync": false,
+          "type": "custom"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "50ms",
+            "value": "50ms"
+          },
+          "hide": 0,
+          "label": "response > ",
+          "name": "response",
+          "options": [
+            {
+              "selected": true,
+              "text": "50ms",
+              "value": "50ms"
+            }
+          ],
+          "query": "50ms",
+          "skipUrlSync": false,
+          "type": "textbox"
+        },
+        {
+          "current": {
+            "selected": true,
+            "text": "Nimble",
+            "value": "Nimble"
+          },
+          "hide": 0,
+          "includeAll": true,
+          "label": "application",
+          "multi": true,
+          "name": "application",
+          "options": [
+            {
+              "selected": false,
+              "text": "All",
+              "value": "$__all"
+            },
+            {
+              "selected": false,
+              "text": "Storymapping BE",
+              "value": "Storymapping BE"
+            },
+            {
+              "selected": false,
+              "text": "External Work Requests BE",
+              "value": "External Work Requests BE"
+            },
+            {
+              "selected": false,
+              "text": "LicensingModule FE",
+              "value": "LicensingModule FE"
+            },
+            {
+              "selected": true,
+              "text": "Nimble",
+              "value": "Nimble"
+            },
+            {
+              "selected": false,
+              "text": "PPM BE",
+              "value": "PPM BE"
+            },
+            {
+              "selected": false,
+              "text": "PPM FE",
+              "value": "PPM FE"
+            },
+            {
+              "selected": false,
+              "text": "External Work Requests FE",
+              "value": "External Work Requests FE"
+            },
+            {
+              "selected": false,
+              "text": "Git",
+              "value": "Git"
+            },
+            {
+              "selected": false,
+              "text": "PPM Optimizer",
+              "value": "PPM Optimizer"
+            },
+            {
+              "selected": false,
+              "text": "External Work Requests For External Form",
+              "value": "External Work Requests For External Form"
+            },
+            {
+              "selected": false,
+              "text": "RM",
+              "value": "RM"
+            },
+            {
+              "selected": false,
+              "text": "Collab Attachments",
+              "value": "Collab Attachments"
+            },
+            {
+              "selected": false,
+              "text": "Howler",
+              "value": "Howler"
+            },
+            {
+              "selected": false,
+              "text": "Retro FE",
+              "value": "Retro FE"
+            },
+            {
+              "selected": false,
+              "text": "BAAS",
+              "value": "BAAS"
+            },
+            {
+              "selected": false,
+              "text": "Piglet",
+              "value": "Piglet"
+            },
+            {
+              "selected": false,
+              "text": "Collab Downloads",
+              "value": "Collab Downloads"
+            },
+            {
+              "selected": false,
+              "text": "Thoth",
+              "value": "Thoth"
+            },
+            {
+              "selected": false,
+              "text": "Retro BE",
+              "value": "Retro BE"
+            },
+            {
+              "selected": false,
+              "text": "Collab comments",
+              "value": "Collab comments"
+            },
+            {
+              "selected": false,
+              "text": "LandingPage",
+              "value": "LandingPage"
+            },
+            {
+              "selected": false,
+              "text": "Retro Mailcatcher",
+              "value": "Retro Mailcatcher"
+            },
+            {
+              "selected": false,
+              "text": "Storymapping FE",
+              "value": "Storymapping FE"
+            },
+            {
+              "selected": false,
+              "text": "Thoth Chat",
+              "value": "Thoth Chat"
+            },
+            {
+              "selected": false,
+              "text": "LicensingModule BE",
+              "value": "LicensingModule BE"
+            },
+            {
+              "selected": false,
+              "text": "Piglet Webhooks",
+              "value": "Piglet Webhooks"
+            },
+            {
+              "selected": false,
+              "text": "webgateway",
+              "value": "webgateway"
+            },
+            {
+              "selected": false,
+              "text": "Gringotts Service",
+              "value": "Gringotts Service"
+            }
+          ],
+          "query": "Storymapping BE\n,External Work Requests BE\n,LicensingModule FE\n,Nimble\n,PPM BE\n,PPM FE\n,External Work Requests FE\n,Git\n,PPM Optimizer\n,External Work Requests For External Form\n,RM\n,Collab Attachments\n,Howler\n,Retro FE\n,BAAS\n,Piglet\n,Collab Downloads\n,Thoth\n,Retro BE\n,Collab comments\n,LandingPage\n,Retro Mailcatcher\n,Storymapping FE\n,Thoth Chat\n,LicensingModule BE\n,Piglet Webhooks\n,webgateway\n,Gringotts Service",
+          "queryValue": "",
+          "skipUrlSync": false,
+          "type": "custom"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Slow Requests",
+    "uid": "sEQHYxOVz",
+    "version": 2,
+    "weekStart": ""
+  }
