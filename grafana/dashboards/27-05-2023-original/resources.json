@@ -9,227 +9,7 @@
         "pluginName": "Prometheus"
       }
     ],
-    "__elements": [
-      {
-        "name": "Fabric Network I/O",
-        "uid": "1fN-3a87k",
-        "kind": 1,
-        "model": {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "decimals": 2,
-          "description": "The network received throughput in Megabits per second. This metric is derived from the Prometheus metric.",
-          "fieldConfig": {
-            "defaults": {
-              "unit": "bytes"
-            },
-            "overrides": []
-          },
-          "fill": 1,
-          "fillGradient": 0,
-          "gridPos": {
-            "h": 11,
-            "w": 24,
-            "x": 0,
-            "y": 12
-          },
-          "hiddenSeries": false,
-          "id": 6,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "max": false,
-            "min": false,
-            "rightSide": true,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 2,
-          "links": [],
-          "nullPointMode": "connected",
-          "options": {
-            "alertThreshold": true
-          },
-          "percentage": false,
-          "pluginVersion": "8.4.3",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": 1,
-              "exemplar": true,
-              "expr": "sort_desc(sum by (pod) (rate (container_network_receive_bytes_total{namespace=~\"$namespace\",pod=~\"$pod\",container=~\"$container\"}[$interval])))",
-              "format": "time_series",
-              "interval": "10s",
-              "intervalFactor": 1,
-              "legendFormat": "{{pod}}",
-              "range": true,
-              "refId": "A",
-              "step": 30
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "- sort_desc(sum by (pod) (rate (container_network_transmit_bytes_total{namespace=~\"$namespace\",pod=~\"$pod\",container=~\"$container\"}[$interval])))",
-              "hide": false,
-              "interval": "10s",
-              "legendFormat": "{{pod}}",
-              "range": true,
-              "refId": "B"
-            }
-          ],
-          "thresholds": [],
-          "timeRegions": [],
-          "title": "Fabric Network I/O",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:71",
-              "format": "bytes",
-              "label": "Requests",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:72",
-              "format": "short",
-              "logBase": 1,
-              "show": false
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
-        }
-      },
-      {
-        "name": "Container Network Transmitted Packets/Sec\t",
-        "uid": "nbKRZHw7z",
-        "kind": 1,
-        "model": {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "description": "Number of packets transmitted per second. This metric is derived from prometheus metric.",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 0,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "auto",
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "pps"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 34
-          },
-          "id": 58,
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "right"
-            },
-            "tooltip": {
-              "mode": "single",
-              "sort": "none"
-            }
-          },
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "exemplar": true,
-              "expr": "rate(container_network_transmit_packets_total{ pod=~\"$pod\", namespace=~\"$namespace\"}[5m])",
-              "interval": "",
-              "legendFormat": "{{namespace}} | {{pod}}",
-              "refId": "A"
-            }
-          ],
-          "title": "Container Network Transmitted Packets/Sec\t",
-          "type": "timeseries"
-        }
-      }
-    ],
+    "__elements": [],
     "__requires": [
       {
         "type": "grafana",
@@ -288,7 +68,7 @@
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
     "id": null,
-    "iteration": 1685198280670,
+    "iteration": 1685198280676,
     "links": [],
     "liveNow": false,
     "panels": [
@@ -454,30 +234,6 @@
           "show": true,
           "total": false,
           "values": true
-        },
-        "libraryPanel": {
-          "description": "The network received throughput in Megabits per second. This metric is derived from the Prometheus metric.",
-          "meta": {
-            "connectedDashboards": 1,
-            "created": "2023-05-19T08:15:46Z",
-            "createdBy": {
-              "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
-              "id": 1,
-              "name": "admin"
-            },
-            "folderName": "General",
-            "folderUid": "",
-            "updated": "2023-05-19T08:15:46Z",
-            "updatedBy": {
-              "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
-              "id": 1,
-              "name": "admin"
-            }
-          },
-          "name": "Fabric Network I/O",
-          "type": "graph",
-          "uid": "1fN-3a87k",
-          "version": 1
         },
         "lines": true,
         "linewidth": 2,
@@ -794,30 +550,6 @@
           "y": 34
         },
         "id": 58,
-        "libraryPanel": {
-          "description": "Number of packets transmitted per second. This metric is derived from prometheus metric.",
-          "meta": {
-            "connectedDashboards": 1,
-            "created": "2023-05-19T08:15:46Z",
-            "createdBy": {
-              "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
-              "id": 1,
-              "name": "admin"
-            },
-            "folderName": "General",
-            "folderUid": "",
-            "updated": "2023-05-19T08:15:46Z",
-            "updatedBy": {
-              "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
-              "id": 1,
-              "name": "admin"
-            }
-          },
-          "name": "Container Network Transmitted Packets/Sec\t",
-          "type": "timeseries",
-          "uid": "nbKRZHw7z",
-          "version": 1
-        },
         "options": {
           "legend": {
             "calcs": [],
@@ -1665,6 +1397,6 @@
     "timezone": "",
     "title": "Resources",
     "uid": "d8TDL-87z",
-    "version": 5,
+    "version": 7,
     "weekStart": ""
   }
