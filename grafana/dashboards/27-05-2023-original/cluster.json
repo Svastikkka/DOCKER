@@ -1,0 +1,2081 @@
+{
+    "__inputs": [
+      {
+        "name": "DS_PROMETHEUS",
+        "label": "prometheus",
+        "description": "",
+        "type": "datasource",
+        "pluginId": "prometheus",
+        "pluginName": "Prometheus"
+      }
+    ],
+    "__elements": [],
+    "__requires": [
+      {
+        "type": "panel",
+        "id": "bargauge",
+        "name": "Bar gauge",
+        "version": ""
+      },
+      {
+        "type": "panel",
+        "id": "gauge",
+        "name": "Gauge",
+        "version": ""
+      },
+      {
+        "type": "grafana",
+        "id": "grafana",
+        "name": "Grafana",
+        "version": "8.4.3"
+      },
+      {
+        "type": "panel",
+        "id": "piechart",
+        "name": "Pie chart",
+        "version": ""
+      },
+      {
+        "type": "datasource",
+        "id": "prometheus",
+        "name": "Prometheus",
+        "version": "1.0.0"
+      },
+      {
+        "type": "panel",
+        "id": "stat",
+        "name": "Stat",
+        "version": ""
+      },
+      {
+        "type": "panel",
+        "id": "timeseries",
+        "name": "Time series",
+        "version": ""
+      }
+    ],
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": null,
+    "iteration": 1685203689513,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "ms"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 9,
+          "x": 0,
+          "y": 0
+        },
+        "id": 2,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": false
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "mongodb_uptimeMillis{cl_name=\"$cluster\"}",
+            "interval": "",
+            "legendFormat": "{{rs_state}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Uptime",
+        "type": "gauge"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 5,
+          "x": 9,
+          "y": 0
+        },
+        "id": 4,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(increase(kube_pod_container_status_restarts_total{pod=~\"$cluster-\\\\d\",container=\"mongod\"}[$__range])) by (pod)",
+            "interval": "",
+            "legendFormat": "{{ pod }}",
+            "refId": "A"
+          }
+        ],
+        "title": "Restarts",
+        "transformations": [
+          {
+            "id": "groupBy",
+            "options": {
+              "fields": {
+                "Time": {
+                  "aggregations": []
+                },
+                "mongodbcrv2-0": {
+                  "aggregations": [
+                    "sum"
+                  ],
+                  "operation": "aggregate"
+                },
+                "mongodbcrv2-1": {
+                  "aggregations": [
+                    "sum"
+                  ],
+                  "operation": "aggregate"
+                }
+              }
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "description": "Reports the read concern level specified by query operations to the mongod instance since it last started.",
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 5,
+          "x": 14,
+          "y": 0
+        },
+        "id": 11,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "mongodb_connections_current{cl_name=\"$cluster\"}",
+            "interval": "",
+            "legendFormat": "Current - {{rs_state}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Open Connections",
+        "transformations": [],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "description": "The number of unused incoming connections available. Consider this value in combination with the value of  connections.current to understand the connection load on the database.",
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 5,
+          "x": 19,
+          "y": 0
+        },
+        "id": 22,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "mongodb_connections_available{cl_name=\"$cluster\"}",
+            "interval": "",
+            "legendFormat": "Available - {{rs_state}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Available Connections",
+        "transformations": [],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "description": "Reports the read concern level specified by query operations to the mongod instance since it last started.",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": []
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 12,
+          "x": 0,
+          "y": 7
+        },
+        "id": 5,
+        "options": {
+          "displayLabels": [
+            "percent"
+          ],
+          "legend": {
+            "displayMode": "list",
+            "placement": "right",
+            "values": []
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(increase(mongodb_opReadConcernCounters_available{cl_name=\"$cluster\",rs_nm=\"$replicaSet\"}[$__range])) by (rs_state)",
+            "interval": "",
+            "legendFormat": "Available | {{rs_state}}",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(increase(mongodb_opReadConcernCounters_linearizable{cl_name=\"$cluster\",rs_nm=\"$replicaSet\"}[$__range])) by (rs_state)",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Linearizable  | {{rs_state}}",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(increase(mongodb_opReadConcernCounters_local{cl_name=\"$cluster\",rs_nm=\"$replicaSet\"}[$__range])) by (rs_state)",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Local  | {{rs_state}}",
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(increase(mongodb_opReadConcernCounters_majority{cl_name=\"$cluster\",rs_nm=\"$replicaSet\"}[$__range])) by (rs_state)",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Majority  | {{rs_state}}",
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(increase(mongodb_opReadConcernCounters_snapshot{cl_name=\"$cluster\",rs_nm=\"$replicaSet\"}[$__range])) by (rs_state)",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Snapshot  | {{rs_state}}",
+            "refId": "E"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(increase(mongodb_opReadConcernCounters_none{cl_name=\"$cluster\",rs_nm=\"$replicaSet\"}[$__range])) by (rs_state)",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "None  | {{rs_state}}",
+            "refId": "F"
+          }
+        ],
+        "title": "Open Read Concerns",
+        "transformations": [],
+        "type": "piechart"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "description": "Reports the write concern level specified by query operations to the mongod instance since it last started.",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": []
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 12,
+          "x": 12,
+          "y": 7
+        },
+        "id": 24,
+        "options": {
+          "legend": {
+            "displayMode": "list",
+            "placement": "bottom"
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(increase(mongodb_opWriteConcernCounters_available{cl_name=~\"$cluster\",rs_nm=~\"$replicaSet\"}[$__rate_interval])) by (rs_state)",
+            "interval": "",
+            "legendFormat": "Available | {{rs_state}}",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(increase(mongodb_opWriteConcernCounters_linearizable{cl_name=~\"$cluster\",rs_nm=~\"$replicaSet\"}[$__rate_interval])) by (rs_state)",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Linearizable  | {{rs_state}}",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(increase(mongodb_opWriteConcernCounters_local{cl_name=~\"$cluster\",rs_nm=~\"$replicaSet\"}[$__rate_interval])) by (rs_state)",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Local  | {{rs_state}}",
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(increase(mongodb_opWriteConcernCounters_majority{cl_name=~\"$cluster\",rs_nm=~\"$replicaSet\"}[$__rate_interval])) by (rs_state)",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Majority  | {{rs_state}}",
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(increase(mongodb_opWriteConcernCounters_snapshot{cl_name=~\"$cluster\",rs_nm=~\"$replicaSet\"}[$__rate_interval])) by (rs_state)",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Snapshot  | {{rs_state}}",
+            "refId": "E"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(increase(mongodb_opWriteConcernCounters_none{cl_name=~\"$cluster\",rs_nm=~\"$replicaSet\"}[$__rate_interval])) by (rs_state)",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "None  | {{rs_state}}",
+            "refId": "F"
+          }
+        ],
+        "title": "Open Write Concerns",
+        "transformations": [],
+        "type": "piechart"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "description": "A histogram of Number of Documents vs Latencies for read operations",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": [],
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 6,
+          "x": 0,
+          "y": 17
+        },
+        "id": 12,
+        "options": {
+          "displayLabels": [
+            "value"
+          ],
+          "legend": {
+            "displayMode": "table",
+            "placement": "right"
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "asc"
+          }
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_read_latency_histogram_bucket_1_100_249us{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\", rs_state=\"1\"}[$__range])",
+            "interval": "",
+            "legendFormat": "0.1ms-.249ms",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_read_latency_histogram_bucket_2_250_499us{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\", rs_state=\"1\"}[$__range])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": ".25ms-.49ms",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_read_latency_histogram_bucket_3_500_999us{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\", rs_state=\"1\"}[$__range])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": ".5ms-.99ms",
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_read_latency_histogram_bucket_4_1000_9999us{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\", rs_state=\"1\"}[$__range])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "1ms-9.9us",
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_read_latency_histogram_bucket_5_10000us{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\", rs_state=\"1\"}[$__range])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "10ms and above",
+            "refId": "E"
+          }
+        ],
+        "title": "Read Latencies Primary",
+        "transformations": [],
+        "type": "piechart"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "description": "A histogram of Number of Documents vs Latencies for read operations",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": [],
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 6,
+          "x": 6,
+          "y": 17
+        },
+        "id": 13,
+        "options": {
+          "displayLabels": [
+            "value"
+          ],
+          "legend": {
+            "displayMode": "table",
+            "placement": "right"
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "asc"
+          }
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_write_latency_histogram_bucket_1_100_249us{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\", rs_state=\"1\"}[$__range])",
+            "interval": "",
+            "legendFormat": "0.1ms-.249ms",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_write_latency_histogram_bucket_2_250_499us{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\", rs_state=\"1\"}[$__range])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": ".25ms-.49ms",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_write_latency_histogram_bucket_3_500_999us{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\", rs_state=\"1\"}[$__range])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": ".5ms-.99ms",
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_write_latency_histogram_bucket_4_1000_9999us{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\", rs_state=\"1\"}[$__range])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "1ms-9.9us",
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_write_latency_histogram_bucket_5_10000us{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\", rs_state=\"1\"}[$__range])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "10ms and above",
+            "refId": "E"
+          }
+        ],
+        "title": "Write Latencies Primary",
+        "transformations": [],
+        "type": "piechart"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "description": "Total Open cursors, cursors pinned and cursors manually set to high timeout",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "continuous-GrYlRd"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 6,
+          "x": 12,
+          "y": 17
+        },
+        "id": 15,
+        "options": {
+          "displayMode": "lcd",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showUnfilled": true
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(increase(mongodb_metrics_cursor_open_total{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\"}[$__rate_interval])) by (rs_state)",
+            "interval": "",
+            "legendFormat": "Total - {{rs_state}}",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(increase(mongodb_metrics_cursor_open_pinned{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\"}[$__rate_interval])) by (rs_state)",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Pinned - {{rs_state}}",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "sum(increase(mongodb_metrics_cursor_open_noTimeout{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\"}[$__rate_interval])) by (rs_state)",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "No Timeout - {{rs_state}}",
+            "refId": "C"
+          }
+        ],
+        "title": "Cursors",
+        "transformations": [],
+        "type": "bargauge"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 6,
+          "x": 18,
+          "y": 17
+        },
+        "id": 18,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom"
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": false,
+            "expr": "mongodb_globalLock_activeClients_readers{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\"}",
+            "interval": "",
+            "legendFormat": "Readers",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": false,
+            "expr": "mongodb_globalLock_activeClients_writers{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Writers",
+            "refId": "B"
+          }
+        ],
+        "title": "Global Locks",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "description": "A histogram of Number of Documents vs Latencies for read operations",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": [],
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 6,
+          "x": 0,
+          "y": 27
+        },
+        "id": 26,
+        "options": {
+          "displayLabels": [
+            "value"
+          ],
+          "legend": {
+            "displayMode": "table",
+            "placement": "right"
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "asc"
+          }
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_read_latency_histogram_bucket_1_100_249us{cl_name=\"$cluster\", rs_nm=\"$replicaSet\", rs_state=\"2\"}[$__range])",
+            "interval": "",
+            "legendFormat": "0.1ms-.249ms",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_read_latency_histogram_bucket_2_250_499us{cl_name=\"$cluster\", rs_nm=\"$replicaSet\", rs_state=\"2\"}[$__range])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": ".25ms-.49ms",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_read_latency_histogram_bucket_3_500_999us{cl_name=\"$cluster\", rs_nm=\"$replicaSet\", rs_state=\"2\"}[$__range])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": ".5ms-.99ms",
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_read_latency_histogram_bucket_4_1000_9999us{cl_name=\"$cluster\", rs_nm=\"$replicaSet\", rs_state=\"2\"}[$__range])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "1ms-9.9us",
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_read_latency_histogram_bucket_5_10000us{cl_name=\"$cluster\", rs_nm=\"$replicaSet\", rs_state=\"2\"}[$__range])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "10ms and above",
+            "refId": "E"
+          }
+        ],
+        "title": "Read Latencies Secondary",
+        "transformations": [],
+        "type": "piechart"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "description": "A histogram of Number of Documents vs Latencies for read operations",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": [],
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 6,
+          "x": 6,
+          "y": 27
+        },
+        "id": 27,
+        "options": {
+          "displayLabels": [
+            "value"
+          ],
+          "legend": {
+            "displayMode": "table",
+            "placement": "right"
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "asc"
+          }
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_write_latency_histogram_bucket_1_100_249us{cl_name=\"$cluster\", rs_nm=\"$replicaSet\", rs_state=\"2\"}[$__range])",
+            "interval": "",
+            "legendFormat": "0.1ms-.249ms",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_write_latency_histogram_bucket_2_250_499us{cl_name=\"$cluster\", rs_nm=\"$replicaSet\", rs_state=\"2\"}[$__range])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": ".25ms-.49ms",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_write_latency_histogram_bucket_3_500_999us{cl_name=\"$cluster\", rs_nm=\"$replicaSet\", rs_state=\"2\"}[$__range])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": ".5ms-.99ms",
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_write_latency_histogram_bucket_4_1000_9999us{cl_name=\"$cluster\", rs_nm=\"$replicaSet\", rs_state=\"2\"}[$__range])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "1ms-9.9us",
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "delta(mongodb_wiredTiger_perf_operation_write_latency_histogram_bucket_5_10000us{cl_name=\"$cluster\", rs_nm=\"$replicaSet\", rs_state=\"2\"}[$__range])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "10ms and above",
+            "refId": "E"
+          }
+        ],
+        "title": "Write Latencies Secondary",
+        "transformations": [],
+        "type": "piechart"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": [
+            {
+              "__systemRef": "hideSeriesFrom",
+              "matcher": {
+                "id": "byNames",
+                "options": {
+                  "mode": "exclude",
+                  "names": [
+                    "Aborted"
+                  ],
+                  "prefix": "All except:",
+                  "readOnly": true
+                }
+              },
+              "properties": [
+                {
+                  "id": "custom.hideFrom",
+                  "value": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": true
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 12,
+          "x": 12,
+          "y": 27
+        },
+        "id": 20,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom"
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "mongodb_transactions_currentActive{cl_name=~\"$cluster\",rs_nm=~\"$replicaSet\"}",
+            "interval": "",
+            "legendFormat": "Current",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "increase(mongodb_transactions_totalAborted{cl_name=~\"$cluster\",rs_nm=~\"$replicaSet\"}[$__rate_interval])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Aborted",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "mongodb_transactions_retriedStatementsCount{cl_name=~\"$cluster\",rs_nm=~\"$replicaSet\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Retried Statements",
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "mongodb_transactions_retriedCommandsCount{cl_name=~\"$cluster\",rs_nm=~\"$replicaSet\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Retried Commands",
+            "refId": "D"
+          }
+        ],
+        "title": "Transactions",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "description": "Number of Replication Operations run over the given period",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 12,
+          "w": 12,
+          "x": 0,
+          "y": 37
+        },
+        "id": 7,
+        "options": {
+          "legend": {
+            "calcs": [
+              "lastNotNull",
+              "max",
+              "mean"
+            ],
+            "displayMode": "table",
+            "placement": "right"
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "increase(mongodb_opcountersRepl_query{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\"}[$__rate_interval])",
+            "interval": "",
+            "legendFormat": "Read - {{rs_state}}",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "increase(mongodb_opcountersRepl_getmore{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\"}[$__rate_interval])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "GetMore - {{rs_state}}",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "increase(mongodb_opcountersRepl_insert{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\"}[$__rate_interval])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Insert - {{rs_state}}",
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "increase(mongodb_opcountersRepl_delete{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\"}[$__rate_interval])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Delete - {{rs_state}}",
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "increase(mongodb_opcountersRepl_update{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\"}[$__rate_interval])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Update - {{rs_state}}",
+            "refId": "E"
+          }
+        ],
+        "title": "Replication",
+        "transformations": [
+          {
+            "id": "renameByRegex",
+            "options": {
+              "regex": "(1$)",
+              "renamePattern": "Primary"
+            }
+          },
+          {
+            "id": "renameByRegex",
+            "options": {
+              "regex": "(2$)",
+              "renamePattern": "Secondary"
+            }
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "description": "Summary of number of operations executed in the given time range",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 12,
+          "w": 12,
+          "x": 12,
+          "y": 37
+        },
+        "id": 9,
+        "options": {
+          "legend": {
+            "calcs": [
+              "lastNotNull",
+              "max",
+              "mean"
+            ],
+            "displayMode": "table",
+            "placement": "right"
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "8.4.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "increase(mongodb_opcounters_query{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\"}[$__rate_interval])",
+            "interval": "",
+            "legendFormat": "Read - {{rs_state}}",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "increase(mongodb_opcounters_getmore{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\"}[$__rate_interval])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "GetMore - {{rs_state}}",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "increase(mongodb_opcounters_insert{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\"}[$__rate_interval])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Insert - {{rs_state}}",
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "increase(mongodb_opcounters_update{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\"}[$__rate_interval])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Update - {{rs_state}}",
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "increase(mongodb_opcounters_delete{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\"}[$__rate_interval])",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "Delete - {{rs_state}}",
+            "refId": "E"
+          }
+        ],
+        "title": "Mongo Operations",
+        "transformations": [],
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "description": "The total number of queries that encountered write conflicts.",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 12,
+          "w": 12,
+          "x": 0,
+          "y": 49
+        },
+        "id": 8,
+        "options": {
+          "legend": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "displayMode": "list",
+            "placement": "bottom"
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "mongodb_metrics_operation_writeConflicts{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\"}",
+            "interval": "",
+            "legendFormat": "{{cl_name}}-{{rs_nm}}-{{rs_state}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Write Conflicts",
+        "transformations": [
+          {
+            "id": "renameByRegex",
+            "options": {
+              "regex": "(1$)",
+              "renamePattern": "Primary"
+            }
+          },
+          {
+            "id": "renameByRegex",
+            "options": {
+              "regex": "(2$)",
+              "renamePattern": "Secondary"
+            }
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "description": "The total number of queries that return sorted numbers that cannot perform the sort operation using an index.",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 12,
+          "w": 12,
+          "x": 12,
+          "y": 49
+        },
+        "id": 14,
+        "options": {
+          "legend": {
+            "calcs": [
+              "lastNotNull",
+              "min",
+              "max",
+              "mean"
+            ],
+            "displayMode": "list",
+            "placement": "bottom"
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "${DS_PROMETHEUS}"
+            },
+            "editorMode": 1,
+            "exemplar": true,
+            "expr": "mongodb_metrics_operation_scanAndOrder{cl_name=~\"$cluster\", rs_nm=~\"$replicaSet\"}",
+            "interval": "",
+            "legendFormat": "{{cl_name}}-{{rs_nm}}-{{rs_state}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Scan And Order",
+        "transformations": [
+          {
+            "id": "renameByRegex",
+            "options": {
+              "regex": "(1$)",
+              "renamePattern": "Primary"
+            }
+          },
+          {
+            "id": "renameByRegex",
+            "options": {
+              "regex": "(2$)",
+              "renamePattern": "Secondary"
+            }
+          }
+        ],
+        "type": "timeseries"
+      }
+    ],
+    "schemaVersion": 35,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {},
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "definition": "label_values(mongodb_connections_available, cl_name)",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "cluster",
+          "options": [],
+          "query": {
+            "query": "label_values(mongodb_connections_available, cl_name)",
+            "refId": "StandardVariableQuery"
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "current": {},
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "definition": "label_values(mongodb_connections_available, rs_nm)",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "replicaSet",
+          "options": [],
+          "query": {
+            "query": "label_values(mongodb_connections_available, rs_nm)",
+            "refId": "StandardVariableQuery"
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "current": {},
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "definition": "label_values(mongodb_connections_available, job)",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "job",
+          "options": [],
+          "query": {
+            "query": "label_values(mongodb_connections_available, job)",
+            "refId": "StandardVariableQuery"
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-2d",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Cluster",
+    "uid": "b8XLI_J4z",
+    "version": 16,
+    "weekStart": ""
+  }
