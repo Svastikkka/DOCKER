@@ -1,7 +1,7 @@
 {
     "__inputs": [
       {
-        "name": "DS_PROMETHEUS",
+        "name": "datasource",
         "label": "prometheus",
         "description": "",
         "type": "datasource",
@@ -2191,7 +2191,7 @@
     "timepicker": {},
     "timezone": "",
     "title": "NH44",
-    "uid": "dWoqGVxVk",
+    "uid": "dWoqGVxaa",
     "version": 16,
     "weekStart": ""
   }
