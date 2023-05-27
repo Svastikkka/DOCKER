@@ -560,6 +560,7 @@
         "type": "timeseries"
       }
     ],
+    "refresh": false,
     "schemaVersion": 35,
     "style": "dark",
     "tags": [],
