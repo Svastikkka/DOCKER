@@ -1161,30 +1161,6 @@
           "y": 29
         },
         "id": 80,
-        "libraryPanel": {
-          "description": "Tells how many times the container is restarted or going in crash loop backoff error",
-          "meta": {
-            "connectedDashboards": 1,
-            "created": "2022-04-14T08:16:32Z",
-            "createdBy": {
-              "avatarUrl": "/theia/avatar/46d229b033af06a191ff2267bca9ae56",
-              "id": 1,
-              "name": "admin"
-            },
-            "folderName": "General",
-            "folderUid": "",
-            "updated": "2022-04-20T06:34:22Z",
-            "updatedBy": {
-              "avatarUrl": "",
-              "id": 2,
-              "name": ""
-            }
-          },
-          "name": "Fabric Containers Restarts",
-          "type": "bargauge",
-          "uid": "BNsxOEU7k",
-          "version": 15
-        },
         "links": [],
         "maxDataPoints": 100,
         "options": {
