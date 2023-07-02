@@ -6,8 +6,9 @@ from multiprocessing import Queue
 import datetime
 import time
 import re
+import json
 def parse_logfmt(log):
-    pattern = r'([^;=]+)=([^;]+)'
+    pattern = r"([^;=]+)=([^;]+)"
     matches = re.findall(pattern, log)
     return {key: value.strip() for key, value in matches}
 
@@ -15,9 +16,9 @@ def extract_field(log, field):
     log_data = parse_logfmt(log)
     try:
         value = log_data[field]
-        return value if value.strip() != '' else None
+        return value.strip() if value.strip() != '' else ''
     except KeyError:
-        return None
+        return ""
 
 
 def cruiser(LOGGER_POD_NAME,LOGGER_CONTAINER_NAME,LOGGER_LOKI_URL,LOGGER_POD_NAMESPACE,LOGGER_SERVICE,LOG_FILE_PATH):
@@ -25,7 +26,7 @@ def cruiser(LOGGER_POD_NAME,LOGGER_CONTAINER_NAME,LOGGER_LOKI_URL,LOGGER_POD_NAM
     handler = logging_loki.LokiQueueHandler(
         Queue(-1),
         url=LOGGER_LOKI_URL, 
-        tags={"application":LOGGER_CONTAINER_NAME, "namespace": LOGGER_POD_NAMESPACE},
+        tags={"application": LOGGER_CONTAINER_NAME, "namespace": LOGGER_POD_NAMESPACE},
         version="1",
     )
     logger = logging.getLogger("loki")
@@ -50,15 +51,20 @@ def cruiser(LOGGER_POD_NAME,LOGGER_CONTAINER_NAME,LOGGER_LOKI_URL,LOGGER_POD_NAM
                 
                 # Process existing logs
                 for log in logs:
-                    log_entry = {
+                    log_entry = json.dumps({
+                        "timestamp": datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
                         "stream": LOG_FILE_PATH,
-                        "values": [[int(time.time() * 1000), log.strip()]],
-                        "Web_page": extract_field(log, 'Web_page'),
-                        "WaitTime": extract_field(log, 'WaitTime'),
-                        "Current_URL": extract_field(log, 'Current_URL'),
-                        "Locator_strategy": extract_field(log, 'Locator_strategy'),
-                        "Element_locator": extract_field(log, 'Element_locator')
-                    }
+                        "message": {"Web_page": extract_field(log, 'Web_page'),
+                                    "WaitTime": extract_field(log, "WaitTime"),
+                                    "Current_URL": extract_field(log, "Current_URL"),
+                                    "Locator_strategy": extract_field(log, "Locator_strategy"),
+                                    "Element_locator": extract_field(log, "Element_locator")}
+                        # "Web_page": extract_field(log, 'Web_page'),
+                        # "WaitTime": extract_field(log, "WaitTime"),
+                        # "Current_URL": extract_field(log, "Current_URL"),
+                        # "Locator_strategy": extract_field(log, "Locator_strategy"),
+                        # "Element_locator": extract_field(log, "Element_locator")
+                    })
                     try:
                         logger.debug(log_entry)
                     except Exception as e:
@@ -77,15 +83,20 @@ def cruiser(LOGGER_POD_NAME,LOGGER_CONTAINER_NAME,LOGGER_LOKI_URL,LOGGER_POD_NAM
                         continue
                     
                     # Create a log entry with timestamp
-                    log_entry = {
+                    log_entry = json.dumps({
+                        "timestamp": datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
                         "stream": LOG_FILE_PATH,
-                        "values": [[int(time.time() * 1000), line.strip()]],
-                        "Web_page": extract_field(line, 'Web_page'),
-                        "WaitTime": extract_field(line, 'WaitTime'),
-                        "Current_URL": extract_field(line, 'Current_URL'),
-                        "Locator_strategy": extract_field(line, 'Locator_strategy'),
-                        "Element_locator": extract_field(line, 'Element_locator')
-                    }
+                        "message": {"Web_page": extract_field(line, 'Web_page'),
+                                    "WaitTime": extract_field(line, "WaitTime"),
+                                    "Current_URL": extract_field(line, "Current_URL"),
+                                    "Locator_strategy": extract_field(line, "Locator_strategy"),
+                                    "Element_locator": extract_field(line, "Element_locator")}
+                        # "Web_page": extract_field(line, 'Web_page'),
+                        # "WaitTime": extract_field(line, "WaitTime"),
+                        # "Current_URL": extract_field(line, "Current_URL"),
+                        # "Locator_strategy": extract_field(line, "Locator_strategy"),
+                        # "Element_locator": extract_field(line, "Element_locator")
+                    })
                     
                     try:
                         logger.debug(log_entry)
@@ -100,7 +111,7 @@ def cruiser(LOGGER_POD_NAME,LOGGER_CONTAINER_NAME,LOGGER_LOKI_URL,LOGGER_POD_NAM
 if __name__ == "__main__":
 
     # Read logs from a file
-    LOG_FILE_PATH = "./waitTimeLogDetails.log"
+    LOG_FILE_PATH = "/home/jenkins/agent/workspace/nightly/nimble/nightly-tests/logs/waitTimeLogDetails.log"
 
     LOGGER_POD_NAME=os.getenv("LOGGER_POD_NAME")
     LOGGER_CONTAINER_NAME=os.getenv("LOGGER_CONTAINER_NAME")
