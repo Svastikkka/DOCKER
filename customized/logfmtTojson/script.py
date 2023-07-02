@@ -5,6 +5,20 @@ import os
 from multiprocessing import Queue
 import datetime
 import time
+import re
+def parse_logfmt(log):
+    pattern = r'([^;=]+)=([^;]+)'
+    matches = re.findall(pattern, log)
+    return {key: value.strip() for key, value in matches}
+
+def extract_field(log, field):
+    log_data = parse_logfmt(log)
+    try:
+        value = log_data[field]
+        return value if value.strip() != '' else None
+    except KeyError:
+        return None
+
 
 def cruiser(LOGGER_POD_NAME,LOGGER_CONTAINER_NAME,LOGGER_LOKI_URL,LOGGER_POD_NAMESPACE,LOGGER_SERVICE,LOG_FILE_PATH):
     # Create a Loki handler for logging
@@ -18,6 +32,15 @@ def cruiser(LOGGER_POD_NAME,LOGGER_CONTAINER_NAME,LOGGER_LOKI_URL,LOGGER_POD_NAM
     logger.addHandler(handler)
     logger.setLevel(logging.DEBUG)
 
+    # Create a console handler for logging
+    console_handler = logging.StreamHandler()
+    console_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+    console_handler.setFormatter(console_formatter)
+    console_logger = logging.getLogger("console")
+    console_logger.addHandler(console_handler)
+    console_logger.setLevel(logging.DEBUG)
+
+    #  Infinite loop to check log file exist or not
     while True:
         # Check if the log file exists
         if os.path.isfile(LOG_FILE_PATH):
@@ -29,14 +52,23 @@ def cruiser(LOGGER_POD_NAME,LOGGER_CONTAINER_NAME,LOGGER_LOKI_URL,LOGGER_POD_NAM
                 for log in logs:
                     log_entry = {
                         "stream": LOG_FILE_PATH,
-                        "values": [[int(time.time() * 1000), log.strip()]]
+                        "values": [[int(time.time() * 1000), log.strip()]],
+                        "Web_page": extract_field(log, 'Web_page'),
+                        "WaitTime": extract_field(log, 'WaitTime'),
+                        "Current_URL": extract_field(log, 'Current_URL'),
+                        "Locator_strategy": extract_field(log, 'Locator_strategy'),
+                        "Element_locator": extract_field(log, 'Element_locator')
                     }
-                    print(log_entry)
-                
+                    try:
+                        logger.debug(log_entry)
+                    except Exception as e:
+                        logger.error("Error occurred while sending logs to Loki: {}".format(str(e)))
+                        time.sleep(5)
+                    console_logger.debug(log_entry)
                 # Seek to the last position read
                 file.seek(0, 2)
 
-                # # Continuously monitor the log file for new logs
+                # Continuously monitor the log file for new logs
                 while True:
                     line = file.readline()
                     if not line:
@@ -47,12 +79,23 @@ def cruiser(LOGGER_POD_NAME,LOGGER_CONTAINER_NAME,LOGGER_LOKI_URL,LOGGER_POD_NAM
                     # Create a log entry with timestamp
                     log_entry = {
                         "stream": LOG_FILE_PATH,
-                        "values": [[int(time.time() * 1000), line.strip()]]
+                        "values": [[int(time.time() * 1000), log.strip()]],
+                        "Web_page": extract_field(log, 'Web_page'),
+                        "WaitTime": extract_field(log, 'WaitTime'),
+                        "Current_URL": extract_field(log, 'Current_URL'),
+                        "Locator_strategy": extract_field(log, 'Locator_strategy'),
+                        "Element_locator": extract_field(log, 'Element_locator')
                     }
                     
-                    print(log_entry)
+                    try:
+                        logger.debug(log_entry)
+                    except Exception as e:
+                        logger.error("Error occurred while sending logs to Loki: {}".format(str(e)))
+                        time.sleep(5)
+                    console_logger.debug(log_entry)
         else:
-            print("Log file not found: " + LOG_FILE_PATH)
+            console_logger.error("Error occurred while reading the log file: {}".format(LOG_FILE_PATH))
+            time.sleep(5)
         
 if __name__ == "__main__":
 
