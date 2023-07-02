@@ -79,12 +79,12 @@ def cruiser(LOGGER_POD_NAME,LOGGER_CONTAINER_NAME,LOGGER_LOKI_URL,LOGGER_POD_NAM
                     # Create a log entry with timestamp
                     log_entry = {
                         "stream": LOG_FILE_PATH,
-                        "values": [[int(time.time() * 1000), log.strip()]],
-                        "Web_page": extract_field(log, 'Web_page'),
-                        "WaitTime": extract_field(log, 'WaitTime'),
-                        "Current_URL": extract_field(log, 'Current_URL'),
-                        "Locator_strategy": extract_field(log, 'Locator_strategy'),
-                        "Element_locator": extract_field(log, 'Element_locator')
+                        "values": [[int(time.time() * 1000), line.strip()]],
+                        "Web_page": extract_field(line, 'Web_page'),
+                        "WaitTime": extract_field(line, 'WaitTime'),
+                        "Current_URL": extract_field(line, 'Current_URL'),
+                        "Locator_strategy": extract_field(line, 'Locator_strategy'),
+                        "Element_locator": extract_field(line, 'Element_locator')
                     }
                     
                     try:
