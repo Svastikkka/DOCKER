@@ -8,7 +8,7 @@ import time
 import re
 import json
 def parse_logfmt(log):
-    pattern = r"([^;=]+)=([^;]+)"
+    pattern = r"([^-^\s^;=]+)=([^;]+)"
     matches = re.findall(pattern, log)
     return {key: value.strip() for key, value in matches}
 
