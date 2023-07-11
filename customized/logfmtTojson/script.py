@@ -54,7 +54,9 @@ def cruiser(LOGGER_POD_NAME,LOGGER_CONTAINER_NAME,LOGGER_LOKI_URL,LOGGER_POD_NAM
                     log_entry = json.dumps({
                         "timestamp": datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
                         "stream": LOG_FILE_PATH,
-                        "message": {"Web_page": extract_field(log, 'Web_page'),
+                        "message": {"Module_Name": extract_field(log, 'Module_Name'),
+                                    "Element_business_name": extract_field(log, "Element_business_name"),
+                                    "Web_page": extract_field(log, 'Web_page'),
                                     "WaitTime": extract_field(log, "WaitTime"),
                                     "Current_URL": extract_field(log, "Current_URL"),
                                     "Locator_strategy": extract_field(log, "Locator_strategy"),
@@ -86,7 +88,9 @@ def cruiser(LOGGER_POD_NAME,LOGGER_CONTAINER_NAME,LOGGER_LOKI_URL,LOGGER_POD_NAM
                     log_entry = json.dumps({
                         "timestamp": datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
                         "stream": LOG_FILE_PATH,
-                        "message": {"Web_page": extract_field(line, 'Web_page'),
+                        "message": {"Module_Name": extract_field(line, 'Module_Name'),
+                                    "Element_business_name": extract_field(line, "Element_business_name"),
+                                    "Web_page": extract_field(line, 'Web_page'),
                                     "WaitTime": extract_field(line, "WaitTime"),
                                     "Current_URL": extract_field(line, "Current_URL"),
                                     "Locator_strategy": extract_field(line, "Locator_strategy"),
