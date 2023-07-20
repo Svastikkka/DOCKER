@@ -1,0 +1,20 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki.observability.svc.cluster.local:3100/loki/api/v1/push
+
+scrape_configs:
+- job_name: nightly-test
+  static_configs:
+  - targets:
+      - localhost
+    labels:
+      namespace: qa
+      application: nightly-tests
+      job: nightly-tests
+      __path__: /home/jenkins/agent/workspace/nightly/nimble/nightly-tests/logs/*log
