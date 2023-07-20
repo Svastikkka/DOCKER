@@ -32,15 +32,15 @@ def extract_field(log, field):
 
 def cruiser(LOGGER_POD_NAME,LOGGER_CONTAINER_NAME,LOGGER_LOKI_URL,LOGGER_POD_NAMESPACE,LOGGER_SERVICE,LOG_FILE_PATH):
     # Create a Loki handler for logging
-    handler = logging_loki.LokiQueueHandler(
-        Queue(-1),
-        url=LOGGER_LOKI_URL, 
-        tags={"application": LOGGER_CONTAINER_NAME, "namespace": LOGGER_POD_NAMESPACE},
-        version="1",
-    )
-    logger = logging.getLogger("loki")
-    logger.addHandler(handler)
-    logger.setLevel(logging.DEBUG)
+    # handler = logging_loki.LokiQueueHandler(
+    #     Queue(-1),
+    #     url=LOGGER_LOKI_URL, 
+    #     tags={"application": LOGGER_CONTAINER_NAME, "namespace": LOGGER_POD_NAMESPACE},
+    #     version="1",
+    # )
+    # logger = logging.getLogger("loki")
+    # logger.addHandler(handler)
+    # logger.setLevel(logging.DEBUG)
 
     # Create a console handler for logging
     console_handler = logging.StreamHandler()
@@ -76,11 +76,11 @@ def cruiser(LOGGER_POD_NAME,LOGGER_CONTAINER_NAME,LOGGER_LOKI_URL,LOGGER_POD_NAM
                         # "Locator_strategy": extract_field(log, "Locator_strategy"),
                         # "Element_locator": extract_field(log, "Element_locator")
                     })
-                    try:
-                        logger.debug(log_entry)
-                    except Exception as e:
-                        logger.error("Error occurred while sending logs to Loki: {}".format(str(e)))
-                        time.sleep(5)
+                    # try:
+                    #     logger.debug(log_entry)
+                    # except Exception as e:
+                    #     logger.error("Error occurred while sending logs to Loki: {}".format(str(e)))
+                    #     time.sleep(5)
                     console_logger.debug(log_entry)
                 # Seek to the last position read
                 file.seek(0, 2)
@@ -111,11 +111,11 @@ def cruiser(LOGGER_POD_NAME,LOGGER_CONTAINER_NAME,LOGGER_LOKI_URL,LOGGER_POD_NAM
                         # "Element_locator": extract_field(line, "Element_locator")
                     })
                     
-                    try:
-                        logger.debug(log_entry)
-                    except Exception as e:
-                        logger.error("Error occurred while sending logs to Loki: {}".format(str(e)))
-                        time.sleep(5)
+                    # try:
+                    #     logger.debug(log_entry)
+                    # except Exception as e:
+                    #     logger.error("Error occurred while sending logs to Loki: {}".format(str(e)))
+                    #     time.sleep(5)
                     console_logger.debug(log_entry)
         else:
             console_logger.error("Error occurred while reading the log file: {}".format(LOG_FILE_PATH))
@@ -124,7 +124,7 @@ def cruiser(LOGGER_POD_NAME,LOGGER_CONTAINER_NAME,LOGGER_LOKI_URL,LOGGER_POD_NAM
 if __name__ == "__main__":
 
     # Read logs from a file
-    LOG_FILE_PATH = "/home/jenkins/agent/workspace/nightly/nimble/nightly-tests/logs/waitTimeLogDetails.log"
+    LOG_FILE_PATH = "./waitTimeLogDetails.log"
 
     LOGGER_POD_NAME=os.getenv("LOGGER_POD_NAME")
     LOGGER_CONTAINER_NAME=os.getenv("LOGGER_CONTAINER_NAME")
