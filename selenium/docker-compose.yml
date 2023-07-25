@@ -1,0 +1,71 @@
+version: '3'
+
+services:
+  selenium-hub:
+    image: selenium/hub:4.1.1
+    container_name: selenium-hub
+    environment:
+      GRID_MAX_SESSION: 16
+      GRID_BROWSER_TIMEOUT: 3000
+      GRID_TIMEOUT: 3000
+    ports:
+      - "4444:4444"
+    networks:
+      - selenium-grid
+
+  selenium-node-1:
+    image: selenium/node-chrome:4.1.1
+    container_name: selenium-node-1
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    networks:
+      - selenium-grid
+
+  selenium-node-2:
+    image: selenium/node-chrome:4.1.1
+    container_name: selenium-node-2
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    networks:
+      - selenium-grid
+
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      - selenium-grid
+
+  scraper:
+    build:
+      context: .
+    container_name: scraper
+    depends_on:
+      - selenium-hub
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/
+      - NUM_PAGES=10
+      - NUM_INSTANCES=2
+    volumes:
+      - ./script/script.py:/app/script.py
+      - ./logs:/app/logs
+    networks:
+      - selenium-grid
+
+networks:
+  selenium-grid:
+    driver: bridge
