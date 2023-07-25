@@ -15,21 +15,6 @@ services:
 
   selenium-node-1:
     image: selenium/node-chrome:4.1.1
-    container_name: selenium-node-1
-    depends_on:
-      - selenium-hub
-    environment:
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444
-      - SE_EVENT_BUS_HOST=selenium-hub
-      - SE_EVENT_BUS_PUBLISH_PORT=4442
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-    networks:
-      - selenium-grid
-
-  selenium-node-2:
-    image: selenium/node-chrome:4.1.1
-    container_name: selenium-node-2
     depends_on:
       - selenium-hub
     environment:
