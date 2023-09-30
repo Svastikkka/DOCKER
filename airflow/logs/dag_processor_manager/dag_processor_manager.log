@@ -1,0 +1,1195 @@
+[2023-09-30 08:58:08,775] {manager.py:514} INFO - Processing files using up to 2 processes at a time 
+[2023-09-30 08:58:08,808] {manager.py:515} INFO - Process each file at most once every 30 seconds
+[2023-09-30 08:58:08,849] {manager.py:517} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2023-09-30 08:58:08,866] {manager.py:663} INFO - Searching for files in /opt/airflow/dags
+[2023-09-30 08:58:09,077] {manager.py:666} INFO - There are 2 files in /opt/airflow/dags
+[2023-09-30 08:58:09,392] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 08:58:09,411] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:53:09.411783+00:00
+[2023-09-30 08:58:09,648] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/process_raw.py    383  0.29s             0           0
+/opt/airflow/dags/stations.py       380  0.30s             0           0
+================================================================================
+[2023-09-30 08:58:20,337] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 08:58:20,350] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:53:20.350187+00:00
+[2023-09-30 08:58:31,210] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 08:58:31,224] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:53:31.223202+00:00
+[2023-09-30 08:58:40,479] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/process_raw.py    383  31.12s            0           0
+/opt/airflow/dags/stations.py       380  31.13s            0           0
+================================================================================
+[2023-09-30 08:58:41,496] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 08:58:41,503] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:53:41.503852+00:00
+[2023-09-30 08:58:51,682] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 08:58:51,729] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:53:51.729247+00:00
+[2023-09-30 08:58:59,586] {manager.py:1106} ERROR - Processor for /opt/airflow/dags/stations.py with PID 380 started at 2023-09-30T08:58:09.341624+00:00 has timed out, killing it.
+[2023-09-30 08:58:59,714] {manager.py:1106} ERROR - Processor for /opt/airflow/dags/process_raw.py with PID 383 started at 2023-09-30T08:58:09.356041+00:00 has timed out, killing it.
+[2023-09-30 08:58:59,845] {manager.py:1106} ERROR - Processor for /opt/airflow/dags/stations.py with PID 380 started at 2023-09-30T08:58:09.341624+00:00 has timed out, killing it.
+[2023-09-30 08:58:59,854] {manager.py:1106} ERROR - Processor for /opt/airflow/dags/process_raw.py with PID 383 started at 2023-09-30T08:58:09.356041+00:00 has timed out, killing it.
+[2023-09-30 08:59:00,863] {manager.py:1106} ERROR - Processor for /opt/airflow/dags/stations.py with PID 380 started at 2023-09-30T08:58:09.341624+00:00 has timed out, killing it.
+[2023-09-30 08:59:00,899] {manager.py:1106} ERROR - Processor for /opt/airflow/dags/process_raw.py with PID 383 started at 2023-09-30T08:58:09.356041+00:00 has timed out, killing it.
+[2023-09-30 08:59:04,698] {manager.py:514} INFO - Processing files using up to 2 processes at a time 
+[2023-09-30 08:59:04,776] {manager.py:515} INFO - Process each file at most once every 30 seconds
+[2023-09-30 08:59:04,809] {manager.py:517} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2023-09-30 08:59:04,829] {manager.py:663} INFO - Searching for files in /opt/airflow/dags
+[2023-09-30 08:59:05,588] {manager.py:666} INFO - There are 2 files in /opt/airflow/dags
+[2023-09-30 08:59:08,672] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 08:59:08,734] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:54:08.733737+00:00
+[2023-09-30 08:59:09,580] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/process_raw.py    424  0.81s             0           0
+/opt/airflow/dags/stations.py       422  0.99s             0           0
+================================================================================
+[2023-09-30 08:59:19,716] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 08:59:19,788] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:54:19.787874+00:00
+[2023-09-30 08:59:31,023] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 08:59:31,043] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:54:31.042937+00:00
+[2023-09-30 08:59:39,795] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  30.16s          2023-09-30T08:59:38
+/opt/airflow/dags/stations.py                              1           0  30.70s          2023-09-30T08:59:39
+================================================================================
+[2023-09-30 08:59:41,178] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 08:59:41,200] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:54:41.200423+00:00
+[2023-09-30 08:59:51,750] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 08:59:51,773] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:54:51.773702+00:00
+[2023-09-30 09:00:02,213] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:00:02,776] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:55:02.776751+00:00
+[2023-09-30 09:00:10,464] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py    466  0.16s             1           0  30.16s          2023-09-30T08:59:38
+/opt/airflow/dags/stations.py       465  0.68s             1           0  30.70s          2023-09-30T08:59:39
+================================================================================
+[2023-09-30 09:00:16,145] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:00:16,184] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:55:16.184077+00:00
+[2023-09-30 09:00:26,673] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:00:26,679] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:55:26.679465+00:00
+[2023-09-30 09:00:36,773] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:00:36,782] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:55:36.782414+00:00
+[2023-09-30 09:00:40,832] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  11.79s          2023-09-30T09:00:22
+/opt/airflow/dags/stations.py                              1           0  11.90s          2023-09-30T09:00:21
+================================================================================
+[2023-09-30 09:00:46,883] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:00:46,897] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:55:46.897611+00:00
+[2023-09-30 09:00:57,261] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:00:57,274] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:55:57.274685+00:00
+[2023-09-30 09:01:07,360] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:01:07,457] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:56:07.457408+00:00
+[2023-09-30 09:01:11,553] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  2.47s           2023-09-30T09:00:54
+/opt/airflow/dags/stations.py                              1           0  2.22s           2023-09-30T09:00:54
+================================================================================
+[2023-09-30 09:01:17,586] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:01:17,676] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:56:17.675640+00:00
+[2023-09-30 09:01:28,174] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:01:28,184] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:56:28.183829+00:00
+[2023-09-30 09:01:38,300] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:01:38,314] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:56:38.313808+00:00
+[2023-09-30 09:01:42,363] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  2.51s           2023-09-30T09:01:27
+/opt/airflow/dags/stations.py                              1           0  2.33s           2023-09-30T09:01:27
+================================================================================
+[2023-09-30 09:01:48,519] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:01:48,538] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:56:48.537973+00:00
+[2023-09-30 09:01:59,099] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:01:59,105] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:56:59.104994+00:00
+[2023-09-30 09:02:09,400] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:02:09,413] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:57:09.413453+00:00
+[2023-09-30 09:02:12,463] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  4.59s           2023-09-30T09:02:02
+/opt/airflow/dags/stations.py                              1           0  4.41s           2023-09-30T09:02:02
+================================================================================
+[2023-09-30 09:02:19,516] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:02:19,520] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:57:19.520865+00:00
+[2023-09-30 09:02:29,877] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:02:29,888] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:57:29.888025+00:00
+[2023-09-30 09:02:39,947] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:02:39,957] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:57:39.957443+00:00
+[2023-09-30 09:02:39,979] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e971d90>, 'is_failure_callback': True}
+[2023-09-30 09:02:39,990] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e959b90>, 'is_failure_callback': True}
+[2023-09-30 09:02:42,770] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py    630  2.75s             1           0  2.93s           2023-09-30T09:02:35
+/opt/airflow/dags/stations.py                              1           0  2.73s           2023-09-30T09:02:35
+================================================================================
+[2023-09-30 09:02:50,102] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:02:50,106] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:57:50.106868+00:00
+[2023-09-30 09:02:50,155] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9bae90>, 'is_failure_callback': True}
+[2023-09-30 09:02:50,179] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb8c750>, 'is_failure_callback': True}
+[2023-09-30 09:03:00,854] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:03:00,868] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:58:00.868407+00:00
+[2023-09-30 09:03:00,917] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e959a90>, 'is_failure_callback': True}
+[2023-09-30 09:03:00,930] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18850>, 'is_failure_callback': True}
+[2023-09-30 09:03:11,163] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:03:11,172] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:58:11.172188+00:00
+[2023-09-30 09:03:11,197] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e971d90>, 'is_failure_callback': True}
+[2023-09-30 09:03:11,202] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb31fd0>, 'is_failure_callback': True}
+[2023-09-30 09:03:13,224] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.34s           2023-09-30T09:03:12
+/opt/airflow/dags/stations.py                              1           0  2.08s           2023-09-30T09:03:08
+================================================================================
+[2023-09-30 09:03:21,233] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:03:21,243] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:58:21.243214+00:00
+[2023-09-30 09:03:21,265] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb8cc50>, 'is_failure_callback': True}
+[2023-09-30 09:03:21,269] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb8c510>, 'is_failure_callback': True}
+[2023-09-30 09:03:31,601] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:03:31,608] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:58:31.608599+00:00
+[2023-09-30 09:03:31,634] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb86410>, 'is_failure_callback': True}
+[2023-09-30 09:03:31,639] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb86950>, 'is_failure_callback': True}
+[2023-09-30 09:03:42,337] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:03:42,348] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:58:42.348669+00:00
+[2023-09-30 09:03:42,374] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb6ca10>, 'is_failure_callback': True}
+[2023-09-30 09:03:42,383] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb6c690>, 'is_failure_callback': True}
+[2023-09-30 09:03:43,402] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py    728  1.01s             1           0  1.63s           2023-09-30T09:03:33
+/opt/airflow/dags/stations.py                              1           0  1.08s           2023-09-30T09:03:39
+================================================================================
+[2023-09-30 09:03:52,438] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:03:52,449] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:58:52.449489+00:00
+[2023-09-30 09:03:52,494] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb86690>, 'is_failure_callback': True}
+[2023-09-30 09:03:52,497] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb86e50>, 'is_failure_callback': True}
+[2023-09-30 09:04:02,553] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:04:02,558] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:59:02.558666+00:00
+[2023-09-30 09:04:02,617] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e986390>, 'is_failure_callback': True}
+[2023-09-30 09:04:02,622] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e986f50>, 'is_failure_callback': True}
+[2023-09-30 09:04:05,107] {manager.py:663} INFO - Searching for files in /opt/airflow/dags
+[2023-09-30 09:04:05,144] {manager.py:666} INFO - There are 2 files in /opt/airflow/dags
+[2023-09-30 09:04:13,231] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:04:13,252] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:59:13.252625+00:00
+[2023-09-30 09:04:13,302] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18e10>, 'is_failure_callback': True}
+[2023-09-30 09:04:13,309] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18490>, 'is_failure_callback': True}
+[2023-09-30 09:04:14,330] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py    785  1.01s             1           0  1.68s           2023-09-30T09:04:04
+/opt/airflow/dags/stations.py                              1           0  1.06s           2023-09-30T09:04:11
+================================================================================
+[2023-09-30 09:04:23,333] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:04:23,344] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:59:23.343947+00:00
+[2023-09-30 09:04:23,362] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9d5e50>, 'is_failure_callback': True}
+[2023-09-30 09:04:23,366] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb69fd0>, 'is_failure_callback': True}
+[2023-09-30 09:04:33,419] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:04:33,429] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:59:33.428608+00:00
+[2023-09-30 09:04:33,450] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9922d0>, 'is_failure_callback': True}
+[2023-09-30 09:04:33,453] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eac4150>, 'is_failure_callback': True}
+[2023-09-30 09:04:43,482] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:04:43,493] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:59:43.493073+00:00
+[2023-09-30 09:04:43,552] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e959290>, 'is_failure_callback': True}
+[2023-09-30 09:04:43,565] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e959d10>, 'is_failure_callback': True}
+[2023-09-30 09:04:44,691] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py    833  1.07s             1           0  1.34s           2023-09-30T09:04:34
+/opt/airflow/dags/stations.py                              1           0  1.70s           2023-09-30T09:04:43
+================================================================================
+[2023-09-30 09:04:53,697] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:04:53,708] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 08:59:53.708369+00:00
+[2023-09-30 09:04:53,734] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb69a90>, 'is_failure_callback': True}
+[2023-09-30 09:04:53,739] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb69890>, 'is_failure_callback': True}
+[2023-09-30 09:05:04,146] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:05:04,154] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:00:04.154010+00:00
+[2023-09-30 09:05:04,182] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb44250>, 'is_failure_callback': True}
+[2023-09-30 09:05:04,187] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb44ed0>, 'is_failure_callback': True}
+[2023-09-30 09:05:14,477] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:05:14,481] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:00:14.481891+00:00
+[2023-09-30 09:05:14,512] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb30c50>, 'is_failure_callback': True}
+[2023-09-30 09:05:14,517] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb30890>, 'is_failure_callback': True}
+[2023-09-30 09:05:15,586] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py    878  1.05s             1           0  1.32s           2023-09-30T09:05:05
+/opt/airflow/dags/stations.py                              1           0  1.05s           2023-09-30T09:05:14
+================================================================================
+[2023-09-30 09:05:24,636] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:05:24,666] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:00:24.665869+00:00
+[2023-09-30 09:05:24,699] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e992e50>, 'is_failure_callback': True}
+[2023-09-30 09:05:24,705] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e992990>, 'is_failure_callback': True}
+[2023-09-30 09:05:35,024] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:05:35,035] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:00:35.035096+00:00
+[2023-09-30 09:05:35,059] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9d5b10>, 'is_failure_callback': True}
+[2023-09-30 09:05:35,063] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb31c10>, 'is_failure_callback': True}
+[2023-09-30 09:05:45,126] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:05:45,134] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:00:45.134285+00:00
+[2023-09-30 09:05:45,162] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9ba0d0>, 'is_failure_callback': True}
+[2023-09-30 09:05:45,167] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb44390>, 'is_failure_callback': True}
+[2023-09-30 09:05:46,208] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py    919  1.02s             1           0  1.32s           2023-09-30T09:05:36
+/opt/airflow/dags/stations.py       923  0.77s             1           0  1.05s           2023-09-30T09:05:14
+================================================================================
+[2023-09-30 09:05:55,167] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:05:55,175] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:00:55.175123+00:00
+[2023-09-30 09:05:55,205] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e992210>, 'is_failure_callback': True}
+[2023-09-30 09:05:55,209] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e992e90>, 'is_failure_callback': True}
+[2023-09-30 09:06:05,271] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:06:05,277] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:01:05.277805+00:00
+[2023-09-30 09:06:05,303] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e971850>, 'is_failure_callback': True}
+[2023-09-30 09:06:05,308] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e98b050>, 'is_failure_callback': True}
+[2023-09-30 09:06:15,541] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:06:15,589] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:01:15.589215+00:00
+[2023-09-30 09:06:15,635] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e992fd0>, 'is_failure_callback': True}
+[2023-09-30 09:06:15,640] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18150>, 'is_failure_callback': True}
+[2023-09-30 09:06:16,656] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py    967  1.01s             1           0  1.45s           2023-09-30T09:06:06
+/opt/airflow/dags/stations.py                              1           0  1.38s           2023-09-30T09:05:46
+================================================================================
+[2023-09-30 09:06:25,838] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:06:25,843] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:01:25.842935+00:00
+[2023-09-30 09:06:25,862] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e98b410>, 'is_failure_callback': True}
+[2023-09-30 09:06:25,867] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e98b050>, 'is_failure_callback': True}
+[2023-09-30 09:06:35,917] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:06:35,928] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:01:35.928644+00:00
+[2023-09-30 09:06:35,949] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e959290>, 'is_failure_callback': True}
+[2023-09-30 09:06:35,952] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9d5b10>, 'is_failure_callback': True}
+[2023-09-30 09:06:46,185] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:06:46,194] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:01:46.193998+00:00
+[2023-09-30 09:06:46,234] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e98b810>, 'is_failure_callback': True}
+[2023-09-30 09:06:46,238] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb4a6d0>, 'is_failure_callback': True}
+[2023-09-30 09:06:47,260] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py   1024  1.01s             1           0  1.46s           2023-09-30T09:06:37
+/opt/airflow/dags/stations.py                              1           0  1.42s           2023-09-30T09:06:18
+================================================================================
+[2023-09-30 09:06:56,462] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:06:56,467] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:01:56.467242+00:00
+[2023-09-30 09:06:56,496] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9ba850>, 'is_failure_callback': True}
+[2023-09-30 09:06:56,501] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e98b9d0>, 'is_failure_callback': True}
+[2023-09-30 09:07:06,674] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:07:06,678] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:02:06.677736+00:00
+[2023-09-30 09:07:06,699] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb0ba90>, 'is_failure_callback': True}
+[2023-09-30 09:07:06,704] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e992cd0>, 'is_failure_callback': True}
+[2023-09-30 09:07:17,001] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:07:17,010] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:02:17.009896+00:00
+[2023-09-30 09:07:17,031] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9bafd0>, 'is_failure_callback': True}
+[2023-09-30 09:07:17,037] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb69110>, 'is_failure_callback': True}
+[2023-09-30 09:07:18,054] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py   1071  1.01s             1           0  1.38s           2023-09-30T09:07:08
+/opt/airflow/dags/stations.py                              1           0  1.16s           2023-09-30T09:06:49
+================================================================================
+[2023-09-30 09:07:27,314] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:07:27,322] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:02:27.321265+00:00
+[2023-09-30 09:07:27,350] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb69850>, 'is_failure_callback': True}
+[2023-09-30 09:07:27,356] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb695d0>, 'is_failure_callback': True}
+[2023-09-30 09:07:37,953] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:07:37,964] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:02:37.964686+00:00
+[2023-09-30 09:07:37,985] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb8c090>, 'is_failure_callback': True}
+[2023-09-30 09:07:37,989] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb8c850>, 'is_failure_callback': True}
+[2023-09-30 09:07:48,049] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:07:48,058] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:02:48.057514+00:00
+[2023-09-30 09:07:48,079] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9d5e50>, 'is_failure_callback': True}
+[2023-09-30 09:07:48,083] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e971f10>, 'is_failure_callback': True}
+[2023-09-30 09:07:48,099] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py   1119  0.01s             1           0  1.33s           2023-09-30T09:07:39
+/opt/airflow/dags/stations.py                              1           0  1.74s           2023-09-30T09:07:21
+================================================================================
+[2023-09-30 09:07:58,379] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:07:58,388] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:02:58.387916+00:00
+[2023-09-30 09:07:58,405] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e992950>, 'is_failure_callback': True}
+[2023-09-30 09:07:58,409] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9922d0>, 'is_failure_callback': True}
+[2023-09-30 09:08:08,482] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:08:08,490] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:03:08.490415+00:00
+[2023-09-30 09:08:08,523] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e971d90>, 'is_failure_callback': True}
+[2023-09-30 09:08:08,534] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9863d0>, 'is_failure_callback': True}
+[2023-09-30 09:08:18,242] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.66s           2023-09-30T09:08:10
+/opt/airflow/dags/stations.py                              1           0  1.04s           2023-09-30T09:07:53
+================================================================================
+[2023-09-30 09:08:18,752] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:08:18,760] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:03:18.760376+00:00
+[2023-09-30 09:08:18,786] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb31c10>, 'is_failure_callback': True}
+[2023-09-30 09:08:18,790] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e971510>, 'is_failure_callback': True}
+[2023-09-30 09:08:29,064] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:08:29,073] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:03:29.072422+00:00
+[2023-09-30 09:08:29,098] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb31c10>, 'is_failure_callback': True}
+[2023-09-30 09:08:29,102] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb30bd0>, 'is_failure_callback': True}
+[2023-09-30 09:08:39,343] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:08:39,351] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:03:39.350586+00:00
+[2023-09-30 09:08:39,387] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb69450>, 'is_failure_callback': True}
+[2023-09-30 09:08:39,394] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9922d0>, 'is_failure_callback': True}
+[2023-09-30 09:08:48,551] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.28s           2023-09-30T09:08:40
+/opt/airflow/dags/stations.py                              1           0  1.49s           2023-09-30T09:08:25
+================================================================================
+[2023-09-30 09:08:49,563] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:08:49,571] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:03:49.571470+00:00
+[2023-09-30 09:08:49,591] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eac4a90>, 'is_failure_callback': True}
+[2023-09-30 09:08:49,594] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e98b150>, 'is_failure_callback': True}
+[2023-09-30 09:08:59,741] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:08:59,749] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:03:59.749244+00:00
+[2023-09-30 09:08:59,774] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18fd0>, 'is_failure_callback': True}
+[2023-09-30 09:08:59,778] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18790>, 'is_failure_callback': True}
+[2023-09-30 09:09:05,131] {manager.py:663} INFO - Searching for files in /opt/airflow/dags
+[2023-09-30 09:09:05,154] {manager.py:666} INFO - There are 2 files in /opt/airflow/dags
+[2023-09-30 09:09:09,831] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:09:09,843] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:04:09.842914+00:00
+[2023-09-30 09:09:09,860] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e986c10>, 'is_failure_callback': True}
+[2023-09-30 09:09:09,865] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9860d0>, 'is_failure_callback': True}
+[2023-09-30 09:09:18,918] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.24s           2023-09-30T09:09:11
+/opt/airflow/dags/stations.py                              1           0  1.00s           2023-09-30T09:08:56
+================================================================================
+[2023-09-30 09:09:19,894] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:09:19,899] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:04:19.898419+00:00
+[2023-09-30 09:09:19,925] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb69810>, 'is_failure_callback': True}
+[2023-09-30 09:09:19,930] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb69310>, 'is_failure_callback': True}
+[2023-09-30 09:09:30,145] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:09:30,154] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:04:30.154554+00:00
+[2023-09-30 09:09:30,181] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9cf6d0>, 'is_failure_callback': True}
+[2023-09-30 09:09:30,186] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e959a90>, 'is_failure_callback': True}
+[2023-09-30 09:09:40,400] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:09:40,408] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:04:40.408672+00:00
+[2023-09-30 09:09:40,426] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9baa10>, 'is_failure_callback': True}
+[2023-09-30 09:09:40,430] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eac4150>, 'is_failure_callback': True}
+[2023-09-30 09:09:49,649] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.41s           2023-09-30T09:09:41
+/opt/airflow/dags/stations.py                              1           0  0.98s           2023-09-30T09:09:28
+================================================================================
+[2023-09-30 09:09:50,663] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:09:50,671] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:04:50.670688+00:00
+[2023-09-30 09:09:50,691] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9cf690>, 'is_failure_callback': True}
+[2023-09-30 09:09:50,695] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb44710>, 'is_failure_callback': True}
+[2023-09-30 09:10:01,160] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:10:01,169] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:05:01.169204+00:00
+[2023-09-30 09:10:01,236] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb44fd0>, 'is_failure_callback': True}
+[2023-09-30 09:10:01,243] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb44690>, 'is_failure_callback': True}
+[2023-09-30 09:10:11,628] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:10:11,637] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:05:11.637492+00:00
+[2023-09-30 09:10:11,662] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e999f10>, 'is_failure_callback': True}
+[2023-09-30 09:10:11,666] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e999ed0>, 'is_failure_callback': True}
+[2023-09-30 09:10:19,680] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.23s           2023-09-30T09:10:12
+/opt/airflow/dags/stations.py                              1           0  1.38s           2023-09-30T09:09:59
+================================================================================
+[2023-09-30 09:10:21,700] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:10:21,707] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:05:21.707568+00:00
+[2023-09-30 09:10:21,731] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9cfcd0>, 'is_failure_callback': True}
+[2023-09-30 09:10:21,735] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb216d0>, 'is_failure_callback': True}
+[2023-09-30 09:10:31,909] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:10:31,916] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:05:31.915875+00:00
+[2023-09-30 09:10:31,945] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb44450>, 'is_failure_callback': True}
+[2023-09-30 09:10:31,950] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e999150>, 'is_failure_callback': True}
+[2023-09-30 09:10:42,094] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:10:42,116] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:05:42.116731+00:00
+[2023-09-30 09:10:42,154] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e992950>, 'is_failure_callback': True}
+[2023-09-30 09:10:42,165] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e992e90>, 'is_failure_callback': True}
+[2023-09-30 09:10:50,071] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.90s           2023-09-30T09:10:44
+/opt/airflow/dags/stations.py                              1           0  0.96s           2023-09-30T09:10:30
+================================================================================
+[2023-09-30 09:10:52,312] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:10:52,319] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:05:52.319648+00:00
+[2023-09-30 09:10:52,351] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18e90>, 'is_failure_callback': True}
+[2023-09-30 09:10:52,359] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18850>, 'is_failure_callback': True}
+[2023-09-30 09:11:02,480] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:11:02,488] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:06:02.488655+00:00
+[2023-09-30 09:11:02,513] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb188d0>, 'is_failure_callback': True}
+[2023-09-30 09:11:02,518] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb182d0>, 'is_failure_callback': True}
+[2023-09-30 09:11:12,566] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:11:12,571] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:06:12.571250+00:00
+[2023-09-30 09:11:12,590] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb301d0>, 'is_failure_callback': True}
+[2023-09-30 09:11:12,594] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb30390>, 'is_failure_callback': True}
+[2023-09-30 09:11:20,086] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.48s           2023-09-30T09:11:14
+/opt/airflow/dags/stations.py                              1           0  0.97s           2023-09-30T09:11:02
+================================================================================
+[2023-09-30 09:11:22,957] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:11:22,963] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:06:22.963399+00:00
+[2023-09-30 09:11:22,984] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb4abd0>, 'is_failure_callback': True}
+[2023-09-30 09:11:22,988] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb4a990>, 'is_failure_callback': True}
+[2023-09-30 09:11:33,122] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:11:33,129] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:06:33.129515+00:00
+[2023-09-30 09:11:33,151] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e959110>, 'is_failure_callback': True}
+[2023-09-30 09:11:33,157] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e959d50>, 'is_failure_callback': True}
+[2023-09-30 09:11:43,206] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:11:43,217] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:06:43.216600+00:00
+[2023-09-30 09:11:43,234] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e971f10>, 'is_failure_callback': True}
+[2023-09-30 09:11:43,238] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e971490>, 'is_failure_callback': True}
+[2023-09-30 09:11:50,241] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.24s           2023-09-30T09:11:44
+/opt/airflow/dags/stations.py                              1           0  0.98s           2023-09-30T09:11:33
+================================================================================
+[2023-09-30 09:11:53,255] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:11:53,259] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:06:53.259341+00:00
+[2023-09-30 09:11:53,281] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9baad0>, 'is_failure_callback': True}
+[2023-09-30 09:11:53,286] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb4a9d0>, 'is_failure_callback': True}
+[2023-09-30 09:12:03,530] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:12:03,542] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:07:03.542107+00:00
+[2023-09-30 09:12:03,568] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9860d0>, 'is_failure_callback': True}
+[2023-09-30 09:12:03,573] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e986710>, 'is_failure_callback': True}
+[2023-09-30 09:12:13,716] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:12:13,725] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:07:13.724407+00:00
+[2023-09-30 09:12:13,746] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb69310>, 'is_failure_callback': True}
+[2023-09-30 09:12:13,749] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb69ad0>, 'is_failure_callback': True}
+[2023-09-30 09:12:20,902] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.23s           2023-09-30T09:12:14
+/opt/airflow/dags/stations.py                              1           0  1.89s           2023-09-30T09:12:05
+================================================================================
+[2023-09-30 09:12:23,920] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:12:23,926] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:07:23.926395+00:00
+[2023-09-30 09:12:23,955] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9cf650>, 'is_failure_callback': True}
+[2023-09-30 09:12:23,961] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9cfcd0>, 'is_failure_callback': True}
+[2023-09-30 09:12:34,020] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:12:34,026] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:07:34.025918+00:00
+[2023-09-30 09:12:34,050] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb312d0>, 'is_failure_callback': True}
+[2023-09-30 09:12:34,055] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e971510>, 'is_failure_callback': True}
+[2023-09-30 09:12:44,616] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:12:44,621] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:07:44.621311+00:00
+[2023-09-30 09:12:44,640] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e992fd0>, 'is_failure_callback': True}
+[2023-09-30 09:12:44,644] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9baad0>, 'is_failure_callback': True}
+[2023-09-30 09:12:50,894] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.25s           2023-09-30T09:12:45
+/opt/airflow/dags/stations.py                              1           0  1.45s           2023-09-30T09:12:37
+================================================================================
+[2023-09-30 09:12:54,664] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:12:54,677] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:07:54.676950+00:00
+[2023-09-30 09:12:54,695] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9cf6d0>, 'is_failure_callback': True}
+[2023-09-30 09:12:54,701] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb442d0>, 'is_failure_callback': True}
+[2023-09-30 09:13:04,970] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:13:04,976] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:08:04.976443+00:00
+[2023-09-30 09:13:05,003] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb215d0>, 'is_failure_callback': True}
+[2023-09-30 09:13:05,006] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb21550>, 'is_failure_callback': True}
+[2023-09-30 09:13:15,328] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:13:15,335] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:08:15.335365+00:00
+[2023-09-30 09:13:15,358] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb69890>, 'is_failure_callback': True}
+[2023-09-30 09:13:15,363] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb69ad0>, 'is_failure_callback': True}
+[2023-09-30 09:13:21,534] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.37s           2023-09-30T09:13:16
+/opt/airflow/dags/stations.py                              1           0  1.48s           2023-09-30T09:13:08
+================================================================================
+[2023-09-30 09:13:25,563] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:13:25,573] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:08:25.573419+00:00
+[2023-09-30 09:13:25,600] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb44690>, 'is_failure_callback': True}
+[2023-09-30 09:13:25,604] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e959110>, 'is_failure_callback': True}
+[2023-09-30 09:13:35,791] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:13:35,798] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:08:35.798272+00:00
+[2023-09-30 09:13:35,821] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb30a10>, 'is_failure_callback': True}
+[2023-09-30 09:13:35,827] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb30c50>, 'is_failure_callback': True}
+[2023-09-30 09:13:46,202] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:13:46,210] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:08:46.210519+00:00
+[2023-09-30 09:13:46,232] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18790>, 'is_failure_callback': True}
+[2023-09-30 09:13:46,238] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18650>, 'is_failure_callback': True}
+[2023-09-30 09:13:52,310] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.27s           2023-09-30T09:13:47
+/opt/airflow/dags/stations.py                              1           0  1.26s           2023-09-30T09:13:40
+================================================================================
+[2023-09-30 09:13:56,340] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:13:56,350] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:08:56.350621+00:00
+[2023-09-30 09:13:56,390] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9cf950>, 'is_failure_callback': True}
+[2023-09-30 09:13:56,398] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e98b990>, 'is_failure_callback': True}
+[2023-09-30 09:14:05,593] {manager.py:663} INFO - Searching for files in /opt/airflow/dags
+[2023-09-30 09:14:05,667] {manager.py:666} INFO - There are 2 files in /opt/airflow/dags
+[2023-09-30 09:14:06,727] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:14:06,734] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:09:06.734727+00:00
+[2023-09-30 09:14:06,753] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb4a090>, 'is_failure_callback': True}
+[2023-09-30 09:14:06,757] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb4a910>, 'is_failure_callback': True}
+[2023-09-30 09:14:17,362] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:14:17,372] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:09:17.372271+00:00
+[2023-09-30 09:14:17,395] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e999150>, 'is_failure_callback': True}
+[2023-09-30 09:14:17,398] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb4a910>, 'is_failure_callback': True}
+[2023-09-30 09:14:22,609] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.29s           2023-09-30T09:14:18
+/opt/airflow/dags/stations.py                              1           0  1.27s           2023-09-30T09:14:11
+================================================================================
+[2023-09-30 09:14:27,645] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:14:27,653] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:09:27.653540+00:00
+[2023-09-30 09:14:27,673] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9cf690>, 'is_failure_callback': True}
+[2023-09-30 09:14:27,678] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb30150>, 'is_failure_callback': True}
+[2023-09-30 09:14:37,744] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:14:37,757] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:09:37.757180+00:00
+[2023-09-30 09:14:37,773] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb4a690>, 'is_failure_callback': True}
+[2023-09-30 09:14:37,776] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb21990>, 'is_failure_callback': True}
+[2023-09-30 09:14:48,020] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:14:48,032] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:09:48.031581+00:00
+[2023-09-30 09:14:48,062] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e971f90>, 'is_failure_callback': True}
+[2023-09-30 09:14:48,067] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e971850>, 'is_failure_callback': True}
+[2023-09-30 09:14:53,397] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.32s           2023-09-30T09:14:49
+/opt/airflow/dags/stations.py                              1           0  1.56s           2023-09-30T09:14:43
+================================================================================
+[2023-09-30 09:14:58,779] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:14:58,787] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:09:58.787481+00:00
+[2023-09-30 09:14:58,809] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9922d0>, 'is_failure_callback': True}
+[2023-09-30 09:14:58,813] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e992cd0>, 'is_failure_callback': True}
+[2023-09-30 09:15:09,026] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:15:09,033] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:10:09.033487+00:00
+[2023-09-30 09:15:09,059] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e971950>, 'is_failure_callback': True}
+[2023-09-30 09:15:09,066] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb4ac10>, 'is_failure_callback': True}
+[2023-09-30 09:15:19,822] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:15:19,828] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:10:19.828561+00:00
+[2023-09-30 09:15:19,864] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18e90>, 'is_failure_callback': True}
+[2023-09-30 09:15:19,873] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18850>, 'is_failure_callback': True}
+[2023-09-30 09:15:24,000] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.55s           2023-09-30T09:15:21
+/opt/airflow/dags/stations.py                              1           0  1.17s           2023-09-30T09:15:14
+================================================================================
+[2023-09-30 09:15:30,051] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:15:30,066] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:10:30.066322+00:00
+[2023-09-30 09:15:30,119] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb69ad0>, 'is_failure_callback': True}
+[2023-09-30 09:15:30,124] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb69150>, 'is_failure_callback': True}
+[2023-09-30 09:15:40,526] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:15:40,537] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:10:40.537640+00:00
+[2023-09-30 09:15:40,568] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18790>, 'is_failure_callback': True}
+[2023-09-30 09:15:40,573] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb21690>, 'is_failure_callback': True}
+[2023-09-30 09:15:51,108] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:15:51,114] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:10:51.114773+00:00
+[2023-09-30 09:15:51,137] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb226d0>, 'is_failure_callback': True}
+[2023-09-30 09:15:51,143] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e999ad0>, 'is_failure_callback': True}
+[2023-09-30 09:15:54,197] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py   1916  3.04s             1           0  1.47s           2023-09-30T09:15:42
+/opt/airflow/dags/stations.py                              1           0  3.15s           2023-09-30T09:15:48
+================================================================================
+[2023-09-30 09:16:01,372] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:16:01,385] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:11:01.385231+00:00
+[2023-09-30 09:16:01,409] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb30390>, 'is_failure_callback': True}
+[2023-09-30 09:16:01,422] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb3b0d0>, 'is_failure_callback': True}
+[2023-09-30 09:16:11,495] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:16:11,504] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:11:11.503956+00:00
+[2023-09-30 09:16:11,524] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb30150>, 'is_failure_callback': True}
+[2023-09-30 09:16:11,527] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb44ed0>, 'is_failure_callback': True}
+[2023-09-30 09:16:21,809] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:16:21,814] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:11:21.814736+00:00
+[2023-09-30 09:16:21,838] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb30150>, 'is_failure_callback': True}
+[2023-09-30 09:16:21,846] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9922d0>, 'is_failure_callback': True}
+[2023-09-30 09:16:25,104] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.30s           2023-09-30T09:16:23
+/opt/airflow/dags/stations.py                              1           0  1.27s           2023-09-30T09:16:20
+================================================================================
+[2023-09-30 09:16:32,154] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:16:32,162] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:11:32.162545+00:00
+[2023-09-30 09:16:32,187] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e999b10>, 'is_failure_callback': True}
+[2023-09-30 09:16:32,192] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e98b350>, 'is_failure_callback': True}
+[2023-09-30 09:16:42,256] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:16:42,265] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:11:42.265217+00:00
+[2023-09-30 09:16:42,284] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18e90>, 'is_failure_callback': True}
+[2023-09-30 09:16:42,287] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18fd0>, 'is_failure_callback': True}
+[2023-09-30 09:16:52,334] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:16:52,343] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:11:52.343390+00:00
+[2023-09-30 09:16:52,400] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e971890>, 'is_failure_callback': True}
+[2023-09-30 09:16:52,411] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb3bf90>, 'is_failure_callback': True}
+[2023-09-30 09:16:55,408] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  2.97s           2023-09-30T09:16:55
+/opt/airflow/dags/stations.py                              1           0  2.18s           2023-09-30T09:16:52
+================================================================================
+[2023-09-30 09:17:02,450] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:17:02,457] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:12:02.457619+00:00
+[2023-09-30 09:17:02,502] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e986710>, 'is_failure_callback': True}
+[2023-09-30 09:17:02,510] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e986e10>, 'is_failure_callback': True}
+[2023-09-30 09:17:12,608] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:17:12,620] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:12:12.620250+00:00
+[2023-09-30 09:17:12,644] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e999ad0>, 'is_failure_callback': True}
+[2023-09-30 09:17:12,649] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e999ed0>, 'is_failure_callback': True}
+[2023-09-30 09:17:23,165] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:17:23,181] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:12:23.180761+00:00
+[2023-09-30 09:17:23,429] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb0ba90>, 'is_failure_callback': True}
+[2023-09-30 09:17:23,443] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb0bf50>, 'is_failure_callback': True}
+[2023-09-30 09:17:25,499] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py   2051  2.04s             1           0  1.57s           2023-09-30T09:17:14
+/opt/airflow/dags/stations.py      2054  2.00s             1           0  2.18s           2023-09-30T09:16:52
+================================================================================
+[2023-09-30 09:17:33,620] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:17:33,625] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:12:33.625873+00:00
+[2023-09-30 09:17:33,649] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9712d0>, 'is_failure_callback': True}
+[2023-09-30 09:17:33,655] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e971f10>, 'is_failure_callback': True}
+[2023-09-30 09:17:43,716] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:17:43,729] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:12:43.729350+00:00
+[2023-09-30 09:17:43,775] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9cf6d0>, 'is_failure_callback': True}
+[2023-09-30 09:17:43,789] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e959a90>, 'is_failure_callback': True}
+[2023-09-30 09:17:54,043] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:17:54,055] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:12:54.054965+00:00
+[2023-09-30 09:17:54,228] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e999150>, 'is_failure_callback': True}
+[2023-09-30 09:17:54,266] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9cf950>, 'is_failure_callback': True}
+[2023-09-30 09:17:55,844] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py   2098  1.56s             1           0  1.92s           2023-09-30T09:17:45
+/opt/airflow/dags/stations.py                              1           0  4.09s           2023-09-30T09:17:27
+================================================================================
+[2023-09-30 09:18:04,318] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:18:04,327] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:13:04.326658+00:00
+[2023-09-30 09:18:04,351] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb312d0>, 'is_failure_callback': True}
+[2023-09-30 09:18:04,355] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e971850>, 'is_failure_callback': True}
+[2023-09-30 09:18:14,440] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:18:14,447] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:13:14.447415+00:00
+[2023-09-30 09:18:14,472] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb31b90>, 'is_failure_callback': True}
+[2023-09-30 09:18:14,478] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9cf6d0>, 'is_failure_callback': True}
+[2023-09-30 09:18:24,607] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:18:24,620] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:13:24.620568+00:00
+[2023-09-30 09:18:24,786] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f17638efa10>, 'is_failure_callback': True}
+[2023-09-30 09:18:24,790] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e98b990>, 'is_failure_callback': True}
+[2023-09-30 09:18:25,877] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.08s           2023-09-30T09:18:25
+/opt/airflow/dags/stations.py                              1           0  1.88s           2023-09-30T09:17:59
+================================================================================
+[2023-09-30 09:18:34,912] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:18:34,919] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:13:34.919777+00:00
+[2023-09-30 09:18:34,939] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9d5f50>, 'is_failure_callback': True}
+[2023-09-30 09:18:34,942] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9d5f90>, 'is_failure_callback': True}
+[2023-09-30 09:18:45,007] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:18:45,014] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:13:45.014268+00:00
+[2023-09-30 09:18:45,052] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e999ed0>, 'is_failure_callback': True}
+[2023-09-30 09:18:45,056] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9cf4d0>, 'is_failure_callback': True}
+[2023-09-30 09:18:55,108] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:18:55,113] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:13:55.113020+00:00
+[2023-09-30 09:18:55,133] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9d5310>, 'is_failure_callback': True}
+[2023-09-30 09:18:55,160] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9d5cd0>, 'is_failure_callback': True}
+[2023-09-30 09:18:56,196] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py   2203  1.02s             1           0  1.13s           2023-09-30T09:18:46
+/opt/airflow/dags/stations.py                              1           0  0.91s           2023-09-30T09:18:30
+================================================================================
+[2023-09-30 09:19:05,168] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:19:05,176] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:14:05.176023+00:00
+[2023-09-30 09:19:05,195] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9716d0>, 'is_failure_callback': True}
+[2023-09-30 09:19:05,198] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e971f90>, 'is_failure_callback': True}
+[2023-09-30 09:19:06,215] {manager.py:663} INFO - Searching for files in /opt/airflow/dags
+[2023-09-30 09:19:06,248] {manager.py:666} INFO - There are 2 files in /opt/airflow/dags
+[2023-09-30 09:19:15,365] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:19:15,371] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:14:15.371586+00:00
+[2023-09-30 09:19:15,394] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175ed35250>, 'is_failure_callback': True}
+[2023-09-30 09:19:15,399] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e999ad0>, 'is_failure_callback': True}
+[2023-09-30 09:19:25,440] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:19:25,449] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:14:25.449689+00:00
+[2023-09-30 09:19:25,469] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18750>, 'is_failure_callback': True}
+[2023-09-30 09:19:25,474] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb184d0>, 'is_failure_callback': True}
+[2023-09-30 09:19:26,488] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py   2251  1.01s             1           0  1.11s           2023-09-30T09:19:16
+/opt/airflow/dags/stations.py                              1           0  0.91s           2023-09-30T09:19:02
+================================================================================
+[2023-09-30 09:19:35,612] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:19:35,618] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:14:35.618281+00:00
+[2023-09-30 09:19:35,642] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e92d3d0>, 'is_failure_callback': True}
+[2023-09-30 09:19:35,647] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175f5f8cd0>, 'is_failure_callback': True}
+[2023-09-30 09:19:45,724] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:19:45,732] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:14:45.732693+00:00
+[2023-09-30 09:19:45,751] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f1763845dd0>, 'is_failure_callback': True}
+[2023-09-30 09:19:45,755] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18e10>, 'is_failure_callback': True}
+[2023-09-30 09:19:56,096] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:19:56,105] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:14:56.104898+00:00
+[2023-09-30 09:19:56,129] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f17654767d0>, 'is_failure_callback': True}
+[2023-09-30 09:19:56,133] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb21f90>, 'is_failure_callback': True}
+[2023-09-30 09:19:56,593] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py   2301  0.45s             1           0  1.82s           2023-09-30T09:19:47
+/opt/airflow/dags/stations.py                              1           0  1.07s           2023-09-30T09:19:33
+================================================================================
+[2023-09-30 09:20:06,200] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:20:06,444] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:15:06.444382+00:00
+[2023-09-30 09:20:06,663] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175ea98590>, 'is_failure_callback': True}
+[2023-09-30 09:20:06,696] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb4aad0>, 'is_failure_callback': True}
+[2023-09-30 09:20:16,751] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:20:16,762] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:15:16.762749+00:00
+[2023-09-30 09:20:16,802] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb31150>, 'is_failure_callback': True}
+[2023-09-30 09:20:16,806] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e98b410>, 'is_failure_callback': True}
+[2023-09-30 09:20:27,014] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:20:27,025] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:15:27.024853+00:00
+[2023-09-30 09:20:27,046] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eac4bd0>, 'is_failure_callback': True}
+[2023-09-30 09:20:27,050] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eac4750>, 'is_failure_callback': True}
+[2023-09-30 09:20:27,067] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py   2348  0.01s             1           0  2.28s           2023-09-30T09:20:19
+/opt/airflow/dags/stations.py                              1           0  2.76s           2023-09-30T09:20:06
+================================================================================
+[2023-09-30 09:20:37,182] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:20:37,193] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:15:37.193152+00:00
+[2023-09-30 09:20:37,210] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb317d0>, 'is_failure_callback': True}
+[2023-09-30 09:20:37,214] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb215d0>, 'is_failure_callback': True}
+[2023-09-30 09:20:47,687] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:20:47,698] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:15:47.698207+00:00
+[2023-09-30 09:20:47,748] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e98b050>, 'is_failure_callback': True}
+[2023-09-30 09:20:47,769] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e98bfd0>, 'is_failure_callback': True}
+[2023-09-30 09:20:57,117] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  2.39s           2023-09-30T09:20:50
+/opt/airflow/dags/stations.py                              1           0  1.20s           2023-09-30T09:20:39
+================================================================================
+[2023-09-30 09:20:58,128] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:20:58,132] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:15:58.131918+00:00
+[2023-09-30 09:20:58,150] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb18850>, 'is_failure_callback': True}
+[2023-09-30 09:20:58,153] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb17690>, 'is_failure_callback': True}
+[2023-09-30 09:21:08,266] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:21:08,280] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:16:08.280584+00:00
+[2023-09-30 09:21:08,321] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f1763864a10>, 'is_failure_callback': True}
+[2023-09-30 09:21:08,325] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e98b8d0>, 'is_failure_callback': True}
+[2023-09-30 09:21:18,394] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:21:18,403] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:16:18.402712+00:00
+[2023-09-30 09:21:18,422] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f176391ee90>, 'is_failure_callback': True}
+[2023-09-30 09:21:18,426] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e92d3d0>, 'is_failure_callback': True}
+[2023-09-30 09:21:27,444] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.02s           2023-09-30T09:21:19
+/opt/airflow/dags/stations.py                              1           0  1.37s           2023-09-30T09:21:10
+================================================================================
+[2023-09-30 09:21:28,451] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:21:28,455] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:16:28.455487+00:00
+[2023-09-30 09:21:28,481] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175ed35dd0>, 'is_failure_callback': True}
+[2023-09-30 09:21:28,485] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb0b990>, 'is_failure_callback': True}
+[2023-09-30 09:21:38,558] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:21:38,569] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:16:38.569359+00:00
+[2023-09-30 09:21:38,589] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175ed35290>, 'is_failure_callback': True}
+[2023-09-30 09:21:38,594] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f1761a6cf90>, 'is_failure_callback': True}
+[2023-09-30 09:21:48,731] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:21:48,740] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:16:48.740776+00:00
+[2023-09-30 09:21:48,768] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175ed4a710>, 'is_failure_callback': True}
+[2023-09-30 09:21:48,772] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e92dcd0>, 'is_failure_callback': True}
+[2023-09-30 09:21:57,801] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.15s           2023-09-30T09:21:49
+/opt/airflow/dags/stations.py                              1           0  1.44s           2023-09-30T09:21:43
+================================================================================
+[2023-09-30 09:21:58,814] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:21:58,818] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:16:58.817888+00:00
+[2023-09-30 09:21:58,862] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175ed35890>, 'is_failure_callback': True}
+[2023-09-30 09:21:58,868] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175ea98450>, 'is_failure_callback': True}
+[2023-09-30 09:22:09,053] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:22:09,060] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:17:09.060455+00:00
+[2023-09-30 09:22:09,084] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f1761a6cf90>, 'is_failure_callback': True}
+[2023-09-30 09:22:09,089] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f1763845dd0>, 'is_failure_callback': True}
+[2023-09-30 09:22:19,128] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:22:19,138] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:17:19.138458+00:00
+[2023-09-30 09:22:19,162] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb0be50>, 'is_failure_callback': True}
+[2023-09-30 09:22:19,166] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f1763864c10>, 'is_failure_callback': True}
+[2023-09-30 09:22:28,219] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.17s           2023-09-30T09:22:20
+/opt/airflow/dags/stations.py                              1           0  1.22s           2023-09-30T09:22:14
+================================================================================
+[2023-09-30 09:22:29,236] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:22:29,245] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:17:29.245237+00:00
+[2023-09-30 09:22:29,264] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e92dcd0>, 'is_failure_callback': True}
+[2023-09-30 09:22:29,267] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175ea98750>, 'is_failure_callback': True}
+[2023-09-30 09:22:39,435] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:22:39,446] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:17:39.446878+00:00
+[2023-09-30 09:22:39,468] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb31150>, 'is_failure_callback': True}
+[2023-09-30 09:22:39,472] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb312d0>, 'is_failure_callback': True}
+[2023-09-30 09:22:49,550] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:22:49,558] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:17:49.558149+00:00
+[2023-09-30 09:22:49,578] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb31350>, 'is_failure_callback': True}
+[2023-09-30 09:22:49,584] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e98be90>, 'is_failure_callback': True}
+[2023-09-30 09:22:58,811] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.43s           2023-09-30T09:22:51
+/opt/airflow/dags/stations.py                              1           0  1.23s           2023-09-30T09:22:45
+================================================================================
+[2023-09-30 09:22:59,826] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:22:59,835] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:17:59.835583+00:00
+[2023-09-30 09:22:59,859] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e92dcd0>, 'is_failure_callback': True}
+[2023-09-30 09:22:59,863] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb0b7d0>, 'is_failure_callback': True}
+[2023-09-30 09:23:10,113] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:23:10,123] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:18:10.123518+00:00
+[2023-09-30 09:23:10,169] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb21c90>, 'is_failure_callback': True}
+[2023-09-30 09:23:10,179] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb31350>, 'is_failure_callback': True}
+[2023-09-30 09:23:20,445] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:23:20,463] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:18:20.463037+00:00
+[2023-09-30 09:23:20,522] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eac49d0>, 'is_failure_callback': True}
+[2023-09-30 09:23:20,542] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eac4b90>, 'is_failure_callback': True}
+[2023-09-30 09:23:29,529] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  3.94s           2023-09-30T09:23:24
+/opt/airflow/dags/stations.py                              1           0  2.37s           2023-09-30T09:23:18
+================================================================================
+[2023-09-30 09:23:30,551] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:23:30,559] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:18:30.559386+00:00
+[2023-09-30 09:23:30,583] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e92dcd0>, 'is_failure_callback': True}
+[2023-09-30 09:23:30,589] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175ea981d0>, 'is_failure_callback': True}
+[2023-09-30 09:23:41,167] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:23:41,268] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:18:41.268831+00:00
+[2023-09-30 09:23:41,308] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e98b150>, 'is_failure_callback': True}
+[2023-09-30 09:23:41,315] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175ea986d0>, 'is_failure_callback': True}
+[2023-09-30 09:23:51,345] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:23:51,354] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:18:51.353967+00:00
+[2023-09-30 09:23:51,375] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175ed4a810>, 'is_failure_callback': True}
+[2023-09-30 09:23:51,379] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e986cd0>, 'is_failure_callback': True}
+[2023-09-30 09:23:59,773] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.35s           2023-09-30T09:23:52
+/opt/airflow/dags/stations.py                              1           0  1.13s           2023-09-30T09:23:50
+================================================================================
+[2023-09-30 09:24:01,452] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:24:01,457] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:19:01.457155+00:00
+[2023-09-30 09:24:01,473] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f17638451d0>, 'is_failure_callback': True}
+[2023-09-30 09:24:01,477] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f1765476850>, 'is_failure_callback': True}
+[2023-09-30 09:24:06,825] {manager.py:663} INFO - Searching for files in /opt/airflow/dags
+[2023-09-30 09:24:06,869] {manager.py:666} INFO - There are 2 files in /opt/airflow/dags
+[2023-09-30 09:24:11,971] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:24:11,978] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:19:11.978247+00:00
+[2023-09-30 09:24:12,008] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb31150>, 'is_failure_callback': True}
+[2023-09-30 09:24:12,012] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9d5f50>, 'is_failure_callback': True}
+[2023-09-30 09:24:22,047] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:24:22,056] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:19:22.054479+00:00
+[2023-09-30 09:24:22,117] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e992950>, 'is_failure_callback': True}
+[2023-09-30 09:24:22,123] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e999b10>, 'is_failure_callback': True}
+[2023-09-30 09:24:30,308] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.49s           2023-09-30T09:24:23
+/opt/airflow/dags/stations.py                              1           0  1.23s           2023-09-30T09:24:22
+================================================================================
+[2023-09-30 09:24:32,322] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:24:32,328] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:19:32.328227+00:00
+[2023-09-30 09:24:32,354] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb3b690>, 'is_failure_callback': True}
+[2023-09-30 09:24:32,360] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb312d0>, 'is_failure_callback': True}
+[2023-09-30 09:24:42,420] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:24:42,435] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:19:42.435334+00:00
+[2023-09-30 09:24:42,518] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9922d0>, 'is_failure_callback': True}
+[2023-09-30 09:24:42,539] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e986f50>, 'is_failure_callback': True}
+[2023-09-30 09:24:52,682] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:24:52,711] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:19:52.710915+00:00
+[2023-09-30 09:24:52,748] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f1763845dd0>, 'is_failure_callback': True}
+[2023-09-30 09:24:52,758] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e986e50>, 'is_failure_callback': True}
+[2023-09-30 09:25:00,508] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  3.70s           2023-09-30T09:24:56
+/opt/airflow/dags/stations.py                              1           0  2.93s           2023-09-30T09:24:55
+================================================================================
+[2023-09-30 09:25:02,912] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:25:02,920] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:20:02.920294+00:00
+[2023-09-30 09:25:02,945] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb4a9d0>, 'is_failure_callback': True}
+[2023-09-30 09:25:02,951] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb4acd0>, 'is_failure_callback': True}
+[2023-09-30 09:25:13,012] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:25:13,018] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:20:13.018403+00:00
+[2023-09-30 09:25:13,056] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9baf50>, 'is_failure_callback': True}
+[2023-09-30 09:25:13,063] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9badd0>, 'is_failure_callback': True}
+[2023-09-30 09:25:23,835] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:25:23,843] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:20:23.843627+00:00
+[2023-09-30 09:25:23,873] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9cfcd0>, 'is_failure_callback': True}
+[2023-09-30 09:25:23,880] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f17638451d0>, 'is_failure_callback': True}
+[2023-09-30 09:25:30,997] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.68s           2023-09-30T09:25:25
+/opt/airflow/dags/stations.py                              1           0  1.52s           2023-09-30T09:25:27
+================================================================================
+[2023-09-30 09:25:34,030] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:25:34,035] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:20:34.034918+00:00
+[2023-09-30 09:25:34,172] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e992b10>, 'is_failure_callback': True}
+[2023-09-30 09:25:34,192] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f1765476a10>, 'is_failure_callback': True}
+[2023-09-30 09:25:44,278] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:25:44,287] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:20:44.287490+00:00
+[2023-09-30 09:25:44,319] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175ed4a710>, 'is_failure_callback': True}
+[2023-09-30 09:25:44,330] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175ed35290>, 'is_failure_callback': True}
+[2023-09-30 09:25:54,462] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:25:54,467] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:20:54.467696+00:00
+[2023-09-30 09:25:54,488] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e992950>, 'is_failure_callback': True}
+[2023-09-30 09:25:54,492] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb4aa90>, 'is_failure_callback': True}
+[2023-09-30 09:26:01,155] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  2.27s           2023-09-30T09:25:56
+/opt/airflow/dags/stations.py                              1           0  1.63s           2023-09-30T09:25:59
+================================================================================
+[2023-09-30 09:26:04,809] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:26:04,817] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:21:04.817262+00:00
+[2023-09-30 09:26:04,841] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb31150>, 'is_failure_callback': True}
+[2023-09-30 09:26:04,845] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb44510>, 'is_failure_callback': True}
+[2023-09-30 09:26:14,895] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:26:14,904] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:21:14.904518+00:00
+[2023-09-30 09:26:14,924] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9d5d50>, 'is_failure_callback': True}
+[2023-09-30 09:26:14,928] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9d5f10>, 'is_failure_callback': True}
+[2023-09-30 09:26:24,943] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:26:24,949] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:21:24.949205+00:00
+[2023-09-30 09:26:24,975] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb31350>, 'is_failure_callback': True}
+[2023-09-30 09:26:24,979] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175ed35dd0>, 'is_failure_callback': True}
+[2023-09-30 09:26:31,260] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.64s           2023-09-30T09:26:26
+/opt/airflow/dags/stations.py                              1           0  1.05s           2023-09-30T09:26:30
+================================================================================
+[2023-09-30 09:26:35,309] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:26:35,320] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:21:35.320290+00:00
+[2023-09-30 09:26:35,341] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb31350>, 'is_failure_callback': True}
+[2023-09-30 09:26:35,345] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175ea98690>, 'is_failure_callback': True}
+[2023-09-30 09:26:45,396] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:26:45,407] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:21:45.407386+00:00
+[2023-09-30 09:26:45,433] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb3b2d0>, 'is_failure_callback': True}
+[2023-09-30 09:26:45,439] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb3bb90>, 'is_failure_callback': True}
+[2023-09-30 09:26:55,727] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:26:55,813] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:21:55.813216+00:00
+[2023-09-30 09:26:56,039] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e992990>, 'is_failure_callback': True}
+[2023-09-30 09:26:56,055] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9928d0>, 'is_failure_callback': True}
+[2023-09-30 09:27:02,142] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  2.01s           2023-09-30T09:26:58
+/opt/airflow/dags/stations.py      2977  1.01s             1           0  1.05s           2023-09-30T09:26:30
+================================================================================
+[2023-09-30 09:27:06,178] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:27:06,186] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:22:06.186396+00:00
+[2023-09-30 09:27:06,211] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb3b2d0>, 'is_failure_callback': True}
+[2023-09-30 09:27:06,216] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175e9ba850>, 'is_failure_callback': True}
+[2023-09-30 09:27:16,821] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:27:16,830] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:22:16.830591+00:00
+[2023-09-30 09:27:16,849] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f1763864a10>, 'is_failure_callback': True}
+[2023-09-30 09:27:16,853] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175ea98690>, 'is_failure_callback': True}
+[2023-09-30 09:27:27,010] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:27:27,015] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:22:27.015473+00:00
+[2023-09-30 09:27:27,068] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb44690>, 'is_failure_callback': True}
+[2023-09-30 09:27:27,075] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb44850>, 'is_failure_callback': True}
+[2023-09-30 09:27:32,136] {manager.py:784} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/process_raw.py                           1           0  1.14s           2023-09-30T09:27:28
+/opt/airflow/dags/stations.py                              1           0  1.46s           2023-09-30T09:27:02
+================================================================================
+[2023-09-30 09:27:37,187] {manager.py:1065} INFO - Finding 'running' jobs without a recent heartbeat
+[2023-09-30 09:27:37,190] {manager.py:1069} INFO - Failing jobs without heartbeat after 2023-09-30 09:22:37.190530+00:00
+[2023-09-30 09:27:37,209] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2001-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb44610>, 'is_failure_callback': True}
+[2023-09-30 09:27:37,213] {manager.py:1092} INFO - Detected zombie job: {'full_filepath': '/opt/airflow/dags/process_raw.py', 'msg': 'Detected <TaskInstance: ingest_process_weather_data.download_dataset scheduled__2000-01-01T00:00:00+00:00 [running]> as zombie', 'simple_task_instance': <airflow.models.taskinstance.SimpleTaskInstance object at 0x7f175eb44310>, 'is_failure_callback': True}
