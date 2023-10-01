@@ -1,0 +1,27 @@
+[2023-10-01 06:23:49,349] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: our_fourth_dag_v4.thrid_task 2022-01-26T00:00:00+00:00 [queued]>
+[2023-10-01 06:23:50,788] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: our_fourth_dag_v4.thrid_task 2022-01-26T00:00:00+00:00 [queued]>
+[2023-10-01 06:23:50,798] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 06:23:50,813] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
+[2023-10-01 06:23:50,857] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 06:23:51,094] {taskinstance.py:1063} INFO - Executing <Task(BashOperator): thrid_task> on 2022-01-26T00:00:00+00:00
+[2023-10-01 06:23:51,185] {standard_task_runner.py:52} INFO - Started process 6781 to run task
+[2023-10-01 06:23:51,435] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'our_fourth_dag_v4', 'thrid_task', '2022-01-26T00:00:00+00:00', '--job-id', '981', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/our_fourth_dag.py', '--cfg-path', '/tmp/tmpqlmj13v5', '--error-file', '/tmp/tmpmld_uzm6']
+[2023-10-01 06:23:52,035] {standard_task_runner.py:77} INFO - Job 981: Subtask thrid_task
+[2023-10-01 06:24:04,648] {logging_mixin.py:104} INFO - Running <TaskInstance: our_fourth_dag_v4.thrid_task 2022-01-26T00:00:00+00:00 [running]> on host d4ed655215d1
+[2023-10-01 06:24:07,950] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=svastikkka
+AIRFLOW_CTX_DAG_ID=our_fourth_dag_v4
+AIRFLOW_CTX_TASK_ID=thrid_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-01-26T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-01-26T00:00:00+00:00
+[2023-10-01 06:24:07,990] {bash.py:135} INFO - Tmp dir root location: 
+ /tmp
+[2023-10-01 06:24:08,069] {bash.py:158} INFO - Running command: echo hey, I am task3 and will be running after task1 at the same time as task2!
+[2023-10-01 06:24:09,650] {bash.py:169} INFO - Output:
+[2023-10-01 06:24:10,501] {bash.py:173} INFO - hey, I am task3 and will be running after task1 at the same time as task2!
+[2023-10-01 06:24:11,025] {bash.py:177} INFO - Command exited with return code 0
+[2023-10-01 06:24:21,824] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=our_fourth_dag_v4, task_id=thrid_task, execution_date=20220126T000000, start_date=20231001T062349, end_date=20231001T062421
+[2023-10-01 06:24:23,431] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-10-01 06:24:25,250] {local_task_job.py:146} INFO - Task exited with return code 0

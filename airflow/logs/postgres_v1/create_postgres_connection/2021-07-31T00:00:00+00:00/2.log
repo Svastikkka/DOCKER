@@ -1,0 +1,46 @@
+[2023-10-01 09:44:57,201] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: postgres_v1.create_postgres_connection 2021-07-31T00:00:00+00:00 [queued]>
+[2023-10-01 09:44:57,604] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: postgres_v1.create_postgres_connection 2021-07-31T00:00:00+00:00 [queued]>
+[2023-10-01 09:44:57,608] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 09:44:57,614] {taskinstance.py:1043} INFO - Starting attempt 2 of 6
+[2023-10-01 09:44:57,618] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 09:44:57,890] {taskinstance.py:1063} INFO - Executing <Task(PostgresOperator): create_postgres_connection> on 2021-07-31T00:00:00+00:00
+[2023-10-01 09:44:57,937] {standard_task_runner.py:52} INFO - Started process 40857 to run task
+[2023-10-01 09:44:58,118] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'postgres_v1', 'create_postgres_connection', '2021-07-31T00:00:00+00:00', '--job-id', '2539', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/1_postgresql.py', '--cfg-path', '/tmp/tmp7w2n_m5t', '--error-file', '/tmp/tmpkn6ej478']
+[2023-10-01 09:44:58,291] {standard_task_runner.py:77} INFO - Job 2539: Subtask create_postgres_connection
+[2023-10-01 09:45:00,546] {logging_mixin.py:104} INFO - Running <TaskInstance: postgres_v1.create_postgres_connection 2021-07-31T00:00:00+00:00 [running]> on host d4ed655215d1
+[2023-10-01 09:45:04,098] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=svastikkka
+AIRFLOW_CTX_DAG_ID=postgres_v1
+AIRFLOW_CTX_TASK_ID=create_postgres_connection
+AIRFLOW_CTX_EXECUTION_DATE=2021-07-31T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-07-31T00:00:00+00:00
+[2023-10-01 09:45:04,569] {postgres.py:69} INFO - Executing: create table if not exists dags_run(
+        dt  date,
+        dag_id character varying,
+        primary key (dt,dag_id)
+        )
+[2023-10-01 09:45:06,686] {base.py:74} INFO - Using connection to: id: posgres_testing. Host: host.docker.internal, Port: 5432, Schema: testing, Login: airflow, Password: XXXXXXXX, extra: None
+[2023-10-01 09:45:06,850] {taskinstance.py:1455} ERROR - FATAL:  database "testing" does not exist
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1112, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1285, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1315, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/providers/postgres/operators/postgres.py", line 71, in execute
+    self.hook.run(self.sql, self.autocommit, parameters=self.parameters)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/hooks/dbapi.py", line 173, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/providers/postgres/hooks/postgres.py", line 108, in get_conn
+    self.conn = psycopg2.connect(**conn_args)
+  File "/home/airflow/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  database "testing" does not exist
+
+[2023-10-01 09:45:07,097] {taskinstance.py:1503} INFO - Marking task as UP_FOR_RETRY. dag_id=postgres_v1, task_id=create_postgres_connection, execution_date=20210731T000000, start_date=20231001T094457, end_date=20231001T094507
+[2023-10-01 09:45:09,483] {local_task_job.py:188} WARNING - State of this instance has been externally set to up_for_retry. Terminating instance.
+[2023-10-01 09:45:11,147] {process_utils.py:100} INFO - Sending Signals.SIGTERM to GPID 40857
+[2023-10-01 09:45:11,179] {process_utils.py:66} INFO - Process psutil.Process(pid=40857, status='terminated', exitcode=1, started='09:44:57') (40857) terminated with exit code 1

@@ -1,0 +1,29 @@
+[2023-10-01 10:18:53,097] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: postgres_v2.delete_data_from_table 2021-08-14T00:00:00+00:00 [queued]>
+[2023-10-01 10:18:53,246] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: postgres_v2.delete_data_from_table 2021-08-14T00:00:00+00:00 [queued]>
+[2023-10-01 10:18:53,248] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 10:18:53,251] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
+[2023-10-01 10:18:53,254] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 10:18:53,566] {taskinstance.py:1063} INFO - Executing <Task(PostgresOperator): delete_data_from_table> on 2021-08-14T00:00:00+00:00
+[2023-10-01 10:18:53,604] {standard_task_runner.py:52} INFO - Started process 48017 to run task
+[2023-10-01 10:18:53,718] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'postgres_v2', 'delete_data_from_table', '2021-08-14T00:00:00+00:00', '--job-id', '2744', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/postgresql_example_2.py', '--cfg-path', '/tmp/tmpb03_qevo', '--error-file', '/tmp/tmp_1yhc0zg']
+[2023-10-01 10:18:53,798] {standard_task_runner.py:77} INFO - Job 2744: Subtask delete_data_from_table
+[2023-10-01 10:18:54,860] {logging_mixin.py:104} INFO - Running <TaskInstance: postgres_v2.delete_data_from_table 2021-08-14T00:00:00+00:00 [running]> on host d4ed655215d1
+[2023-10-01 10:18:55,555] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=svastikkka
+AIRFLOW_CTX_DAG_ID=postgres_v2
+AIRFLOW_CTX_TASK_ID=delete_data_from_table
+AIRFLOW_CTX_EXECUTION_DATE=2021-08-14T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-08-14T00:00:00+00:00
+[2023-10-01 10:18:55,563] {postgres.py:69} INFO - Executing: 
+            delete from dags_run where dt = '2021-08-14' and dag_id = 'postgres_v2';
+        
+[2023-10-01 10:18:55,685] {base.py:74} INFO - Using connection to: id: posgres_testing. Host: host.docker.internal, Port: 5432, Schema: testing, Login: airflow, Password: XXXXXXXX, extra: None
+[2023-10-01 10:18:55,802] {dbapi.py:180} INFO - Running statement: 
+            delete from dags_run where dt = '2021-08-14' and dag_id = 'postgres_v2';
+        , parameters: None
+[2023-10-01 10:18:55,816] {dbapi.py:186} INFO - Rows affected: 0
+[2023-10-01 10:18:55,897] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=postgres_v2, task_id=delete_data_from_table, execution_date=20210814T000000, start_date=20231001T101853, end_date=20231001T101855
+[2023-10-01 10:18:57,422] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-10-01 10:18:57,568] {local_task_job.py:146} INFO - Task exited with return code 0

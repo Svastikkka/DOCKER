@@ -1,0 +1,37 @@
+[2023-10-01 17:28:09,023] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: backup_postgres.list_backup_directory 2023-10-01T17:20:54.818264+00:00 [queued]>
+[2023-10-01 17:28:09,350] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: backup_postgres.list_backup_directory 2023-10-01T17:20:54.818264+00:00 [queued]>
+[2023-10-01 17:28:09,353] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 17:28:09,356] {taskinstance.py:1043} INFO - Starting attempt 3 of 6
+[2023-10-01 17:28:09,358] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 17:28:09,416] {taskinstance.py:1063} INFO - Executing <Task(BashOperator): list_backup_directory> on 2023-10-01T17:20:54.818264+00:00
+[2023-10-01 17:28:09,457] {standard_task_runner.py:52} INFO - Started process 3913 to run task
+[2023-10-01 17:28:09,490] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'backup_postgres', 'list_backup_directory', '2023-10-01T17:20:54.818264+00:00', '--job-id', '8', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/backup_postgres.py', '--cfg-path', '/tmp/tmphtpvwvbs', '--error-file', '/tmp/tmpgo5l1q9x']
+[2023-10-01 17:28:09,541] {standard_task_runner.py:77} INFO - Job 8: Subtask list_backup_directory
+[2023-10-01 17:28:09,744] {logging_mixin.py:104} INFO - Running <TaskInstance: backup_postgres.list_backup_directory 2023-10-01T17:20:54.818264+00:00 [running]> on host c1a95d6e7033
+[2023-10-01 17:28:09,873] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=svastikkka
+AIRFLOW_CTX_DAG_ID=backup_postgres
+AIRFLOW_CTX_TASK_ID=list_backup_directory
+AIRFLOW_CTX_EXECUTION_DATE=2023-10-01T17:20:54.818264+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-10-01T17:20:54.818264+00:00
+[2023-10-01 17:28:09,887] {bash.py:135} INFO - Tmp dir root location: 
+ /tmp
+[2023-10-01 17:28:09,902] {bash.py:158} INFO - Running command: ls -l /path/to
+[2023-10-01 17:28:09,930] {bash.py:169} INFO - Output:
+[2023-10-01 17:28:09,949] {bash.py:173} INFO - ls: cannot access '/path/to': No such file or directory
+[2023-10-01 17:28:09,953] {bash.py:177} INFO - Command exited with return code 2
+[2023-10-01 17:28:09,992] {taskinstance.py:1455} ERROR - Bash command failed. The command returned a non-zero exit code.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1112, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1285, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1315, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/bash.py", line 180, in execute
+    raise AirflowException('Bash command failed. The command returned a non-zero exit code.')
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code.
+[2023-10-01 17:28:10,012] {taskinstance.py:1503} INFO - Marking task as UP_FOR_RETRY. dag_id=backup_postgres, task_id=list_backup_directory, execution_date=20231001T172054, start_date=20231001T172809, end_date=20231001T172810
+[2023-10-01 17:28:10,113] {local_task_job.py:146} INFO - Task exited with return code 1

@@ -1,0 +1,26 @@
+[2023-10-01 17:28:38,422] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: backup_postgres.perform_postgresql_backup 2023-10-01T17:28:28.396518+00:00 [queued]>
+[2023-10-01 17:28:38,489] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: backup_postgres.perform_postgresql_backup 2023-10-01T17:28:28.396518+00:00 [queued]>
+[2023-10-01 17:28:38,491] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 17:28:38,505] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
+[2023-10-01 17:28:38,508] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 17:28:38,564] {taskinstance.py:1063} INFO - Executing <Task(BashOperator): perform_postgresql_backup> on 2023-10-01T17:28:28.396518+00:00
+[2023-10-01 17:28:38,610] {standard_task_runner.py:52} INFO - Started process 4052 to run task
+[2023-10-01 17:28:38,638] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'backup_postgres', 'perform_postgresql_backup', '2023-10-01T17:28:28.396518+00:00', '--job-id', '11', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/backup_postgres.py', '--cfg-path', '/tmp/tmp603m4hjk', '--error-file', '/tmp/tmpu6mengvv']
+[2023-10-01 17:28:38,655] {standard_task_runner.py:77} INFO - Job 11: Subtask perform_postgresql_backup
+[2023-10-01 17:28:39,120] {logging_mixin.py:104} INFO - Running <TaskInstance: backup_postgres.perform_postgresql_backup 2023-10-01T17:28:28.396518+00:00 [running]> on host c1a95d6e7033
+[2023-10-01 17:28:39,318] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=svastikkka
+AIRFLOW_CTX_DAG_ID=backup_postgres
+AIRFLOW_CTX_TASK_ID=perform_postgresql_backup
+AIRFLOW_CTX_EXECUTION_DATE=2023-10-01T17:28:28.396518+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-10-01T17:28:28.396518+00:00
+[2023-10-01 17:28:39,327] {bash.py:135} INFO - Tmp dir root location: 
+ /tmp
+[2023-10-01 17:28:39,339] {bash.py:158} INFO - Running command: export PGPASSWORD='airflow' && pg_dump -U airflow -h host.docker.internal -d airflow -f /tmp/backup.sql
+[2023-10-01 17:28:39,392] {bash.py:169} INFO - Output:
+[2023-10-01 17:28:42,552] {bash.py:177} INFO - Command exited with return code 0
+[2023-10-01 17:28:42,789] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=backup_postgres, task_id=perform_postgresql_backup, execution_date=20231001T172828, start_date=20231001T172838, end_date=20231001T172842
+[2023-10-01 17:28:43,504] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-10-01 17:28:43,606] {local_task_job.py:146} INFO - Task exited with return code 0

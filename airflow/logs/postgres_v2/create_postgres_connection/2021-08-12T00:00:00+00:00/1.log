@@ -1,0 +1,37 @@
+[2023-10-01 10:17:46,176] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: postgres_v2.create_postgres_connection 2021-08-12T00:00:00+00:00 [queued]>
+[2023-10-01 10:17:47,866] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: postgres_v2.create_postgres_connection 2021-08-12T00:00:00+00:00 [queued]>
+[2023-10-01 10:17:47,872] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 10:17:47,910] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
+[2023-10-01 10:17:47,921] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 10:17:48,480] {taskinstance.py:1063} INFO - Executing <Task(PostgresOperator): create_postgres_connection> on 2021-08-12T00:00:00+00:00
+[2023-10-01 10:17:48,825] {standard_task_runner.py:52} INFO - Started process 47868 to run task
+[2023-10-01 10:17:50,565] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'postgres_v2', 'create_postgres_connection', '2021-08-12T00:00:00+00:00', '--job-id', '2723', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/postgresql_example_2.py', '--cfg-path', '/tmp/tmpa1pw244_', '--error-file', '/tmp/tmprz6_n6ck']
+[2023-10-01 10:17:50,897] {standard_task_runner.py:77} INFO - Job 2723: Subtask create_postgres_connection
+[2023-10-01 10:17:54,377] {logging_mixin.py:104} INFO - Running <TaskInstance: postgres_v2.create_postgres_connection 2021-08-12T00:00:00+00:00 [running]> on host d4ed655215d1
+[2023-10-01 10:17:57,163] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=svastikkka
+AIRFLOW_CTX_DAG_ID=postgres_v2
+AIRFLOW_CTX_TASK_ID=create_postgres_connection
+AIRFLOW_CTX_EXECUTION_DATE=2021-08-12T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-08-12T00:00:00+00:00
+[2023-10-01 10:17:57,176] {postgres.py:69} INFO - Executing: create table if not exists dags_run(
+        dt  date,
+        dag_id character varying,
+        primary key (dt,dag_id)
+        )
+[2023-10-01 10:17:57,258] {base.py:74} INFO - Using connection to: id: posgres_testing. Host: host.docker.internal, Port: 5432, Schema: testing, Login: airflow, Password: XXXXXXXX, extra: None
+[2023-10-01 10:17:57,424] {dbapi.py:180} INFO - Running statement: create table if not exists dags_run(
+        dt  date,
+        dag_id character varying,
+        primary key (dt,dag_id)
+        ), parameters: None
+[2023-10-01 10:17:57,464] {dbapi.py:186} INFO - Rows affected: -1
+[2023-10-01 10:17:57,484] {postgres.py:73} INFO - NOTICE:  relation "dags_run" already exists, skipping
+
+[2023-10-01 10:17:57,654] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=postgres_v2, task_id=create_postgres_connection, execution_date=20210812T000000, start_date=20231001T101746, end_date=20231001T101757
+[2023-10-01 10:18:02,318] {local_task_job.py:188} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2023-10-01 10:18:02,977] {process_utils.py:100} INFO - Sending Signals.SIGTERM to GPID 47868
+[2023-10-01 10:18:06,053] {taskinstance.py:1239} ERROR - Received SIGTERM. Terminating subprocesses.
+[2023-10-01 10:18:07,102] {process_utils.py:66} INFO - Process psutil.Process(pid=47868, status='terminated', exitcode=1, started='10:17:48') (47868) terminated with exit code 1

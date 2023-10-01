@@ -1,0 +1,27 @@
+[2023-10-01 16:01:34,313] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: backup_postgres.list_current_directory 2023-10-01T16:01:29.713154+00:00 [queued]>
+[2023-10-01 16:01:34,405] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: backup_postgres.list_current_directory 2023-10-01T16:01:29.713154+00:00 [queued]>
+[2023-10-01 16:01:34,407] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 16:01:34,410] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
+[2023-10-01 16:01:34,413] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 16:01:34,475] {taskinstance.py:1063} INFO - Executing <Task(BashOperator): list_current_directory> on 2023-10-01T16:01:29.713154+00:00
+[2023-10-01 16:01:34,513] {standard_task_runner.py:52} INFO - Started process 5783 to run task
+[2023-10-01 16:01:34,551] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'backup_postgres', 'list_current_directory', '2023-10-01T16:01:29.713154+00:00', '--job-id', '5', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/backup_postgres.py', '--cfg-path', '/tmp/tmpu3l9c1_x', '--error-file', '/tmp/tmpmzb3u71_']
+[2023-10-01 16:01:34,565] {standard_task_runner.py:77} INFO - Job 5: Subtask list_current_directory
+[2023-10-01 16:01:35,005] {logging_mixin.py:104} INFO - Running <TaskInstance: backup_postgres.list_current_directory 2023-10-01T16:01:29.713154+00:00 [running]> on host 55885b568803
+[2023-10-01 16:01:35,382] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=svastikkka
+AIRFLOW_CTX_DAG_ID=backup_postgres
+AIRFLOW_CTX_TASK_ID=list_current_directory
+AIRFLOW_CTX_EXECUTION_DATE=2023-10-01T16:01:29.713154+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-10-01T16:01:29.713154+00:00
+[2023-10-01 16:01:35,392] {bash.py:135} INFO - Tmp dir root location: 
+ /tmp
+[2023-10-01 16:01:35,401] {bash.py:158} INFO - Running command: ls -l
+[2023-10-01 16:01:35,538] {bash.py:169} INFO - Output:
+[2023-10-01 16:01:35,551] {bash.py:173} INFO - total 0
+[2023-10-01 16:01:35,559] {bash.py:177} INFO - Command exited with return code 0
+[2023-10-01 16:01:35,885] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=backup_postgres, task_id=list_current_directory, execution_date=20231001T160129, start_date=20231001T160134, end_date=20231001T160135
+[2023-10-01 16:01:36,326] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-10-01 16:01:36,432] {local_task_job.py:146} INFO - Task exited with return code 0

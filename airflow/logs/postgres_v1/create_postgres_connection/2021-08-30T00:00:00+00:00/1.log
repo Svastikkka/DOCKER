@@ -1,0 +1,14 @@
+[2023-10-01 09:59:19,790] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: postgres_v1.create_postgres_connection 2021-08-30T00:00:00+00:00 [queued]>
+[2023-10-01 09:59:22,165] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: postgres_v1.create_postgres_connection 2021-08-30T00:00:00+00:00 [queued]>
+[2023-10-01 09:59:22,168] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 09:59:22,170] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
+[2023-10-01 09:59:22,176] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 09:59:24,797] {taskinstance.py:1063} INFO - Executing <Task(PostgresOperator): create_postgres_connection> on 2021-08-30T00:00:00+00:00
+[2023-10-01 09:59:26,055] {standard_task_runner.py:52} INFO - Started process 44131 to run task
+[2023-10-01 09:59:27,116] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'postgres_v1', 'create_postgres_connection', '2021-08-30T00:00:00+00:00', '--job-id', '2625', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/1_postgresql.py', '--cfg-path', '/tmp/tmpt1s0k2n0', '--error-file', '/tmp/tmpqklaz5vd']
+[2023-10-01 09:59:27,316] {standard_task_runner.py:77} INFO - Job 2625: Subtask create_postgres_connection
+[2023-10-01 09:59:32,925] {local_task_job.py:188} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2023-10-01 09:59:33,044] {process_utils.py:100} INFO - Sending Signals.SIGTERM to GPID 44131
+[2023-10-01 09:59:36,455] {process_utils.py:66} INFO - Process psutil.Process(pid=44131, status='terminated', exitcode=1, started='09:59:25') (44131) terminated with exit code 1

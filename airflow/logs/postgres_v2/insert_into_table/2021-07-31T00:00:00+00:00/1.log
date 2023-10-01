@@ -1,0 +1,31 @@
+[2023-10-01 10:17:57,287] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: postgres_v2.insert_into_table 2021-07-31T00:00:00+00:00 [queued]>
+[2023-10-01 10:17:58,516] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: postgres_v2.insert_into_table 2021-07-31T00:00:00+00:00 [queued]>
+[2023-10-01 10:17:58,548] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 10:17:58,587] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
+[2023-10-01 10:17:58,622] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 10:18:00,223] {taskinstance.py:1063} INFO - Executing <Task(PostgresOperator): insert_into_table> on 2021-07-31T00:00:00+00:00
+[2023-10-01 10:18:00,498] {standard_task_runner.py:52} INFO - Started process 47898 to run task
+[2023-10-01 10:18:01,299] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'postgres_v2', 'insert_into_table', '2021-07-31T00:00:00+00:00', '--job-id', '2726', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/postgresql_example_2.py', '--cfg-path', '/tmp/tmp9df0e8zf', '--error-file', '/tmp/tmp90tkhfr5']
+[2023-10-01 10:18:01,994] {standard_task_runner.py:77} INFO - Job 2726: Subtask insert_into_table
+[2023-10-01 10:18:09,023] {logging_mixin.py:104} INFO - Running <TaskInstance: postgres_v2.insert_into_table 2021-07-31T00:00:00+00:00 [running]> on host d4ed655215d1
+[2023-10-01 10:18:12,279] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=svastikkka
+AIRFLOW_CTX_DAG_ID=postgres_v2
+AIRFLOW_CTX_TASK_ID=insert_into_table
+AIRFLOW_CTX_EXECUTION_DATE=2021-07-31T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-07-31T00:00:00+00:00
+[2023-10-01 10:18:12,288] {postgres.py:69} INFO - Executing: 
+            insert into dags_run (dt, dag_id) values ('2021-07-31', 'postgres_v2')
+        
+[2023-10-01 10:18:12,487] {base.py:74} INFO - Using connection to: id: posgres_testing. Host: host.docker.internal, Port: 5432, Schema: testing, Login: airflow, Password: XXXXXXXX, extra: None
+[2023-10-01 10:18:12,657] {dbapi.py:180} INFO - Running statement: 
+            insert into dags_run (dt, dag_id) values ('2021-07-31', 'postgres_v2')
+        , parameters: None
+[2023-10-01 10:18:12,671] {dbapi.py:186} INFO - Rows affected: 1
+[2023-10-01 10:18:13,184] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=postgres_v2, task_id=insert_into_table, execution_date=20210731T000000, start_date=20231001T101757, end_date=20231001T101813
+[2023-10-01 10:18:21,468] {local_task_job.py:188} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2023-10-01 10:18:21,900] {process_utils.py:100} INFO - Sending Signals.SIGTERM to GPID 47898
+[2023-10-01 10:18:25,960] {taskinstance.py:1239} ERROR - Received SIGTERM. Terminating subprocesses.
+[2023-10-01 10:18:29,421] {process_utils.py:66} INFO - Process psutil.Process(pid=47898, status='terminated', exitcode=1, started='10:18:00') (47898) terminated with exit code 1

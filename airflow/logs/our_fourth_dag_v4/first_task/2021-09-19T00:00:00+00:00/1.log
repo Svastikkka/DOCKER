@@ -1,0 +1,29 @@
+[2023-10-01 06:11:31,019] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: our_fourth_dag_v4.first_task 2021-09-19T00:00:00+00:00 [queued]>
+[2023-10-01 06:11:31,263] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: our_fourth_dag_v4.first_task 2021-09-19T00:00:00+00:00 [queued]>
+[2023-10-01 06:11:31,266] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 06:11:31,274] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
+[2023-10-01 06:11:31,284] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 06:11:31,480] {taskinstance.py:1063} INFO - Executing <Task(BashOperator): first_task> on 2021-09-19T00:00:00+00:00
+[2023-10-01 06:11:31,567] {standard_task_runner.py:52} INFO - Started process 4626 to run task
+[2023-10-01 06:11:31,674] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'our_fourth_dag_v4', 'first_task', '2021-09-19T00:00:00+00:00', '--job-id', '579', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/our_fourth_dag.py', '--cfg-path', '/tmp/tmparc3xfvh', '--error-file', '/tmp/tmptg4rtq4o']
+[2023-10-01 06:11:31,774] {standard_task_runner.py:77} INFO - Job 579: Subtask first_task
+[2023-10-01 06:11:32,921] {logging_mixin.py:104} INFO - Running <TaskInstance: our_fourth_dag_v4.first_task 2021-09-19T00:00:00+00:00 [running]> on host d4ed655215d1
+[2023-10-01 06:11:34,282] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=svastikkka
+AIRFLOW_CTX_DAG_ID=our_fourth_dag_v4
+AIRFLOW_CTX_TASK_ID=first_task
+AIRFLOW_CTX_EXECUTION_DATE=2021-09-19T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-09-19T00:00:00+00:00
+[2023-10-01 06:11:34,295] {bash.py:135} INFO - Tmp dir root location: 
+ /tmp
+[2023-10-01 06:11:34,327] {bash.py:158} INFO - Running command: echo hello world, this is the first task!
+[2023-10-01 06:11:34,592] {bash.py:169} INFO - Output:
+[2023-10-01 06:11:34,642] {bash.py:173} INFO - hello world, this is the first task!
+[2023-10-01 06:11:34,661] {bash.py:177} INFO - Command exited with return code 0
+[2023-10-01 06:11:35,104] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=our_fourth_dag_v4, task_id=first_task, execution_date=20210919T000000, start_date=20231001T061131, end_date=20231001T061135
+[2023-10-01 06:11:37,088] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-10-01 06:11:37,259] {local_task_job.py:188} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2023-10-01 06:11:37,289] {process_utils.py:100} INFO - Sending Signals.SIGTERM to GPID 4626
+[2023-10-01 06:11:37,350] {process_utils.py:66} INFO - Process psutil.Process(pid=4626, status='terminated', exitcode=0, started='06:11:31') (4626) terminated with exit code 0

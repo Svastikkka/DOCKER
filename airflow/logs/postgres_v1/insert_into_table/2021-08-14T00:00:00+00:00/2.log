@@ -1,0 +1,45 @@
+[2023-10-01 10:01:34,403] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: postgres_v1.insert_into_table 2021-08-14T00:00:00+00:00 [queued]>
+[2023-10-01 10:01:34,613] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: postgres_v1.insert_into_table 2021-08-14T00:00:00+00:00 [queued]>
+[2023-10-01 10:01:34,629] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 10:01:34,634] {taskinstance.py:1043} INFO - Starting attempt 2 of 6
+[2023-10-01 10:01:34,658] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 10:01:34,954] {taskinstance.py:1063} INFO - Executing <Task(PostgresOperator): insert_into_table> on 2021-08-14T00:00:00+00:00
+[2023-10-01 10:01:34,997] {standard_task_runner.py:52} INFO - Started process 44577 to run task
+[2023-10-01 10:01:35,140] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'postgres_v1', 'insert_into_table', '2021-08-14T00:00:00+00:00', '--job-id', '2641', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/1_postgresql.py', '--cfg-path', '/tmp/tmp_wu1c8gl', '--error-file', '/tmp/tmppv4keo39']
+[2023-10-01 10:01:35,277] {standard_task_runner.py:77} INFO - Job 2641: Subtask insert_into_table
+[2023-10-01 10:01:36,429] {logging_mixin.py:104} INFO - Running <TaskInstance: postgres_v1.insert_into_table 2021-08-14T00:00:00+00:00 [running]> on host d4ed655215d1
+[2023-10-01 10:01:37,124] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=svastikkka
+AIRFLOW_CTX_DAG_ID=postgres_v1
+AIRFLOW_CTX_TASK_ID=insert_into_table
+AIRFLOW_CTX_EXECUTION_DATE=2021-08-14T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-08-14T00:00:00+00:00
+[2023-10-01 10:01:37,131] {postgres.py:69} INFO - Executing: 
+            insert into dag_runs (dt, dag_id) values ('2021-08-14', 'postgres_v1')
+        
+[2023-10-01 10:01:37,306] {base.py:74} INFO - Using connection to: id: posgres_testing. Host: host.docker.internal, Port: 5432, Schema: testing, Login: airflow, Password: XXXXXXXX, extra: None
+[2023-10-01 10:01:37,432] {dbapi.py:180} INFO - Running statement: 
+            insert into dag_runs (dt, dag_id) values ('2021-08-14', 'postgres_v1')
+        , parameters: None
+[2023-10-01 10:01:37,493] {taskinstance.py:1455} ERROR - relation "dag_runs" does not exist
+LINE 2:             insert into dag_runs (dt, dag_id) values ('2021-...
+                                ^
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1112, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1285, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1315, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/providers/postgres/operators/postgres.py", line 71, in execute
+    self.hook.run(self.sql, self.autocommit, parameters=self.parameters)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/hooks/dbapi.py", line 184, in run
+    cur.execute(sql_statement)
+psycopg2.errors.UndefinedTable: relation "dag_runs" does not exist
+LINE 2:             insert into dag_runs (dt, dag_id) values ('2021-...
+                                ^
+
+[2023-10-01 10:01:37,643] {taskinstance.py:1503} INFO - Marking task as UP_FOR_RETRY. dag_id=postgres_v1, task_id=insert_into_table, execution_date=20210814T000000, start_date=20231001T100134, end_date=20231001T100137
+[2023-10-01 10:01:37,960] {local_task_job.py:146} INFO - Task exited with return code 1

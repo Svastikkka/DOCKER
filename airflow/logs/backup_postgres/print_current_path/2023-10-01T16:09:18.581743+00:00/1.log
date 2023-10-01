@@ -1,0 +1,27 @@
+[2023-10-01 16:09:26,166] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: backup_postgres.print_current_path 2023-10-01T16:09:18.581743+00:00 [queued]>
+[2023-10-01 16:09:26,502] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: backup_postgres.print_current_path 2023-10-01T16:09:18.581743+00:00 [queued]>
+[2023-10-01 16:09:26,510] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 16:09:26,524] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
+[2023-10-01 16:09:26,541] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 16:09:26,691] {taskinstance.py:1063} INFO - Executing <Task(BashOperator): print_current_path> on 2023-10-01T16:09:18.581743+00:00
+[2023-10-01 16:09:26,738] {standard_task_runner.py:52} INFO - Started process 8361 to run task
+[2023-10-01 16:09:26,797] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'backup_postgres', 'print_current_path', '2023-10-01T16:09:18.581743+00:00', '--job-id', '24', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/backup_postgres.py', '--cfg-path', '/tmp/tmpnq8atn7z', '--error-file', '/tmp/tmp4bpceos1']
+[2023-10-01 16:09:26,832] {standard_task_runner.py:77} INFO - Job 24: Subtask print_current_path
+[2023-10-01 16:09:27,376] {logging_mixin.py:104} INFO - Running <TaskInstance: backup_postgres.print_current_path 2023-10-01T16:09:18.581743+00:00 [running]> on host 55885b568803
+[2023-10-01 16:09:27,938] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=svastikkka
+AIRFLOW_CTX_DAG_ID=backup_postgres
+AIRFLOW_CTX_TASK_ID=print_current_path
+AIRFLOW_CTX_EXECUTION_DATE=2023-10-01T16:09:18.581743+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-10-01T16:09:18.581743+00:00
+[2023-10-01 16:09:27,953] {bash.py:135} INFO - Tmp dir root location: 
+ /tmp
+[2023-10-01 16:09:27,984] {bash.py:158} INFO - Running command: pwd
+[2023-10-01 16:09:28,220] {bash.py:169} INFO - Output:
+[2023-10-01 16:09:28,231] {bash.py:173} INFO - /tmp/airflowtmpvjyy1_c0
+[2023-10-01 16:09:28,235] {bash.py:177} INFO - Command exited with return code 0
+[2023-10-01 16:09:28,383] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=backup_postgres, task_id=print_current_path, execution_date=20231001T160918, start_date=20231001T160926, end_date=20231001T160928
+[2023-10-01 16:09:28,971] {taskinstance.py:1220} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-10-01 16:09:29,133] {local_task_job.py:146} INFO - Task exited with return code 0

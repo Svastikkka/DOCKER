@@ -1,0 +1,25 @@
+[2023-10-01 08:07:25,038] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: our_eight_dag_v8.greet 2021-08-03T00:00:00+00:00 [queued]>
+[2023-10-01 08:07:25,403] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: our_eight_dag_v8.greet 2021-08-03T00:00:00+00:00 [queued]>
+[2023-10-01 08:07:25,406] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 08:07:25,410] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
+[2023-10-01 08:07:25,414] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 08:07:25,638] {taskinstance.py:1063} INFO - Executing <Task(PythonOperator): greet> on 2021-08-03T00:00:00+00:00
+[2023-10-01 08:07:25,690] {standard_task_runner.py:52} INFO - Started process 24702 to run task
+[2023-10-01 08:07:26,038] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'our_eight_dag_v8', 'greet', '2021-08-03T00:00:00+00:00', '--job-id', '2451', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/our_eight_dag.py', '--cfg-path', '/tmp/tmpazi6fozu', '--error-file', '/tmp/tmp3l8zcuhp']
+[2023-10-01 08:07:26,569] {standard_task_runner.py:77} INFO - Job 2451: Subtask greet
+[2023-10-01 08:07:27,793] {logging_mixin.py:104} INFO - Running <TaskInstance: our_eight_dag_v8.greet 2021-08-03T00:00:00+00:00 [running]> on host d4ed655215d1
+[2023-10-01 08:07:28,645] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=svastikkka
+AIRFLOW_CTX_DAG_ID=our_eight_dag_v8
+AIRFLOW_CTX_TASK_ID=greet
+AIRFLOW_CTX_EXECUTION_DATE=2021-08-03T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-08-03T00:00:00+00:00
+[2023-10-01 08:07:30,274] {logging_mixin.py:104} INFO - Hello My name is Manshu Sharma and I am 26 years old.
+[2023-10-01 08:07:30,322] {python.py:118} INFO - Done. Returned value was: None
+[2023-10-01 08:07:30,517] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=our_eight_dag_v8, task_id=greet, execution_date=20210803T000000, start_date=20231001T080725, end_date=20231001T080730
+[2023-10-01 08:07:32,127] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-10-01 08:07:32,213] {local_task_job.py:188} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2023-10-01 08:07:33,346] {process_utils.py:100} INFO - Sending Signals.SIGTERM to GPID 24702
+[2023-10-01 08:07:33,842] {process_utils.py:66} INFO - Process psutil.Process(pid=24702, status='terminated', exitcode=0, started='08:07:25') (24702) terminated with exit code 0

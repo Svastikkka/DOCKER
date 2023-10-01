@@ -1,0 +1,37 @@
+[2023-10-01 07:34:21,244] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: our_seventh_dag_v7.greet 2021-08-02T00:00:00+00:00 [queued]>
+[2023-10-01 07:34:22,020] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: our_seventh_dag_v7.greet 2021-08-02T00:00:00+00:00 [queued]>
+[2023-10-01 07:34:22,043] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 07:34:22,079] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
+[2023-10-01 07:34:22,094] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2023-10-01 07:34:22,494] {taskinstance.py:1063} INFO - Executing <Task(PythonOperator): greet> on 2021-08-02T00:00:00+00:00
+[2023-10-01 07:34:22,610] {standard_task_runner.py:52} INFO - Started process 17919 to run task
+[2023-10-01 07:34:23,330] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'our_seventh_dag_v7', 'greet', '2021-08-02T00:00:00+00:00', '--job-id', '1338', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/our_seventh_dag.py', '--cfg-path', '/tmp/tmpbjoyvf89', '--error-file', '/tmp/tmp4dbf9avk']
+[2023-10-01 07:34:23,734] {standard_task_runner.py:77} INFO - Job 1338: Subtask greet
+[2023-10-01 07:34:27,298] {logging_mixin.py:104} INFO - Running <TaskInstance: our_seventh_dag_v7.greet 2021-08-02T00:00:00+00:00 [running]> on host d4ed655215d1
+[2023-10-01 07:34:29,339] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=svastikkka
+AIRFLOW_CTX_DAG_ID=our_seventh_dag_v7
+AIRFLOW_CTX_TASK_ID=greet
+AIRFLOW_CTX_EXECUTION_DATE=2021-08-02T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-08-02T00:00:00+00:00
+[2023-10-01 07:34:29,375] {taskinstance.py:1455} ERROR - xcom_pull() got an unexpected keyword argument 'value'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1112, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1285, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1315, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 117, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 128, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/our_seventh_dag.py", line 14, in greet
+    firstname = ti.xcom_pull(task_ids="get_name", key="firstname",value="Manshu")
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/session.py", line 65, in wrapper
+    return func(*args, session=session, **kwargs)
+TypeError: xcom_pull() got an unexpected keyword argument 'value'
+[2023-10-01 07:34:29,518] {taskinstance.py:1503} INFO - Marking task as UP_FOR_RETRY. dag_id=our_seventh_dag_v7, task_id=greet, execution_date=20210802T000000, start_date=20231001T073421, end_date=20231001T073429
+[2023-10-01 07:34:30,705] {local_task_job.py:146} INFO - Task exited with return code 1
