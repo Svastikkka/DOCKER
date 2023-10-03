@@ -1,6 +1,11 @@
 # Introduction
 This repository contains the necessary files and instructions to set up a local environment using Docker and Docker Compose. The Docker Compose YAML file provided in this repository will deploy the following services:
 
+- Airflow: An open-source workflow management platform.
+- Minio: An object bucket
+- MySQL: A RDBMS
+- Selenium(Python): A browser automation tool. Good for Functional testing.
+- Vault: A secure secrets storage.
 - Kafka: A distributed streaming platform.
 - MongoDB: A document-oriented database.
 - ZooKeeper: A centralized service for maintaining configuration information.
