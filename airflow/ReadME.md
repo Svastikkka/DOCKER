@@ -28,7 +28,7 @@ psql -h localhost -p 5432 -U airflow -W airflow
 ## Dump
 
 ```
-pg_dump -U airflow -W -F t testing > testing.dump
+pg_dump -U airflow -W -F t airflow > airflow.dump
 ```
 
 # Reference
@@ -39,6 +39,8 @@ pg_dump -U airflow -W -F t testing > testing.dump
 - [PostgreSQL pg_dump Backup and pg_restore Restore Guide](https://snapshooter.com/learn/postgresql/pg_dump_pg_restore#pg-dump-example)
 - [How to create S3 connection for AWS and MinIO in latest airflow version | Airflow Tutorial Tips 3](https://www.youtube.com/watch?v=sVNvAtIZWdQ)
 - [Airflow Hooks S3 PostgreSQL: Airflow Tutorial P13](https://www.youtube.com/watch?v=rcG4WNwi900&list=PLwFJcsJ61oujAqYpMp1kdUBcPG0sE0QMT&index=14)
+- [How to Use the S3 Hook in Apache Airflow: A Comprehensive Guide for Data Scientists](https://saturncloud.io/blog/how-to-use-the-s3-hook-in-apache-airflow-a-comprehensive-guide-for-data-scientists/#:~:text=Using%20the%20S3%20Hook%20in%20a%20DAG&text=In%20this%20example%2C%20we%20create,upload%20a%20file%20to%20S3.)
+- [Introduction to Kapacitor | Getting Started [5 of 7]](https://www.youtube.com/watch?v=lfNcYG0bMhU)
 
 # Errors
 - [No module named 'airflow' when initializing Apache airflow docker](https://stackoverflow.com/questions/66791752/no-module-named-airflow-when-initializing-apache-airflow-docker)
