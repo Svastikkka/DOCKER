@@ -53,3 +53,8 @@ pg_dump -U airflow -W -F t airflow > airflow.dump
         "host": "http://host.docker.internal:9000"
     }
 ```
+
+- To take backup of connections
+```bash
+airflow connections export /tmp/connections --format yaml
+```
