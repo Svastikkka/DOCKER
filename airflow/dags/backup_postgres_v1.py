@@ -60,7 +60,7 @@ print_current_path = BashOperator(
 # Define the BashOperator to perform the backup
 backup_command = (
     f"export PGPASSWORD='{conn_params['password']}' && "
-    f"pg_dump -U {conn_params['username']} -h {conn_params['host']} -d airflow -f /tmp/backup.sql"
+    f"pg_dump -U {conn_params['username']} -h {conn_params['host']} -d airflow -t connection -f /tmp/backup.sql"
 )
 backup_task = BashOperator(
     task_id='perform_postgresql_backup',
