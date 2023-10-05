@@ -68,12 +68,14 @@ services:
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
     ports:
-      - 5432:5432
+      - 5433:5432
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "airflow"]
       interval: 5s
       retries: 5
     restart: always
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   airflow-webserver:
     <<: *airflow-common
@@ -86,11 +88,15 @@ services:
       timeout: 10s
       retries: 5
     restart: always
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   airflow-scheduler:
     <<: *airflow-common
     command: scheduler
     restart: always
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   airflow-init:
     <<: *airflow-common
@@ -101,6 +107,8 @@ services:
       _AIRFLOW_WWW_USER_CREATE: 'true'
       _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
       _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
 volumes:
   postgres-db-volume:
