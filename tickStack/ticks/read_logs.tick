@@ -1,0 +1,74 @@
+var db = 'telegraf'
+
+var rp = 'autogen'
+
+var measurement = 'climate'
+
+var groupBy = []
+
+var period = 5s
+
+var whereFilter = lambda: ("host" == 'telegraf-getting-started') AND isPresent("data")
+
+var name = 'sample_script'
+
+var idVar = name
+
+var message = 'sample_script: {{ index .Fields "value" }}'
+
+var idTag = 'alertID'
+
+var levelTag = 'level'
+
+var messageField = 'message'
+
+var durationField = 'duration'
+
+var outputDB = 'chronograf'
+
+var outputRP = 'autogen'
+
+var outputMeasurement = 'alerts'
+
+var triggerType = 'threshold'
+
+var crit = 'Sample'
+
+var data = stream
+    |from()
+        .database(db)
+        .retentionPolicy(rp)
+        .measurement(measurement)
+        .groupBy(groupBy)
+        .where(whereFilter)
+    |eval(lambda: "data")
+        .quiet()
+        .as('value')
+
+var trigger = data
+    |alert()
+        .crit(lambda: "value" =~ /Sample/)
+        .stateChangesOnly(30s)
+        .message(message)
+        .id(idVar)
+        .idTag(idTag)
+        .levelTag(levelTag)
+        .messageField(messageField)
+        .durationField(durationField)
+        .teams()
+        .channelURL('https://kivicapitalin.webhook.office.com/webhookb2/5a07d11e-f255-46b5-8d87-e4186973aec9@b5b1a78b-9721-421b-a3e5-b56d1f6ea9e2/IncomingWebhook/349497d48f6f46a9bb60a1532f62b7d6/58b643a3-6618-4077-a3d5-8c9481042714')
+
+trigger
+    |eval(lambda: float("value"))
+        .as('value')
+        .keep()
+    |influxDBOut()
+        .create()
+        .database(outputDB)
+        .retentionPolicy(outputRP)
+        .measurement(outputMeasurement)
+        .tag('alertName', name)
+        .tag('triggerType', triggerType)
+
+trigger
+    |httpOut('output')
