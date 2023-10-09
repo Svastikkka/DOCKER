@@ -104,3 +104,15 @@ services:
     environment:
       - ZOOKEEPER_CONNECT=zookeeper:2181 # Change the port if needed
       - KAFKA_BROKER=broker:9092 # Change the port if needed
+
+  kafka-ui:
+      container_name: kafka-ui
+      image: provectuslabs/kafka-ui:latest
+      ports:
+          - "18080:8080"
+      depends_on:
+          - broker
+      environment:
+          - KAFKA_CLUSTERS_0_NAME=local
+          - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=broker:9092
+          - KAFKA_CLUSTERS_0_ZOOKEEPER=zookeepers:2181
