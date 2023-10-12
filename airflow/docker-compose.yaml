@@ -60,6 +60,7 @@ x-airflow-common:
 
 services:
   postgres:
+    hostname: postgres
     image: postgres:11
     environment:
       POSTGRES_USER: airflow
@@ -76,6 +77,8 @@ services:
     restart: always
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    networks:
+      - svastikkka
 
   airflow-webserver:
     <<: *airflow-common
@@ -90,6 +93,8 @@ services:
     restart: always
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    networks:
+      - svastikkka
 
   airflow-scheduler:
     <<: *airflow-common
@@ -97,6 +102,8 @@ services:
     restart: always
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    networks:
+      - svastikkka
 
   airflow-init:
     <<: *airflow-common
@@ -109,6 +116,12 @@ services:
       _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    networks:
+      - svastikkka
 
 volumes:
   postgres-db-volume:
+
+networks:
+    svastikkka:
+        driver: bridge
