@@ -1,60 +1,61 @@
 version: '2'
 services:
   zookeeper:
-    image: quay.io/debezium/zookeeper:${DEBEZIUM_VERSION}
+    image: quay.io/debezium/zookeeper:2.1
     ports:
      - 2181:2181
      - 2888:2888
      - 3888:3888
   kafka:
-    image: quay.io/debezium/kafka:${DEBEZIUM_VERSION}
+    image: quay.io/debezium/kafka:2.1
     ports:
-     - 9092:9092
+     - 19092:9092
     links:
      - zookeeper
     environment:
      - ZOOKEEPER_CONNECT=zookeeper:2181
   mysql:
-    image: quay.io/debezium/example-mysql:${DEBEZIUM_VERSION}
+    image: docker.io/library/sample-mysql:latest
     ports:
-     - 3306:3306
+     - 13306:3306
     environment:
      - MYSQL_ROOT_PASSWORD=debezium
      - MYSQL_USER=mysqluser
      - MYSQL_PASSWORD=mysqlpw 
-  postgres:
-    image: quay.io/debezium/postgres:9.6
+  mysql2:
+    image: docker.io/library/sample-mysql:latest
     ports:
-     - "5432:5432"
+     - 23306:3306
     environment:
-     - POSTGRES_USER=postgresuser
-     - POSTGRES_PASSWORD=postgrespw
-     - POSTGRES_DB=inventory
-  elastic:
-    image: docker.elastic.co/elasticsearch/elasticsearch:5.5.2
-    ports:
-     - "9200:9200"
-    environment:
-     - http.host=0.0.0.0
-     - transport.host=127.0.0.1
-     - xpack.security.enabled=false
+     - MYSQL_ROOT_PASSWORD=debezium
+     - MYSQL_USER=mysqluser
+     - MYSQL_PASSWORD=mysqlpw 
   connect:
-    image: debezium/connect-jdbc-es:${DEBEZIUM_VERSION}
+    image: debezium/connect-jdbc-es:2.1
     build:
       context: debezium-jdbc-es
       args:
-        DEBEZIUM_VERSION: ${DEBEZIUM_VERSION}
+        DEBEZIUM_VERSION: 2.1
     ports:
      - 8083:8083
      - 5005:5005
     links:
      - kafka
      - mysql
-     - postgres
-     - elastic
+     - mysql2
     environment:
      - BOOTSTRAP_SERVERS=kafka:9092
      - GROUP_ID=1
      - CONFIG_STORAGE_TOPIC=my_connect_configs
      - OFFSET_STORAGE_TOPIC=my_connect_offsets
      - STATUS_STORAGE_TOPIC=my_source_connect_statuses
+  kafka-ui:
+      container_name: kafka-ui
+      image: provectuslabs/kafka-ui:latest
+      ports:
+          - "18080:8080"
+      depends_on:
+          - kafka
+      environment:
+          - KAFKA_CLUSTERS_0_NAME=local
+          - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=kafka:9092
