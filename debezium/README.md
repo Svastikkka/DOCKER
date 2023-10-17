@@ -1,3 +1,116 @@
+# Common steps
+
+- Step 1 `docker-compose up --build -d`
+- Step 2 Connect to MySQL
+  ```bash
+  mysql -u $MYSQL_USER  -p$MYSQL_PASSWORD
+  ```
+- Step 3 Create Connector
+  - JDBC Connector
+  ```bash
+  curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @jdbc-sink.json
+  ```
+  - MySQL Connector
+  ```bash
+  curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @source.json
+  ```
+- Step 4 Insert data into testing_table in sample DB
+  ```sql
+  insert into testing_table values(default, 'John', 'Doe', 'john.doe@example.com');
+  insert into testing_table values(default, 'Manshu', 'Doe', 'm.doe@example.com');
+  ```
+- Step 5 Delete data into testing_table
+  ```sql
+  delete  from testing_table where id=1007;
+  ```
+- Step 6 Update data into testing_table
+
+  ```sql
+  UPDATE testing_table
+  SET first_name = 'Mary', last_name = 'Smith'
+  WHERE first_name = 'John' AND last_name = 'Doe';
+  ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Debezium Unwrap SMT Demo
 
 This setup is going to demonstrate how to receive events from MySQL database and stream them down to a PostgreSQL database and/or an Elasticsearch server using the [Debezium Event Flattening SMT](https://debezium.io/docs/configuration/event-flattening/).
