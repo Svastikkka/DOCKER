@@ -40,7 +40,7 @@
 
 - Step 8 Go inside MySQL container 2
   ```bash
-  docker exec -it debezium-mysql-1 bash
+  docker exec -it debezium-mysql2-1 bash
   mysql -u $MYSQL_USER  -p$MYSQL_PASSWORD
   ```
 
