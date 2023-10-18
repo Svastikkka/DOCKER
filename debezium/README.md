@@ -14,16 +14,23 @@
   ```bash
   curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @source.json
   ```
-- Step 4 Insert data into testing_table in sample DB
+- Step 4 Go inside MySQL container
+  ```bash
+  docker exec -it debezium-mysql-1 bash
+  mysql -u $MYSQL_USER  -p$MYSQL_PASSWORD
+  ```
+- Step 5 Insert data into testing_table in sample DB
   ```sql
+  use sample;
   insert into testing_table values(default, 'John', 'Doe', 'john.doe@example.com');
   insert into testing_table values(default, 'Manshu', 'Doe', 'm.doe@example.com');
   ```
-- Step 5 Delete data into testing_table
+- Step 6 Delete data into testing_table
   ```sql
+  use sample;
   delete  from testing_table where id=1007;
   ```
-- Step 6 Update data into testing_table
+- Step 7 Update data into testing_table
 
   ```sql
   UPDATE testing_table
@@ -31,7 +38,11 @@
   WHERE first_name = 'John' AND last_name = 'Doe';
   ```
 
-
+- Step 8 Go inside MySQL container 2
+  ```bash
+  docker exec -it debezium-mysql-1 bash
+  mysql -u $MYSQL_USER  -p$MYSQL_PASSWORD
+  ```
 
 
 
