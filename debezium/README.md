@@ -1,4 +1,13 @@
-# Common steps
+# Pros & Cons
+- Cons
+  - Need to take a dump so both started at same position.
+  - Need to give database name & tables name in source.json and jdbc-sink.json before creating connector.
+  - Automatic sink will not work for new database without updating/adding  connector.
+- Pros
+  - Sink is working
+  - Insert/Update/Delete
+
+# Common steps to check INSERT/UPDATE/DELETE are working
 
 - Step 1 `docker-compose up --build -d`
 - Step 2 Connect to MySQL
@@ -44,22 +53,73 @@
   mysql -u $MYSQL_USER  -p$MYSQL_PASSWORD
   ```
 
+# Steps to take a dump and sync in both mysql container
+- Step 1 Go inside the mysql container
+  ```bash
+  docker exec -it debezium-mysql-1 bash
+  ```
+- Step 2 Login to MySQL server
+  ```bash
+  mysql -u $MYSQL_USER  -p$MYSQL_PASSWORD
+  ```
+- Step 3 Insert some new data or create new tables
+  ```sql
+  use sample
+  create table devops (id int primary key, name varchar(80));
+  insert into devops values(1,'Manshu');
+  ```
+- Step 4 Start taking MySQL dump
+  ```bash
+  mysqldump -u root -p --all-databases  > sample.sql
+  # PASSWD: debezium
+  ```
+- Step 5 Copy Dump from container to host
+  ```bash
+  docker cp debezium-mysql-1:/sample.sql .
+  ```
+- Step 6 Replace this new dump (sample.sql) with old (sample.sql)
+- Step 7 Setup down
+  ```
+  docker compose down
+  ```
+- Step 7 Build image
+  ```bash
+  docker build -t sample-mysql:0.1 .
+  ```
+- Step 8 Setup up
+  ```bash
+  docker compose up -d 
+  ```
+- Step 9 Check Data
+- Step 10 Create Connector
+  - JDBC Connector
+  ```bash
+  curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @jdbc-sink.json
+  ```
+  - MySQL Connector
+  ```bash
+  curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @source.json
+  ```
+- Step 11 Go inside MySQL container
+  ```bash
+  docker exec -it debezium-mysql-1 bash
+  mysql -u $MYSQL_USER  -p$MYSQL_PASSWORD
+  ```
+- Step 12 Insert data into testing_table in sample DB
+  ```sql
+  use sample;
+  insert into testing_table values(default, 'John', 'Doe', 'john.doe@example.com');
+  insert into testing_table values(default, 'Manshu', 'Doe', 'm.doe@example.com');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  insert into devops values(2, 'Manshu');
+  insert into devops values(3, 'Ravit');
+  insert into devops values(4, 'Shashi');
+  ```
+- Step 13 Go inside MySQL container 2 and check data
+  ```bash
+  docker exec -it debezium-mysql2-1 bash
+  mysql -u $MYSQL_USER  -p$MYSQL_PASSWORD
+  ```
 
 
 
@@ -168,7 +228,7 @@ This setup is going to demonstrate how to receive events from MySQL database and
                           |
                           |
                   +-------v--------+
-                  |                |
+                  |                mysql -u $MYSQL_USER  -p$MYSQL_PASSWORD|
                   |   PostgreSQL   |
                   |                |
                   +----------------+
@@ -197,7 +257,7 @@ curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json"
 
 # Start MySQL connector
 curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @source.json
-```
+```mysql -u $MYSQL_USER  -p$MYSQL_PASSWORD
 
 Check contents of the MySQL database:
 
