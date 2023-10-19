@@ -54,6 +54,13 @@
   ```
 
 # Steps to take a dump and sync in both mysql container
+- Step 0 Compose Up to do initial backup
+  ```
+  cd debezium-mysql
+  docker build -t sample-mysql:0.1 .
+  cd ..
+  docker-compose up --build -d
+  ```
 - Step 1 Go inside the mysql container
   ```bash
   docker exec -it debezium-mysql-1 bash
@@ -81,9 +88,11 @@
 - Step 7 Setup down
   ```
   docker compose down
+  docker rmi sample-mysql:0.1
   ```
 - Step 7 Build image
   ```bash
+  cd debezium-mysql
   docker build -t sample-mysql:0.1 .
   ```
 - Step 8 Setup up
@@ -126,6 +135,23 @@
 
 
 
+curl -i -X PUT -H "Accept: application/json" -H "Content-Type: application/json" http://localhost:8083/connectors/jdbc-sink/config -d '{
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "tasks.max": "1",
+    "topics": "addresses,abcd,beta",
+    "connection.url": "jdbc:mysql://mysql2:3306/sample?user=mysqluser&password=mysqlpw",
+    "transforms": "unwrap",
+    "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState",
+    "transforms.unwrap.drop.tombstones": "false",
+    "auto.create": "true",
+    "insert.mode": "upsert",
+    "delete.enabled": "true",
+    "pk.fields": "id",
+    "pk.mode": "record_key",
+    "schema.enable": "true"
+}'
+
+docker cp debezium-mysql-1:sample.sql ./sample.sql
 
 
 
