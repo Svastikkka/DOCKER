@@ -42,7 +42,7 @@ Scenarios
 
 
 
-# Pg Logical Replication
+# PG Logical Replication
 
 ```
 docker compose -f docker-compose1.yml up -d
@@ -73,11 +73,29 @@ psql --username=postgresadmin postgresdb
 CREATE USER appuser WITH PASSWORD 'apppass' SUPERUSER;
 CREATE DATABASE appdb WITH OWNER appuser;
 \c appdb;
+***Create a sample table***
+CREATE TABLE public.sample_table (
+    id serial PRIMARY KEY,
+    name text
+);
+CREATE TABLE public.sample_table2 (
+    id serial PRIMARY KEY,
+    name text
+);
 CREATE EXTENSION pglogical;
 
 ### INSTANCE 1
 select pglogical.create_node(node_name := 'provider1', dsn := 'host=192.168.0.211 port=5000 dbname=appdb user=appuser password=apppass');
-SELECT pglogical.replication_set_add_all_tables('default', ARRAY['public']);
+
+// SELECT pglogical.replication_set_add_all_tables('default', ARRAY['public']);
+SELECT pglogical.replication_set_add_table(
+    set_name := 'default',    -- The replication set name
+    relation := 'sample_table' -- The table name
+);
+SELECT pglogical.replication_set_add_table(
+    set_name := 'default',    -- The replication set name
+    relation := 'sample_table2' -- The table name
+);
 CREATE ROLE appdb;
 grant usage on schema pglogical to appdb;
 
@@ -89,20 +107,14 @@ select subscription_name, status FROM pglogical.show_subscription_status();
 SELECT pglogical.wait_for_subscription_sync_complete('subscription1');
 ```
 
-
-***Connect to the provider database (Instance 1)***
-\c appdb;
-
-***Create a sample table***
-CREATE TABLE public.sample_table (
-    id serial PRIMARY KEY,
-    name text
-);
 ***Insert data***
 INSERT INTO public.sample_table (name) VALUES ('Data from Provider Instance');
+INSERT INTO public.sample_table2 (name) VALUES ('Data from Provider Instance');
+
 ***See data***
 SELECT * FROM public.sample_table;
 SELECT * FROM sample_table;
+SELECT * FROM sample_table2;
 
 
 
