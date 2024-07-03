@@ -66,15 +66,16 @@ docker restart postgres-2
 
 ```
 psql --username=postgresadmin postgresdb
+psql --username=postgresadmin postgresdb
 ```
 
 ```
 CREATE USER appuser WITH PASSWORD 'apppass' SUPERUSER;
 CREATE DATABASE appdb WITH OWNER appuser;
+\c appdb;
 CREATE EXTENSION pglogical;
 
 ### INSTANCE 1
-\c appdb;
 select pglogical.create_node(node_name := 'provider1', dsn := 'host=192.168.0.211 port=5000 dbname=appdb user=appuser password=apppass');
 SELECT pglogical.replication_set_add_all_tables('default', ARRAY['public']);
 CREATE ROLE appdb;
@@ -82,9 +83,27 @@ grant usage on schema pglogical to appdb;
 
 
 ### INSTANCE 2
-\c appdb;
 SELECT pglogical.create_node( node_name := 'subscriber1', dsn := 'host=192.168.0.213 port=5001 dbname=appdb user=appuser password=apppass');
-SELECT pglogical.create_subscription( subscription_name := 'subscription1', provider_dsn := 'host=192.168.0.213 port=5001 dbname=appdb user=appuser password=apppass' );
+SELECT pglogical.create_subscription( subscription_name := 'subscription1', provider_dsn := 'host=192.168.0.211 port=5000 dbname=appdb user=appuser password=apppass');
 select subscription_name, status FROM pglogical.show_subscription_status();
 SELECT pglogical.wait_for_subscription_sync_complete('subscription1');
 ```
+
+
+***Connect to the provider database (Instance 1)***
+\c appdb;
+
+***Create a sample table***
+CREATE TABLE public.sample_table (
+    id serial PRIMARY KEY,
+    name text
+);
+***Insert data***
+INSERT INTO public.sample_table (name) VALUES ('Data from Provider Instance');
+***See data***
+SELECT * FROM public.sample_table;
+SELECT * FROM sample_table;
+
+
+
+SELECT pglogical.drop_subscription('subscription1');

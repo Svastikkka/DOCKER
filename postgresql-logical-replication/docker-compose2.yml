@@ -11,7 +11,7 @@ services:
     volumes:
       # - ./postgres-2/pgdata:/data
       - ./postgres-2/config:/config
-      # - ./postgres-2/archive:/mnt/server/archive
+      - ./postgres-2/archive:/mnt/server/archive
     ports:
       - "5001:5432"
     networks:
