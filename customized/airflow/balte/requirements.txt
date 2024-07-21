@@ -1,0 +1,11 @@
+pandas==1.4.0
+numpy==1.21
+statsmodels==0.13.2
+types-python-dateutil
+types-cachetools==5.2.1
+mypy==0.991
+protobuf==3.19.4
+sqlalchemy==1.4.31
+pydantic==1.10.7
+typing-extensions==4.4.0
+pulp==2.8.0
