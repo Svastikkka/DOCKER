@@ -2,8 +2,8 @@
 version: '3.3'
 services:
   postgres:
-    container_name: airflow_postgres
-    hostname: airflow_postgres
+    container_name: airflow_airflow_postgres
+    hostname: airflow_airflow_postgres
     image: postgres:11
     env_file:
       - .env
