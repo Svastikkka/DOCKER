@@ -2,10 +2,10 @@
 set -e
 
 # Initialize the Airflow database
-/opt/conda/envs/env_balte_0.0.3/bin/airflow db init
+/opt/conda/envs/data_auditing_env/bin/airflow db init
 
 # Create the Airflow admin user
-/opt/conda/envs/env_balte_0.0.3/bin/airflow users create --username admin \
+/opt/conda/envs/data_auditing_env/bin/airflow users create --username admin \
                      --password admin \
                      --firstname Manshu \
                      --lastname Sharma \
@@ -13,7 +13,7 @@ set -e
                      --email manshu.sharma@example.com
 
 # Create the Airflow viewer user
-/opt/conda/envs/env_balte_0.0.3/bin/airflow users create --username viewer \
+/opt/conda/envs/data_auditing_env/bin/airflow users create --username viewer \
                      --password viewer \
                      --firstname John \
                      --lastname Doe \
