@@ -25,7 +25,7 @@ services:
   airflow-webserver:
     container_name: airflow_airflow_webserver
     build: ./
-    command: ["/opt/conda/envs/env_balte_0.0.3/bin/airflow", "webserver"]
+    command: ["/opt/conda/envs/data_auditing_env/bin/airflow", "webserver"]
     env_file:
       - .env
     extra_hosts:
@@ -43,7 +43,7 @@ services:
   airflow-scheduler:
     container_name: airflow_airflow_scheduler
     build: ./
-    command: ["/opt/conda/envs/env_balte_0.0.3/bin/airflow","scheduler"]
+    command: ["/opt/conda/envs/data_auditing_env/bin/airflow","scheduler"]
     env_file:
       - .env
     extra_hosts:
