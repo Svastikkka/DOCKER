@@ -83,25 +83,25 @@ RUN apt-get clean && \
 COPY ./balte/ /app/balte_live
 
 RUN conda env create -f ./balte_live/environment.yml && \
-    echo "source activate env_balte_0.0.3" >> /etc/bash.bashrc
+    echo "source activate data_auditing_env" >> /etc/bash.bashrc
 
 # Install Apache Airflow Latest Version
 ARG AIRFLOW_VERSION=2.2.2
 ARG CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-3.8.txt"
-RUN /opt/conda/envs/env_balte_0.0.3/bin/pip install psycopg2-binary
-RUN /opt/conda/envs/env_balte_0.0.3/bin/pip install "apache-airflow[async,postgres,google]==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+RUN /opt/conda/envs/data_auditing_env/bin/pip install psycopg2-binary
+RUN /opt/conda/envs/data_auditing_env/bin/pip install "apache-airflow[async,postgres,google]==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
 
 # Set environment variables for Conda activation
 ENV CONDA_EXE=/opt/conda/bin/conda
-ENV CONDA_PREFIX=/opt/conda/envs/env_balte_0.0.3
-ENV CONDA_PROMPT_MODIFIER=(env_balte_0.0.3)
+ENV CONDA_PREFIX=/opt/conda/envs/data_auditing_env
+ENV CONDA_PROMPT_MODIFIER=(data_auditing_env)
 
 # Copy the entrypoint script into the image
 COPY entrypoint.sh entrypoint.sh
 RUN chmod +x entrypoint.sh
 
 # Installing additional dependencies
-RUN /opt/conda/envs/env_balte_0.0.3/bin/pip install -r /app/balte_live/requirements.txt
+RUN /opt/conda/envs/data_auditing_env/bin/pip install -r /app/balte_live/requirements.txt
 
 
 # CMD to run entrypoint script
