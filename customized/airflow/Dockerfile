@@ -86,8 +86,8 @@ RUN conda env create -f ./balte_live/environment.yml && \
     echo "source activate data_auditing_env" >> /etc/bash.bashrc
 
 # Install Apache Airflow Latest Version
-ARG AIRFLOW_VERSION=2.2.2
-ARG CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-3.8.txt"
+ARG AIRFLOW_VERSION=2.9.3
+ARG CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-3.11.txt"
 RUN /opt/conda/envs/data_auditing_env/bin/pip install psycopg2-binary
 RUN /opt/conda/envs/data_auditing_env/bin/pip install "apache-airflow[async,postgres,google]==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
 
