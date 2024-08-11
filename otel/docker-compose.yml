@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+  otel-collector:
+    image: otel/opentelemetry-collector:latest
+    ports:
+      - "4317:4317"
+      - "4318:4318"
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
+    command: ["--config=/etc/otel-collector-config.yaml"]
+
+  jaeger:
+    container_name: jaeger
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - "16686:16686"  # Jaeger UI
+      - "6831:6831/udp"  # Jaeger Thrift
+      - "14268:14268"  # Jaeger collector HTTP endpoint
+      - "14250:14250"  # Jaeger gRPC endpoint
+      # - "4317:4317"
+      # - "4318:4318"
+    environment:
+      # COLLECTOR_ZIPKIN_HTTP_PORT: 9411
+      COLLECTOR_OTLP_ENABLED: true
+
+  # otel-agent:
+  #   image: otel/opentelemetry-collector:latest
+  #   command: ["--config=/etc/otel-collector-config.yaml"]
+  #   volumes:
+  #     - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
+  #   depends_on:
+  #     - jaeger
