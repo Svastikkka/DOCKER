@@ -79,3 +79,16 @@ services:
         - KAFKA_CLUSTERS_0_NAME=local
         - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=kafka:9092
         - KAFKA_CLUSTERS_0_ZOOKEEPER=zookeeper:2181
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:latest
+    # pull_policy: always
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_USERS_DEFAULT_THEME=light
+      - GF_LOG_MODE=console
+      - GF_LOG_LEVEL=critical
+    ports:
+      - 3000:3000
