@@ -1,4 +1,4 @@
-FROM mongo:latest
+FROM mongo:4.4.6
 
 RUN apt-get update && apt-get -q install -y
 
