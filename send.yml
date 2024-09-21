@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  send:
+    image: registry.gitlab.com/timvisee/send:v3.4.23
+    restart: always
+    ports:
+      - '12341:12341'
+    volumes:
+      - ./uploads:/uploads
+    environment:
+      - VIRTUAL_HOST=192.168.0.211
+      - VIRTUAL_PORT=12341
+      - DHPARAM_GENERATION=false
+      - NODE_ENV=production
+      - BASE_URL=http://192.168.0.211:12341
+      - PORT=12341
+      - REDIS_HOST=redis
+
+      # For local uploads storage
+      - FILE_DIR=/uploads
+
+  redis:
+    image: 'redis:alpine'
+    restart: always
+    # volumes:
+    #   - send-redis:/data
+
+# volumes:
+#   send-redis:
+#   uploads:
