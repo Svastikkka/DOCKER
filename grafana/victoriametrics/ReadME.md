@@ -8,3 +8,9 @@ Loki
 VM/Prometheus
 - victoria-metrics1:8428
 - victoria-metrics1:8428
+
+
+Install OnPremise
+- VictoriaMetrics
+    - Link: https://docs.victoriametrics.com/single-server-victoriametrics/
+    - Release: https://github.com/VictoriaMetrics/VictoriaMetrics/releases/tag/v1.104.0
