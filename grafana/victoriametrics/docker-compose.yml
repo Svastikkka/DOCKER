@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+
+  # Service for metrics
+  victoria-metrics1:
+    image: victoriametrics/victoria-metrics:v1.104.0
+    container_name: victoria-metrics1
+    ports:
+      - "8428:8428"
+    command:
+      - '--retentionPeriod=1'
+      - '--storageDataPath=/victoria-metrics-data'
+    restart: always
+
+  victoria-metrics2:
+    image: victoriametrics/victoria-metrics:v1.104.0
+    container_name: victoria-metrics2
+    ports:
+      - "8429:8428"
+    command:
+      - '--retentionPeriod=1'
+      - '--storageDataPath=/victoria-metrics-data'
+    restart: always
+
+  # Service for logs
+  loki1:
+    image: grafana/loki:3.0.0
+    command: "-config.file=/etc/loki/loki-config.yml"
+    container_name: loki1
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./loki-config1.yml:/etc/loki/loki-config.yml
+    restart: always
+
+  loki2:
+    image: grafana/loki:3.0.0
+    container_name: loki2
+    ports:
+      - "3200:3200"
+    volumes:
+      - ./loki-config2.yml:/etc/loki/loki-config.yml
+    command: "-config.file=/etc/loki/loki-config.yml"
+    restart: always
+
+  
+  # Start sending metrics to victoria logs
+  promtail:
+    image: grafana/promtail:2.9.1
+    container_name: promtail
+    volumes:
+      - ./promtail-config.yml:/etc/promtail/promtail-config.yml
+      # - /var/log:/var/log
+    command: -config.file=/etc/promtail/promtail-config.yml
+    restart: always
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_SECURITY_ADMIN_USER=admin
+    restart: always
+    volumes:
+      - ./grafana.ini:/etc/grafana/grafana.ini
