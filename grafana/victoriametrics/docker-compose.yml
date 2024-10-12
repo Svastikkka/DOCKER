@@ -11,6 +11,9 @@ services:
     command:
       - '--retentionPeriod=1'
       - '--storageDataPath=/victoria-metrics-data'
+      - '--promscrape.config=/etc/victoria-metrics/prometheus.yml'  # Scrape configuration
+    volumes:
+      - ./prometheus.yml:/etc/victoria-metrics/prometheus.yml  # Volume for scrape config
     restart: always
 
   victoria-metrics2:
@@ -21,6 +24,9 @@ services:
     command:
       - '--retentionPeriod=1'
       - '--storageDataPath=/victoria-metrics-data'
+      - '--promscrape.config=/etc/victoria-metrics/prometheus.yml'  # Scrape configuration
+    volumes:
+      - ./prometheus.yml:/etc/victoria-metrics/prometheus.yml  # Volume for scrape config
     restart: always
 
   # Service for logs
@@ -46,13 +52,31 @@ services:
 
   
   # Start sending metrics to victoria logs
+
+  # Start generating sample logs
+  log-generator:
+    image: busybox  # Use a lightweight image to generate logs
+    container_name: log-generator
+    command: /bin/sh -c "while true; do echo '$(date) Sample log entry' >> /var/log/sample.log; sleep 5; done"
+    volumes:
+      - ./sample-log:/var/log  # Volume to store the log file
+    restart: always
+
   promtail:
     image: grafana/promtail:2.9.1
     container_name: promtail
     volumes:
       - ./promtail-config.yml:/etc/promtail/promtail-config.yml
-      # - /var/log:/var/log
+      - ./sample-log:/var/log  # Volume to read the generated logs
     command: -config.file=/etc/promtail/promtail-config.yml
+    restart: always
+
+  # Start sending metrics to VictoriaMetrics using Telegraf
+  telegraf:
+    image: telegraf:latest
+    container_name: telegraf
+    volumes:
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf
     restart: always
 
   grafana:
