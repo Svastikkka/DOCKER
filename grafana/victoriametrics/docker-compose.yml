@@ -29,6 +29,16 @@ services:
       - ./prometheus.yml:/etc/victoria-metrics/prometheus.yml  # Volume for scrape config
     restart: always
 
+  # NGINX for load balancing VictoriaMetrics
+  # nginx:
+  #   image: nginx:latest
+  #   container_name: nginx
+  #   ports:
+  #     - "80:80"  # Expose port 80 for load balancing
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf  # NGINX configuration for load balancing
+  #   restart: always
+
   # Service for logs
   loki1:
     image: grafana/loki:3.0.0
@@ -49,9 +59,6 @@ services:
       - ./loki-config2.yml:/etc/loki/loki-config.yml
     command: "-config.file=/etc/loki/loki-config.yml"
     restart: always
-
-  
-  # Start sending metrics to victoria logs
 
   # Start generating sample logs
   log-generator:
@@ -75,18 +82,97 @@ services:
   telegraf:
     image: telegraf:latest
     container_name: telegraf
+    ports:
+      - 9273:9273
     volumes:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf
     restart: always
 
-  grafana:
+
+  # Prometheus Alertmanager 1
+  # alertmanager1:
+  #   image: prom/alertmanager:v0.25.0
+  #   container_name: alertmanager1
+  #   ports:
+  #     - "9093:9093"
+  #   volumes:
+  #     - ./alertmanager.yml:/etc/alertmanager/config.yml
+  #   command:
+  #     - '--config.file=/etc/alertmanager/config.yml'
+  #     - '--cluster.listen-address=0.0.0.0:9094'  # Enable clustering
+  #     - '--cluster.peer=alertmanager2:9094'      # Peer with alertmanager2
+  #   restart: always
+
+  # Prometheus Alertmanager 2
+  # alertmanager2:
+  #   image: prom/alertmanager:v0.25.0
+  #   container_name: alertmanager2
+  #   ports:
+  #     - "9094:9093"
+  #   volumes:
+  #     - ./alertmanager.yml:/etc/alertmanager/config.yml
+  #   command:
+  #     - '--config.file=/etc/alertmanager/config.yml'
+  #     - '--cluster.listen-address=0.0.0.0:9094'
+  #     - '--cluster.peer=alertmanager1:9094'      # Peer with alertmanager1
+  #   restart: always
+
+  # vmalert for evaluating rules and sending alerts
+  vmalert1:
+    image: victoriametrics/vmalert:v1.104.0
+    container_name: vmalert1
+    ports:
+      - "8880:8880"  # Port for vmalert
+    command:
+      - "--datasource.url=http://victoria-metrics1:8428/"
+      - "--remoteRead.url=http://victoria-metrics1:8428/"
+      - "--remoteWrite.url=http://victoria-metrics1:8428/"
+      - "--notifier.url=http://alertmanager1:9093/"
+      - "--rule=/etc/vmalert/alert_rules.yml"
+    volumes:
+      - ./alert_rules.yml:/etc/vmalert/alert_rules.yml
+    restart: always
+
+  # vmalert for evaluating rules and sending alerts
+  vmalert2:
+    image: victoriametrics/vmalert:v1.104.0
+    container_name: vmalert2
+    ports:
+      - "8881:8880"  # Port for vmalert
+    command:
+      - "--datasource.url=http://victoria-metrics2:8428/"
+      - "--remoteRead.url=http://victoria-metrics2:8428/"
+      - "--remoteWrite.url=http://victoria-metrics2:8428/"
+      - "--notifier.url=http://alertmanager2:9093/"
+      - "--rule=/etc/vmalert/alert_rules.yml"
+    volumes:
+      - ./alert_rules.yml:/etc/vmalert/alert_rules.yml
+    restart: always
+
+  grafana1:
     image: grafana/grafana:latest
-    container_name: grafana
+    container_name: grafana1
     ports:
       - "3000:3000"
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
       - GF_SECURITY_ADMIN_USER=admin
+      - GF_UNIFIED_ALERTING_HA_LISTEN_ADDRESS=:9094
+      - GF_UNIFIED_ALERTING_HA_PEERS=grafana1:9094,grafana2:9094
+    restart: always
+    volumes:
+      - ./grafana.ini:/etc/grafana/grafana.ini
+
+  grafana2:
+    image: grafana/grafana:latest
+    container_name: grafana2
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_UNIFIED_ALERTING_HA_LISTEN_ADDRESS=:9094
+      - GF_UNIFIED_ALERTING_HA_PEERS=grafana1:9094,grafana2:9094
     restart: always
     volumes:
       - ./grafana.ini:/etc/grafana/grafana.ini
