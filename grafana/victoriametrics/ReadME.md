@@ -19,7 +19,7 @@ Observability stack with High availability.
 - postgres:5432
 
 
-# Installation
+# Onpremise Installation
 
 - VictoriaMetrics
     - Link: https://docs.victoriametrics.com/single-server-victoriametrics/
