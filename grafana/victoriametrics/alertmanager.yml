@@ -1,0 +1,25 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  receiver: 'google_chat'
+
+receivers:
+  - name: 'google_chat'
+    webhook_configs:
+      - url: 'https://chat.googleapis.com/v1/spaces/AAAAo6Xt_2E/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=qfXlouvLs-9Jh_oW5Tg7DCaad0sGnjOoLY7RTfGzxFc'
+        send_resolved: true
+        http_config:
+          tls_config:
+            insecure_skip_verify: true  # Use this for self-signed certificates
+        message: |
+          {
+            "text": "Alert: High CPU usage detected."
+          }
+
+inhibit_rules:
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'dev', 'instance']

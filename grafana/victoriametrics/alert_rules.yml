@@ -1,0 +1,11 @@
+groups:
+  - name: example_alerts
+    rules:
+      - alert: HighCPUUsage
+        expr: cpu_usage_idle{cpu="cpu-total",job="telegraf"} > 10
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "CPU usage is above 90% on instance {{ $labels.instance }}"
+          description: "The CPU usage on instance {{ $labels.instance }} has exceeded 90% for more than 5 minutes.\nCurrent usage: {{ $value | humanizePercentage }}."
