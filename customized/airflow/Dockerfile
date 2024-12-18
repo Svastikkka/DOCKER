@@ -80,9 +80,9 @@ RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* \
     mkdir script
 
-COPY ./balte/ /app/balte_live
+COPY ./dependencies/ /app/dependencies
 
-RUN conda env create -f ./balte_live/environment.yml && \
+RUN conda env create -f ./dependencies/environment.yml && \
     echo "source activate data_auditing_env" >> /etc/bash.bashrc
 
 # Install Apache Airflow Latest Version
@@ -101,7 +101,7 @@ COPY entrypoint.sh entrypoint.sh
 RUN chmod +x entrypoint.sh
 
 # Installing additional dependencies
-RUN /opt/conda/envs/data_auditing_env/bin/pip install -r /app/balte_live/requirements.txt
+RUN /opt/conda/envs/data_auditing_env/bin/pip install -r /app/dependencies/requirements.txt
 
 
 # CMD to run entrypoint script
