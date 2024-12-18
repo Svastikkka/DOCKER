@@ -51,7 +51,6 @@ services:
     volumes:
       - ./airflow:/root/airflow:rw
       - ./scripts:/scripts:rw
-      - /opt/access_tokens:/opt/balte_live/pyce_token:rw
       - ~/.ssh/:/root/.ssh:ro # used for git pull of pyce.
       - ./localtime:/etc/localtime:ro
     depends_on:
