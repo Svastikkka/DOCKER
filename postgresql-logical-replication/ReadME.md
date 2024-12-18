@@ -8,7 +8,7 @@
 7. `GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO chirag;` # on publisher host
 8. `CREATE PUBLICATION my_publication;` # on publisher host
 9. `ALTER PUBLICATION my_publication ADD TABLE products;` # on publisher host
-10. `CREATE SUBSCRIPTION my_subscription CONNECTION 'host=192.168.0.211 port=5000 password=admin@123 user=chirag dbname=chiraglogicalrep' PUBLICATION my_publication;` # on subscriber host
+10. `CREATE SUBSCRIPTION my_subscription CONNECTION 'host=192.168.0.123 port=5000 password=admin@123 user=chirag dbname=chiraglogicalrep' PUBLICATION my_publication;` # on subscriber host
 11. `INSERT INTO products (name, price) VALUES ('Pen', 5.90), ('Notebook', 9.10), ('Pencil', 8.50);` # on publisher host
 12. `SELECT * FROM products;` # verify on bath host
 13. `ALTER TABLE products REPLICA IDENTITY FULL;` # enable replica identity so we can perform update operations as well
