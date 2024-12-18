@@ -1,4 +1,4 @@
-name: data_auditing_env
+name: svastikkka
 channels:
   - conda-forge
 dependencies:
