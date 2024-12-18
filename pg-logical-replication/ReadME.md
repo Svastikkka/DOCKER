@@ -8,7 +8,7 @@
 7. `GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO chirag;` # on publisher host
 8. `CREATE PUBLICATION my_publication;` # on publisher host
 9. `ALTER PUBLICATION my_publication ADD TABLE products;` # on publisher host
-10. `CREATE SUBSCRIPTION my_subscription CONNECTION 'host=192.168.0.211 port=5000 password=admin@123 user=chirag dbname=chiraglogicalrep' PUBLICATION my_publication;` # on subscriber host
+10. `CREATE SUBSCRIPTION my_subscription CONNECTION 'host=192.168.0.123 port=5000 password=admin@123 user=chirag dbname=chiraglogicalrep' PUBLICATION my_publication;` # on subscriber host
 11. `INSERT INTO products (name, price) VALUES ('Pen', 5.90), ('Notebook', 9.10), ('Pencil', 8.50);` # on publisher host
 12. `SELECT * FROM products;` # verify on bath host
 13. `ALTER TABLE products REPLICA IDENTITY FULL;` # enable replica identity so we can perform update operations as well
@@ -88,7 +88,7 @@ CREATE EXTENSION pglogical;
 ### INSTANCE 1
 
 ```sql
-select pglogical.create_node(node_name := 'provider1', dsn := 'host=192.168.0.211 port=5001 dbname=appdb user=appuser password=apppass');
+select pglogical.create_node(node_name := 'provider1', dsn := 'host=192.168.0.123 port=5001 dbname=appdb user=appuser password=apppass');
 
 # SELECT pglogical.replication_set_add_all_tables('default', ARRAY['public']);
 SELECT pglogical.replication_set_add_table(
@@ -106,7 +106,7 @@ grant usage on schema pglogical to appdb;
 ### INSTANCE 2
 ```sql
 SELECT pglogical.create_node( node_name := 'subscriber1', dsn := 'host=192.168.0.213 port=5001 dbname=appdb user=appuser password=apppass');
-SELECT pglogical.create_subscription( subscription_name := 'subscription1', provider_dsn := 'host=192.168.0.211 port=5001 dbname=appdb user=appuser password=apppass');
+SELECT pglogical.create_subscription( subscription_name := 'subscription1', provider_dsn := 'host=192.168.0.123 port=5001 dbname=appdb user=appuser password=apppass');
 select subscription_name, status FROM pglogical.show_subscription_status();
 SELECT pglogical.wait_for_subscription_sync_complete('subscription1');
 ```
@@ -160,7 +160,7 @@ grant usage on schema pglogical to appdb2;
 
 
 ### INSTANCE 2
-SELECT pglogical.create_node( node_name := 'subscriber1', dsn := 'host=192.168.0.211 port=5001 dbname=appdb2 user=appuser password=apppass');
+SELECT pglogical.create_node( node_name := 'subscriber1', dsn := 'host=192.168.0.123 port=5001 dbname=appdb2 user=appuser password=apppass');
 SELECT pglogical.create_subscription( subscription_name := 'subscription1', provider_dsn := 'host=192.168.0.213 port=5001 dbname=appdb2 user=appuser password=apppass');
 select subscription_name, status FROM pglogical.show_subscription_status();
 SELECT pglogical.wait_for_subscription_sync_complete('subscription1');
