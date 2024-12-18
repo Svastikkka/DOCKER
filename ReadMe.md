@@ -1,6 +1,11 @@
 # Introduction
 This repository contains the necessary files and instructions to set up a local environment using Docker and Docker Compose. The Docker Compose YAML file provided in this repository will deploy the following services:
 
+- Airflow: An open-source workflow management platform.
+- Minio: An object bucket
+- MySQL: A RDBMS
+- Selenium(Python): A browser automation tool. Good for Functional testing.
+- Vault: A secure secrets storage.
 - Kafka: A distributed streaming platform.
 - MongoDB: A document-oriented database.
 - ZooKeeper: A centralized service for maintaining configuration information.
@@ -11,6 +16,9 @@ This repository contains the necessary files and instructions to set up a local 
 - NiFi: A data integration and processing framework.
 - Wiki.js: A modern and powerful wiki platform.
 - Grafana stack: A comprehensive monitoring and visualization solution.
+- Posgresql Replication:
+- Postgresql Logical Replication
+- Postgresql Logical Replication using pglocial
 
 # Prerequisites
 Before you can set up the local environment using Docker Compose, make sure you have the following prerequisites installed on your system:

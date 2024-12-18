@@ -1,0 +1,26 @@
+version: '3.3'
+services:
+  kafka3:
+    image: confluentinc/cp-kafka:6.2.6
+    healthcheck:
+      test: ps augwwx | egrep [S]upportedKafka
+    ports:
+    - "9093:9093"
+    environment:
+    - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://192.168.0.211:9093
+    - KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9093
+    - KAFKA_ZOOKEEPER_CONNECT=192.168.0.105:12181
+    - KAFKA_BROKER_ID=3
+    - BOOTSTRAP_SERVERS=192.168.0.105:19091,192.168.0.105:19092,192.168.0.211:9093
+    - ZOOKEEPER=192.168.0.105:12181
+    - KAFKA_DEFAULT_REPLICATION_FACTOR=3
+    - KAFKA_MIN_INSYNC_REPLICAS=2
+  kafka-ui:
+      container_name: kafka-ui
+      image: provectuslabs/kafka-ui:latest
+      ports:
+          - "18080:8080"
+      environment:
+          - KAFKA_CLUSTERS_0_NAME=local
+          - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=192.168.0.105:19091,192.168.0.105:19092,192.168.0.211:9093
+          - KAFKA_CLUSTERS_0_ZOOKEEPER=192.168.0.105:12181

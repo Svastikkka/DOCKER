@@ -3,6 +3,29 @@ networks:
   loki:
 
 services:
+
+  fluent-bit:
+    image: fluent/fluent-bit:latest
+    container_name: fluent-bit
+    volumes:
+      - ./config/:/fluent-bit/etc
+      # - /var/log:/var/log
+      # - /var/lib/docker/containers:/var/lib/docker/containers
+    environment:
+      - FLUENT_BIT_LOG_LEVEL=info
+    command: ["/fluent-bit/bin/fluent-bit", "-c", "/fluent-bit/etc/fluent-bit.conf"]
+    networks:
+      - loki
+  promtail:
+    image: grafana/promtail:latest
+    container_name: promtail
+    volumes:
+      - ./config/:/etc/promtail
+      # - /var/log:/var/log
+      # - /var/lib/docker/containers:/var/lib/docker/containers
+    command: -config.file=/etc/promtail/promtail-config.yaml
+    networks:
+      - loki
   read:
     image: grafana/loki:2.4.1
     command: "-config.file=/etc/loki/config.yaml -target=read"
@@ -87,6 +110,7 @@ services:
 
   gateway:
     image: nginx:latest
+    container_name: gateway
     depends_on:
       - read
       - write
@@ -101,7 +125,7 @@ services:
           worker_connections   1000;
         }
         http {
-          resolver 127.0.0.11;
+          resolver 127.0.0.1;
           server {
             listen             3100;
             location = / {

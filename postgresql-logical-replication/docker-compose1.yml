@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  postgres-1:
+    build: ./
+    container_name: postgres-1
+    environment:
+      POSTGRES_USER: postgresadmin
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: postgresdb
+      PGDATA: "/data"
+    volumes:
+      - ./postgres-1/pgdata:/data
+      - ./postgres-1/config:/config
+      - ./postgres-1/archive:/mnt/server/archive
+    ports:
+      - "5000:5432"
+    networks:
+      - custom_network
+    command: -c 'config_file=/config/postgresql.conf'
+    restart: unless-stopped
+networks:
+  custom_network:
+      name: postgres
+      driver: bridge

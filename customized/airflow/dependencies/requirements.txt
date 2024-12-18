@@ -1,0 +1,11 @@
+pandas==2.0.0
+numpy==1.26.4
+statsmodels==0.14.1
+types-python-dateutil
+types-cachetools==5.2.1
+mypy==0.991
+protobuf==4.25.3
+sqlalchemy==1.4.31
+pydantic==1.10.7
+typing-extensions==4.4.0
+bcrypt==4.1.2 ## extra

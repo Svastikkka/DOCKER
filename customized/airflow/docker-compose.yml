@@ -1,0 +1,64 @@
+---
+version: '3.3'
+services:
+  postgres:
+    container_name: airflow_airflow_postgres
+    hostname: airflow_airflow_postgres
+    image: postgres:11
+    env_file:
+      - .env
+    volumes:
+      - ./postgresql:/var/lib/postgresql/data:rw
+      - ./localtime:/etc/localtime:ro
+    ports:
+      - 5434:5432
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      retries: 5
+    restart: always
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - custom_network
+
+  airflow-webserver:
+    container_name: airflow_airflow_webserver
+    build: ./
+    command: ["/opt/conda/envs/data_auditing_env/bin/airflow", "webserver"]
+    env_file:
+      - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./airflow:/root/airflow:rw
+      - ./localtime:/etc/localtime:ro
+    ports:
+      - "${AIRFLOW_EXPOSED_PORT}:8080"
+    depends_on:
+      - postgres
+    networks:
+      - custom_network
+
+  airflow-scheduler:
+    container_name: airflow_airflow_scheduler
+    build: ./
+    command: ["/opt/conda/envs/data_auditing_env/bin/airflow","scheduler"]
+    env_file:
+      - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./airflow:/root/airflow:rw
+      - ./scripts:/scripts:rw
+      - ~/.ssh/:/root/.ssh:ro # used for git pull of pyce.
+      - ./localtime:/etc/localtime:ro
+    depends_on:
+      - postgres
+    networks:
+      - custom_network
+
+networks:
+    custom_network:
+        name: airflow
+        driver: bridge
