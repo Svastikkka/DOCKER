@@ -9,11 +9,11 @@ services:
     volumes:
       - ./uploads:/uploads
     environment:
-      - VIRTUAL_HOST=192.168.0.211
+      - VIRTUAL_HOST=192.168.0.123
       - VIRTUAL_PORT=12341
       - DHPARAM_GENERATION=false
       - NODE_ENV=production
-      - BASE_URL=http://192.168.0.211:12341
+      - BASE_URL=http://192.168.0.123:12341
       - PORT=12341
       - REDIS_HOST=redis
 

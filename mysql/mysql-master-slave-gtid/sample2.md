@@ -6,7 +6,7 @@ We are using GTID based master slave replication. In this replication both maste
 ### Steps for taking dump and restoring it
 1. Dump the database on the master:
    ```bash
-   mysqldump --set-gtid-purged=OFF -u root -p balte_oms > backup.sql
+   mysqldump --set-gtid-purged=OFF -u root -p svastikkka > backup.sql
    ```
 
 2. Copy the dump file from the master to the local machine:
@@ -26,8 +26,8 @@ We are using GTID based master slave replication. In this replication both maste
 
 5. Restore the database on the slave:
    ```bash
-   CREATE DATABASE balte_oms;
-   mysql -u root -p balte_oms < backup.sql
+   CREATE DATABASE svastikkka;
+   mysql -u root -p svastikkka < backup.sql
    ```
 
 ### Step to enable replication on master
@@ -70,7 +70,7 @@ We are using GTID based master slave replication. In this replication both maste
 
 4. Create table filters for replication for  `KRX_PRODUCTION` channel
    ```sql
-   CHANGE REPLICATION FILTER REPLICATE_DO_TABLE = (balte_oms.krx_production, balte_oms.dead_trade_krx_production_total, balte_oms.dead_trade_krx_production) FOR CHANNEL "KRX_PRODUCTION";
+   CHANGE REPLICATION FILTER REPLICATE_DO_TABLE = (svastikkka.krx_production, svastikkka.dead_trade_krx_production_total, svastikkka.dead_trade_krx_production) FOR CHANNEL "KRX_PRODUCTION";
    ```
 
 5. Start the slave for the specified channel:
