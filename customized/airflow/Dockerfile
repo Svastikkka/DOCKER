@@ -83,25 +83,25 @@ RUN apt-get clean && \
 COPY ./dependencies/ /app/dependencies
 
 RUN conda env create -f ./dependencies/environment.yml && \
-    echo "source activate data_auditing_env" >> /etc/bash.bashrc
+    echo "source activate svastikkka" >> /etc/bash.bashrc
 
 # Install Apache Airflow Latest Version
 ARG AIRFLOW_VERSION=2.9.3
 ARG CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-3.11.txt"
-RUN /opt/conda/envs/data_auditing_env/bin/pip install psycopg2-binary
-RUN /opt/conda/envs/data_auditing_env/bin/pip install "apache-airflow[async,postgres,google]==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+RUN /opt/conda/envs/svastikkka/bin/pip install psycopg2-binary
+RUN /opt/conda/envs/svastikkka/bin/pip install "apache-airflow[async,postgres,google]==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
 
 # Set environment variables for Conda activation
 ENV CONDA_EXE=/opt/conda/bin/conda
-ENV CONDA_PREFIX=/opt/conda/envs/data_auditing_env
-ENV CONDA_PROMPT_MODIFIER=(data_auditing_env)
+ENV CONDA_PREFIX=/opt/conda/envs/svastikkka
+ENV CONDA_PROMPT_MODIFIER=(svastikkka)
 
 # Copy the entrypoint script into the image
 COPY entrypoint.sh entrypoint.sh
 RUN chmod +x entrypoint.sh
 
 # Installing additional dependencies
-RUN /opt/conda/envs/data_auditing_env/bin/pip install -r /app/dependencies/requirements.txt
+RUN /opt/conda/envs/svastikkka/bin/pip install -r /app/dependencies/requirements.txt
 
 
 # CMD to run entrypoint script
