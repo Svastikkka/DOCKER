@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  celery-worker:
+    build: .
+    command: celery -A app.celery_app worker --loglevel=info
+    depends_on:
+      - redis
+
+  beat:
+    build: .
+    container_name: celery-beat
+    command: celery -A app.celery_app beat --loglevel=info
+    depends_on:
+      - redis
+
+  flower:
+    build: .
+    command: celery -A app.celery_app flower --broker=redis://redis:6379/0 --port=5555
+    ports:
+      - "5556:5555"
+    depends_on:
+      - redis
