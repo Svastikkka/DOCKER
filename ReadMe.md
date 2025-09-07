@@ -21,6 +21,7 @@ This repository contains the necessary files and instructions to set up a local 
 - **PostgreSQL Replication**: Enables database replication across PostgreSQL instances.
 - **PostgreSQL Logical Replication**: Supports advanced replication using pglogical.
 - **Celery**: Asynchronous task queue system
+- **Send**: Send lets you share files with end-to-end encryption and a link that automatically expires
 
 ## Prerequisites
 Before setting up the local environment, ensure you have the following installed on your system:
