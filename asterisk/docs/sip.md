@@ -1,0 +1,79 @@
+# Asterisks
+Before start, Asterisk is big because telecom is big. Your use case is small. Control modules, not configs.
+
+- SIP ingress + ARI-controlled voice bot
+- Mental model: Asterisk config layers
+    - Think of Asterisk configs in 4 layers:
+    ```
+    ┌──────────────────────────────┐
+    │ Optional features (PBX junk) │  ← ignore
+    ├──────────────────────────────┤
+    │ Services (CDR, CEL, VM, AMI) │  ← mostly ignore
+    ├──────────────────────────────┤
+    │ Core runtime                 │  ← some needed
+    ├──────────────────────────────┤
+    │ SIP + RTP + ARI              │  ← THIS is your focus
+    └──────────────────────────────┘
+    ```
+- To setup asterisk only files we need are
+
+| File              | Why                     |
+| ----------------- | ----------------------- |
+| `asterisk.conf`   | Core paths & startup    |
+| `modules.conf`    | What to load / not load |
+| `pjsip.conf`      | SIP signaling           |
+| `rtp.conf`        | Media                   |
+| `extensions.conf` | Call entry              |
+| `http.conf`       | ARI transport           |
+| `ari.conf`        | ARI auth                |
+| `logger.conf`     | Debugging               |
+
+*Note*: sip.conf is deprecated we only focused PJSIP
+
+- Legacy (Deprecated)
+    - sip.conf          (chan_sip – deprecated)
+    - iax.conf
+    - ooh323.conf
+    - motif.conf
+    - chan_dahdi.conf
+    - chan_mobile.conf
+    - unistim / skinny / mgcp
+
+- Voicemail / PBX features
+    - voicemail.conf
+    - followme.conf
+    - queues.conf
+    - meetme.conf
+    - confbridge.conf
+    - sla.conf
+    - minivm.conf
+    - users.conf
+
+*Note*: These cause 80% of the scary log spam you saw earlier.
+
+- Billing / Logging Backends
+
+    - cdr_*.conf
+    - cel_*.conf
+    - res_odbc.conf
+    - res_pgsql.conf
+    - res_config_*.conf
+
+*Note*: Needed only for billing/compliance systems.
+
+- Testing / Legacy / Obscure
+    - test_sorcery.conf
+    - extensions.ael
+    - extensions.lua
+    - calendar.conf
+    - festival.conf
+    - adsi.conf
+    - alarmreceiver.conf
+    - ss7.timers
+
+- Monitoring / Enterprise
+    - prometheus.conf
+    - statsd.conf
+    - hep.conf
+    - res_snmp.conf
+

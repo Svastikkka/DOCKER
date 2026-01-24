@@ -45,42 +45,59 @@ RUN wget https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-${ASTERI
 WORKDIR /usr/src/asterisk-${ASTERISK_VERSION}
 
 # ----------------------------
-# 3. Install bundled pjproject deps
+# 3. Optional MP3 support
 # ----------------------------
-# RUN contrib/scripts/install_prereq install
-
-# Optional MP3 support (safe)
 RUN contrib/scripts/get_mp3_source.sh
 
 # ----------------------------
-# 4. Configure Asterisk (with bundled PJSIP)
+# 4. Configure (bundled pjproject)
 # ----------------------------
 RUN ./configure
 
 # ----------------------------
-# 5. Build & install
+# 5. Enable PJSIP modules (NON-INTERACTIVE)
+# ----------------------------
+# ----------------------------
+# 5. Enable required modules (Asterisk 22 compatible)
+# ----------------------------
+RUN make menuselect.makeopts && \
+    menuselect/menuselect \
+      --enable chan_pjsip \
+      --enable res_pjsip \
+      --enable res_pjsip_authenticator_digest \
+      --enable res_pjsip_endpoint_identifier_ip \
+      --enable res_pjsip_registrar \
+      --enable res_pjsip_session \
+      --enable bridge_simple \
+      --enable bridge_native_rtp \
+      --enable codec_ulaw \
+      --enable codec_alaw \
+      menuselect.makeopts
+# ----------------------------
+# 6. Build & install
 # ----------------------------
 RUN make -j$(nproc) \
     && make install \
     && make samples \
-    && make config
+    && make config \
+    && ldconfig
 
 # ----------------------------
-# 6. Runtime directories
+# 7. Runtime directories
 # ----------------------------
 RUN mkdir -p /var/run/asterisk \
-    && mkdir -p /var/log/asterisk \
-    && mkdir -p /var/lib/asterisk \
-    && mkdir -p /etc/asterisk
+    /var/log/asterisk \
+    /var/lib/asterisk \
+    /etc/asterisk
 
 # ----------------------------
-# 7. Expose SIP & RTP ports
+# 8. Expose SIP & RTP ports
 # ----------------------------
 EXPOSE 5060/udp
 EXPOSE 5060/tcp
 EXPOSE 10000-20000/udp
 
 # ----------------------------
-# 8. Run Asterisk (foreground)
+# 9. Run Asterisk
 # ----------------------------
 CMD ["asterisk", "-fvvvv"]
