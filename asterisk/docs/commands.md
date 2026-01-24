@@ -26,3 +26,11 @@ module show like pjsip
 ```bash
 pjsip show endpoints
 ```
+
+
+```bash
+sngrep port 5060
+asterisk -rvvvvv
+pjsip set logger on
+core show channels
+```
