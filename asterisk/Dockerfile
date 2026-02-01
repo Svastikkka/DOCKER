@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
-ENV ASTERISK_VERSION=22.8.0
+ENV ASTERISK_VERSION=22.8.1
 
 # ----------------------------
 # 1. Install build dependencies
