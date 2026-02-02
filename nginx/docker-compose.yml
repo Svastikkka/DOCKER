@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    network_mode: host
+    volumes:
+      - ./nginx.conf.template:/etc/nginx/nginx.conf.template
+      - ./certbot:/etc/letsencrypt
+      - ./webroot:/var/www/certbot
+    env_file:
+      - DOMAIN=${DOMAIN}
+    command: >
+      /bin/bash -c "
+      envsubst '\$DOMAIN' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf &&
+      nginx -g 'daemon off;'
+      "
+    depends_on:
+      - certbot
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot_runner
+    network_mode: host
+    volumes:
+      - ./certbot:/etc/letsencrypt
+      - ./webroot:/var/www/certbot
+    environment:
+      - DOMAIN=${DOMAIN}
+      - EMAIL=${EMAIL}
+    command: >
+      /bin/bash -c "
+      certbot certonly --webroot -w /var/www/certbot
+      -d ${DOMAIN} --email ${EMAIL} --agree-tos --non-interactive &&
+      while true; do
+        certbot renew --webroot -w /var/www/certbot;
+        sleep 12h;
+      done
+      "
