@@ -22,6 +22,7 @@ This repository contains the necessary files and instructions to set up a local 
 - **PostgreSQL Logical Replication**: Supports advanced replication using pglogical.
 - **Celery**: Asynchronous task queue system
 - **Send**: Send lets you share files with end-to-end encryption and a link that automatically expires
+- **Asterisk**: Custom Asterisk Docker Setup including Dockerfile & Docker Compose.
 
 ## Prerequisites
 Before setting up the local environment, ensure you have the following installed on your system:
