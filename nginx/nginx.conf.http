@@ -1,0 +1,19 @@
+events {}
+
+http {
+
+    server {
+        listen 80;
+        server_name example.svastikkk.com;
+
+        location /.well-known/acme-challenge/ {
+            root /var/www/certbot;
+            try_files $uri =404;
+        }
+
+        location / {
+            return 200 "Temporary HTTP server running\n";
+        }
+    }
+
+}

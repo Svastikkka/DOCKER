@@ -1,34 +1,43 @@
-server {
-    listen 80;
-    server_name ${DOMAIN};
+events {}
 
-    # Certbot challenge
-    location /.well-known/acme-challenge/ {
-        root /var/www/certbot;
+http {
+
+    server {
+        server_name example.svastikkk.com _;
+
+        location / {
+            return 404 "Not Found\n";
+        }
+
+        location /app1/ {
+            proxy_pass http://127.0.0.1:8002/;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+
+        location /app2/ {
+            proxy_pass http://127.0.0.1:8003/;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+
+        listen 443 ssl; # managed by Certbot
+        ssl_certificate /etc/letsencrypt/live/example.svastikkk.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/example.svastikkk.com/privkey.pem;
     }
 
-    # Redirect all HTTP → HTTPS
-    location / {
-        return 301 https://$host$request_uri;
-    }
-}
+    server {
+        if ($host = example.svastikkk.com) {
+            return 301 https://$host$request_uri;
+        } # managed by Certbot
 
-server {
-    listen 443 ssl;
-    server_name ${DOMAIN};
+        listen 80;
+        server_name example.svastikkk.com _;
+        root /var/www/certbot;  # Required for ACME challenge
 
-    ssl_certificate /etc/letsencrypt/live/${DOMAIN}/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/${DOMAIN}/privkey.pem;
-
-    location /app1/ {
-        proxy_pass http://127.0.0.1:8002/;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
+        location /.well-known/acme-challenge/ {
+            try_files $uri =404;
+        }
     }
 
-    location /app2/ {
-        proxy_pass http://127.0.0.1:8003/;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-    }
 }
