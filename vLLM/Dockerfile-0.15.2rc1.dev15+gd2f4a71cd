@@ -1,0 +1,49 @@
+FROM nvidia/cuda:12.2.2-cudnn8-runtime-ubuntu22.04
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
+
+# System deps
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-venv \
+    python3-pip \
+    git \
+    curl \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Python venv (recommended for vLLM stability)
+RUN python3 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Upgrade pip
+RUN pip install --upgrade pip
+
+# Install vLLM (EXACT version you want)
+RUN pip install \
+    "vllm==0.15.2rc1.dev15+gd2f4a71cd"
+
+# Optional: sanity check
+RUN python - <<EOF
+import vllm, torch
+print("vLLM:", vllm.__version__)
+print("CUDA available:", torch.cuda.is_available())
+EOF
+
+# Hugging Face cache paths (can be overridden in K8s)
+ENV HF_HOME=/hf-cache \
+    TRANSFORMERS_CACHE=/hf-cache \
+    HUGGINGFACE_HUB_CACHE=/hf-cache
+
+# Create cache dir
+RUN mkdir -p /hf-cache
+
+WORKDIR /workspace
+
+# IMPORTANT:
+# No model, no vllm serve here
+# Kubernetes will pass command + args
+ENTRYPOINT ["/bin/sh", "-c"]
+CMD ["sleep infinity"]
