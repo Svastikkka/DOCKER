@@ -14,36 +14,39 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-# Python venv (recommended for vLLM stability)
+# Python venv
 RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 # Upgrade pip
 RUN pip install --upgrade pip
 
-# Install vLLM (EXACT version you want)
+# Install vLLM + LMCache + HF client
 RUN pip install \
-    "vllm==0.15.2rc1.dev15+gd2f4a71cd"
+    vllm==0.15.1 \
+    lmcache \
+    huggingface-hub \
+    redis
 
-# Optional: sanity check
+# Sanity check
 RUN python - <<EOF
 import vllm, torch
+from importlib.metadata import version
+
 print("vLLM:", vllm.__version__)
+print("LMCache:", version("lmcache"))
 print("CUDA available:", torch.cuda.is_available())
 EOF
 
-# Hugging Face cache paths (can be overridden in K8s)
+# HF cache paths
 ENV HF_HOME=/hf-cache \
     TRANSFORMERS_CACHE=/hf-cache \
     HUGGINGFACE_HUB_CACHE=/hf-cache
 
-# Create cache dir
 RUN mkdir -p /hf-cache
 
 WORKDIR /workspace
 
-# IMPORTANT:
-# No model, no vllm serve here
-# Kubernetes will pass command + args
+# K8s controls runtime command
 ENTRYPOINT ["/bin/sh", "-c"]
 CMD ["sleep infinity"]
