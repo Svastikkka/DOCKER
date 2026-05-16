@@ -1,0 +1,63 @@
+version: "3.9"
+services:
+  sglang:
+    image: sglang-wolfi
+    container_name: sglang-server    
+    network_mode: "host"    
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    build:
+      context: .
+      dockerfile: Dockerfile
+      network: host
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+      - CUDA_VISIBLE_DEVICES=0
+      - HF_HOME=/root/.cache/huggingface
+      - HF_TOKEN=YOUR_TOKEN_PLEASE
+      - HUGGINGFACE_HUB_TOKEN=YOUR_TOKEN_PLEASE
+    shm_size: "16gb"
+    command:
+      [
+        "python3",
+        "-m",
+        "sglang.launch_server",
+        "--model-path",
+        "voicing-ai/Voicing-Agent-30B-Instruct",
+        "--served-model-name",
+        "voicing-llm-v1.5",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--tp",
+        "1",
+        "--trust-remote-code",
+        "--dtype",
+        "bfloat16",
+        "--mem-fraction-static",
+        "0.75",
+        "--attention-backend",
+        "triton",
+        "--sampling-backend",
+        "pytorch"
+      ]
+    restart: unless-stopped
+
+# curl http://localhost:8000/generate   -H "Content-Type: application/json"   -d '{
+#     "text": "<|im_start|>system\nYou are a helpful assistant that provides short, factual answers for video scripts.<|im_end|>\n<|im_start|>user\nList 3 facts about Paris for a YouTube Short.<|im_end|>\n<|im_start|>assistant\n",
+#     "sampling_params": {
+#       "max_new_tokens": 100,
+#       "temperature": 0.7
+#     }
+#   }'
